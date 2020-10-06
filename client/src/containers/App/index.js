@@ -8,8 +8,8 @@ class App extends Component {
       <div>
         <div> Hello </div>
         <Navbar></Navbar>
-        {/* <BootstrapCard /> */}
         <CardSection />
+        <Navbar/>
       </div>  
      
           
