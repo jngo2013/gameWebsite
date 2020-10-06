@@ -7,14 +7,9 @@ class App extends Component {
     return (
       <div>
         <div> Hello </div>
-        <Navbar></Navbar>
-        {/* <BootstrapCard /> */}
+        <Navbar/>
         <CardSection />
       </div>  
-     
-          
-  
-      
     )
   }
 }

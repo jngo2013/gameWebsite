@@ -2,18 +2,17 @@ import React from 'react'
 import { NavDropdown, Nav, Form, Navbar, Button, FormControl } from 'react-bootstrap';
 export default (props) => (
 <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
-      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+      <Nav.Link href="#link">Latest News</Nav.Link>
+      <NavDropdown title="Games" id="basic-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Legacy</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Events</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Hooplah</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Form inline>
