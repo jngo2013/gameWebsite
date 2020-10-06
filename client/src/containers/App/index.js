@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import BootstrapCard from '../../components/BootstrapCard';
 
 
 class App extends Component {
   render() {
     return (
-      <div> Hello </div>
+      <div>
+        <div> Hello </div>
+        <BootstrapCard />
+      </div>  
     )
   }
 }
