@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BootstrapCard from '../../components/BootstrapCard';
+import CardSection from './../CardSection';
 import Navbar from './../../components/Navbar'
 
 class App extends Component {
@@ -8,7 +8,8 @@ class App extends Component {
       <div>
         <div> Hello </div>
         <Navbar></Navbar>
-        <BootstrapCard />
+        {/* <BootstrapCard /> */}
+        <CardSection />
       </div>  
      
           
