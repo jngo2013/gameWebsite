@@ -24,6 +24,6 @@ export default CardSection;
 
 // Next steps:
 // X 1.  put cards in a container
-// 2.  adjust width
+// X 2.  adjust width
 // 3.  remove text
 // 4.  add hover effect
