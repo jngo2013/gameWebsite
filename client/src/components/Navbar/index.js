@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavDropdown, Nav, Form, Navbar, Button, FormControl } from 'react-bootstrap';
+import "./style.css";
+
 export default (props) => (
-<Navbar bg="light" expand="lg">
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+<Navbar fixed='top'  className="NavbarBG" expand="lg">
+  <Navbar.Toggle  aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="#home">Home</Nav.Link>
@@ -17,7 +19,7 @@ export default (props) => (
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
+      <Button variant="outline-primary">Search</Button>
     </Form>
   </Navbar.Collapse>
 </Navbar>
