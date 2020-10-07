@@ -9,7 +9,7 @@ class CardSection extends Component {
   render() {
     return (
       <div>
-        <Container className="CardSection-container">
+        <Container fluid className="CardSection-container">
           <Row>
             <BootstrapCard />
             <BootstrapCard />
