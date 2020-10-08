@@ -1,6 +1,6 @@
 .BootstrapCard {
   border: 3px solid blue;
-  margin: 0 2rem;
+  margin: 1rem;
   transition: all 0.1s ease-out;
 }
 
