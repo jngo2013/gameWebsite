@@ -8,14 +8,17 @@ import './CardSection.css';
 class CardSection extends Component {
   render() {
     return (
-      <div>
-        <Container fluid className="CardSection-container">
+      <Container fluid className="CardSection-container">
+        <div>
+
           <Row>
             <BootstrapCard />
             <BootstrapCard />
           </Row>
-        </Container>
-      </div>
+
+        </div>
+      </Container>
+
     );
   }
 }
