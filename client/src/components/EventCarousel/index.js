@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Carousel } from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap';
+import './style.css'
  
 
 
@@ -11,7 +12,7 @@ function ControlledCarousel() {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel className="Carousel" activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
           className="d-block w-100"
