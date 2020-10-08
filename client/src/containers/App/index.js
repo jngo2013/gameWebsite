@@ -3,6 +3,7 @@ import CardSection from './../CardSection';
 import Navbar from './../../components/Navbar'
 import HeadLine from './../../components/HeadLine'
 import ControlledCarousel from './../../components/EventCarousel'
+import Footer from './../../components/Footer';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <HeadLine/>
         <ControlledCarousel/>
         <CardSection />
+        <Footer />
       </div>  
     )
   }
