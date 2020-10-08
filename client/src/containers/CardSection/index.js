@@ -11,7 +11,7 @@ class CardSection extends Component {
       <Container fluid className="CardSection-container">
         <div>
 
-          <Row>
+          <Row className="CardSection-row">
             <BootstrapCard />
             <BootstrapCard />
           </Row>
