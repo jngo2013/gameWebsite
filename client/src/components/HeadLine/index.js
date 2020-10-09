@@ -4,6 +4,7 @@ import "./style.css"
 
 export default (props) => (
   <div>
+    
 <Jumbotron className='jumbotron'>
   <div>
   <h1 className="jumbotronText">Our Story</h1>
