@@ -32,3 +32,18 @@
   height: 50%;
   justify-content: center;
 }
+
+.Footer-ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Footer-youtube {
+  font-size: 3rem;
+  color: red;
+}
+
+.Footer-facebook {
+  font-size: 3rem;
+  color: #4267B2;
+}

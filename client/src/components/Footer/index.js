@@ -14,9 +14,8 @@ function Footer() {
           <div className="Footer-text">
             <h4>Social Media</h4>
             <ul className="Footer-ul">
-              <li>something</li>
-              <li>something</li>
-              <li>something</li>
+              <li><a href="https://www.facebook.com/DrunkOnGamesChannelsomething" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook Footer-facebook"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube Footer-youtube"></i></a></li>
             </ul>
           </div>
         </Col>
@@ -31,7 +30,7 @@ function Footer() {
 
         <Col className="Footer-col">
         <div className="Footer-text">
-            <h4>Social Media</h4>
+            <h4>Contact</h4>
             <ul className="Footer-ul">
               <li>something</li>
               <li>something</li>
