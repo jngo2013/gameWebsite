@@ -1,8 +1,19 @@
 .Footer {
-  border: 3px solid green;
-  height: 25vh;
+  background-color: grey;
 }
 
-.test {
-  border: 3px solid red;
+.Footer-col {
+  height: 40vh;
+  position: relative;
+}
+
+.Footer-col-div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
