@@ -1,35 +1,4 @@
-.Footer {
-  background-color: grey;
-}
-
-.Footer-col {
-  height: 40vh;
-  position: relative;
-  border: 3px solid green;
-
-}
-
-.Footer-col-div {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-.Footer-icon {
-  border: 3px solid black;
-  border-radius: 50%;
-  /* width: 20%; */
-  /* margin-left: 300px; */
-}
-
-/* ==================== */
-
-.test2 {
+.Footer-container {
   /* border: 3px solid black; */
   display: flex;
   justify-content: center;
@@ -37,7 +6,7 @@ ul {
   background-color: skyblue;
 }
 
-.row2 {
+.Footer-row {
   /* border: 3px solid orange; */
   width: 50%;
   display: flex;
@@ -45,28 +14,20 @@ ul {
   align-items: center;
 }
 
-.testCol2 {
+.Footer-col {
   border: 3px solid red;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
-  /* padding-top: 20px; */
 }
 
-.testImg2 {
+.Footer-logo {
   width: 90%;
   border: 3px solid green;
 }
 
-/* .testCol2-div {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-} */
-
-.X {
+.Footer-text {
   border: 3px solid purple;
   height: 50%;
   justify-content: center;
