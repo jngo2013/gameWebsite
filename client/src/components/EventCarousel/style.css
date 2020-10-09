@@ -1,8 +1,13 @@
 .Carousel {
-  max-height: 80%;
   width: 50%;
-  padding-left: 30px;
-  padding-top: 50px;
+  /* padding-left: 2%; */
+  /* padding-top: 7%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Container {
   display: flex;
   justify-content: center;
   align-items: center;

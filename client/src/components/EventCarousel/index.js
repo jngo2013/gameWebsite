@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Container, Card } from 'react-bootstrap';
 import './style.css'
  
 
@@ -12,6 +12,7 @@ function ControlledCarousel() {
   };
 
   return (
+    <Container className="Container">
     <Carousel className="Carousel" activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
@@ -51,6 +52,7 @@ function ControlledCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+  </Container>
   );
 }
 
