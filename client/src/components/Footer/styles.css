@@ -17,3 +17,10 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+.Footer-icon {
+  border: 3px solid black;
+  border-radius: 50%;
+  /* width: 20%; */
+  /* margin-left: 300px; */
+}
