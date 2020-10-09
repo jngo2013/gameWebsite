@@ -5,6 +5,8 @@
 .Footer-col {
   height: 40vh;
   position: relative;
+  border: 3px solid green;
+
 }
 
 .Footer-col-div {
@@ -23,4 +25,49 @@ ul {
   border-radius: 50%;
   /* width: 20%; */
   /* margin-left: 300px; */
+}
+
+/* ==================== */
+
+.test2 {
+  /* border: 3px solid black; */
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+  background-color: skyblue;
+}
+
+.row2 {
+  /* border: 3px solid orange; */
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.testCol2 {
+  border: 3px solid red;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+  /* padding-top: 20px; */
+}
+
+.testImg2 {
+  width: 90%;
+  border: 3px solid green;
+}
+
+/* .testCol2-div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+
+.X {
+  border: 3px solid purple;
+  height: 50%;
+  justify-content: center;
 }
