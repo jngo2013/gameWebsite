@@ -12,7 +12,7 @@ function ControlledCarousel() {
   };
 
   return (
-    <Container className="Container">
+    <Container fluid className="Container">
     <Carousel className="Carousel" activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img

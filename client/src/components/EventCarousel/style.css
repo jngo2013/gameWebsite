@@ -1,10 +1,11 @@
 .Carousel {
-  width: 50%;
+  width: 75%;
   /* padding-left: 2%; */
   /* padding-top: 7%; */
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .Container {
