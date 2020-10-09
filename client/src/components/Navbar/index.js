@@ -9,9 +9,10 @@ export default (props) => (
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       {/* <Nav.Link href="#home">Home</Nav.Link> */}
-      <div>
+      {/* <div>
       <Nav.Link href="#home"><img src = {photo} className= "NavPhoto"></img></Nav.Link>
-      </div>
+      </div> */}
+      <Navbar.Brand href="#home"><img src={photo} className="NavPhoto" /></Navbar.Brand>
       <Nav.Link href="#link">Latest News</Nav.Link>
       <NavDropdown title="Games" id="basic-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Legacy</NavDropdown.Item>
