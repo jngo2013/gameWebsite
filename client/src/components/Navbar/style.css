@@ -1,5 +1,9 @@
 .NavbarBG{
-  background-color: red;
+  /* background-color: red; */
+  background-image: url("./images/wood4.jpg");
+  display: flex;
+
+  
 }
 
 .NavPhoto{
