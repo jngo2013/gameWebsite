@@ -6,6 +6,8 @@ import ControlledCarousel from './../../components/EventCarousel'
 import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
 
+import Home from "../Home"
+
 import AboutUs from '../AboutUs'
 class App extends Component {
   render() {
@@ -15,9 +17,8 @@ class App extends Component {
           <Router>
           <Navbar/> 
         <Route exact path="/AboutUs" component={AboutUs}/>
-        <div>Title</div>
-        <ControlledCarousel/>
-        <CardSection />
+        <Route exact path="/"  component={Home}/>
+        
         <Footer />
           </Router>
         </Container>
