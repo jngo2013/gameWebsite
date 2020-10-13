@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import CardSection from './../CardSection';
 import Navbar from './../../components/Navbar'
-import { BrowserRouter as Router,Route } from "react-router-dom";
+import LegacyGames from './../../components/LegacyGames';
+import ShortTermGames from './../../components/ShortTermGames';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ControlledCarousel from './../../components/EventCarousel'
 import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
@@ -15,14 +17,16 @@ class App extends Component {
       <div className="App">
         <Container fluid>
           <Router>
-          <Navbar/> 
-        <Route exact path="/AboutUs" component={AboutUs}/>
-        <Route exact path="/"  component={Home}/>
-        
-        <Footer />
+            <Navbar />
+            <Route exact path="/AboutUs" component={AboutUs} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/LegacyGames" component={LegacyGames} />
+            <Route exact path="/ShortTermGames" component={ShortTermGames} />
+
+            <Footer />
           </Router>
         </Container>
-      </div>  
+      </div>
     )
   }
 }
