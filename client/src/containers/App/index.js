@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './../../components/Navbar'
-import LegacyGames from './../../components/LegacyGames';
+import LegacyGames from './../../containers/LegacyGames';
 import ShortTermGames from './../../components/ShortTermGames';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ControlledCarousel from './../../components/EventCarousel'
