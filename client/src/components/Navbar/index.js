@@ -1,23 +1,17 @@
 import React from 'react'
 import { NavDropdown, Nav, Form, Navbar, Button, FormControl } from 'react-bootstrap';
 import "./style.css";
-// import photo from "./images/sample2.jpg"
-// import woodPhoto from "./images/photo2.jpg"
 
 export default (props) => (
 <Navbar fixed='top'  className="NavbarBG" expand="lg">
   <Navbar.Toggle  aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      {/* <div>
-      <Nav.Link href="#home"><img src = {photo} className= "NavPhoto"></img></Nav.Link>
-      </div> */}
-      {/* <Navbar.Brand href="#home"><img src={photo} className="NavPhoto" /></Navbar.Brand> */}
-      <Nav.Link href="#link">About Us</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="AboutUs">About Us</Nav.Link>
       <NavDropdown title="Games" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Legacy</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Events</NavDropdown.Item>
+        <NavDropdown.Item href="#Legacy">Legacy</NavDropdown.Item>
+        <NavDropdown.Item href="#Events">Events</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Hooplah</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>

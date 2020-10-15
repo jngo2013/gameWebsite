@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Carousel, Container, Card } from 'react-bootstrap';
+import { Carousel, Container } from 'react-bootstrap';
 import './style.css'
  
 
