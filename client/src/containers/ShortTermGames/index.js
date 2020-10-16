@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import './styles.css';
 
-class LegacyGames extends Component {
+class ShortTermGames extends Component {
   // ===== DEFAULT DATA FOR TESTING =====
   static defaultProps = {
-    legacyGames: [
+    shortTermGames: [
       {
         src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
         name: "Charterstone",
@@ -162,7 +162,7 @@ class LegacyGames extends Component {
 
   // MAP FUNCTION TO CREATE A CARD FOR EVERY GAME
   // for every game in the data, render a kitchen sink card with the information
-  const allGames = this.props.legacyGames.map(game => 
+  const allGames = this.props.shortTermGames.map(game => 
     <KitchenSinkCard 
       src={game.src}
       name={game.name}
@@ -177,9 +177,9 @@ class LegacyGames extends Component {
 
     return (
       <div>
-        <Container fluid className="LegacyGames-container">
-          <h1>Legacy Games</h1>
-          <Row className="LegacyGames-row">
+        <Container fluid className="ShortTermGames-container">
+          <h1>Short Term Games</h1>
+          <Row className="ShortTermGames-row">
             {/* ===== Game cards ===== */}
             {allGames}
           </Row>
@@ -192,4 +192,4 @@ class LegacyGames extends Component {
   }
 }
 
-export default LegacyGames;
+export default ShortTermGames;
