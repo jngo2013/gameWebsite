@@ -20,7 +20,7 @@ export default (props) => (
     </Nav>
     <Form inline>
       <SearchBar />
-      <Button variant="outline-warning">Search</Button>
+      
     </Form>
   </Navbar.Collapse>
 </Navbar>
