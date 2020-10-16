@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import './styles.css';
 
 function KitchenSinkCard(props) {
   return (
-    <div>
-      <Card style={{ width: '18rem' }} bg="secondary">
+    <div className="KitchenSinkCard-div">
+      <Card style={{ width: '21rem' }} bg="secondary" >
 
         <Card.Img variant="top" src="https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" />
 
