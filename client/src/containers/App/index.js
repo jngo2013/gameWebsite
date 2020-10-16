@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardSection from './../CardSection';
 import Navbar from './../../components/Navbar'
+import ScrollToTop from './../../components/ScrollToTop';
 import LegacyGames from './../../containers/LegacyGames';
 import ShortTermGames from './../../containers/ShortTermGames';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ class App extends Component {
       <div className="App">
         <Container fluid>
           <Router>
+            <ScrollToTop />
             <Navbar />
             <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/" component={Home} />
