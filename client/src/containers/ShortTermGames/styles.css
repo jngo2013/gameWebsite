@@ -1,0 +1,11 @@
+.ShortTermGames-container {
+  /* border: 3px solid black; */
+  margin-top: 300px;
+  width: 90%;
+}
+
+.ShortTermGames-row {
+  /* border: 3px dotted red; */
+  display: flex;
+  justify-content: space-evenly;
+}
