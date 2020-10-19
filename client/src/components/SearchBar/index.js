@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button"
 
-
 class SearchBox extends Component {
   state = {
     searchInput: "",
@@ -26,8 +25,8 @@ class SearchBox extends Component {
           aria-label="Search"
           onChange={this.handleInputChange}
         />
-        <button>Search</button>
-        {/* <Button variant="outline-warning">Search</Button> */}
+        
+        <Button variant="outline-warning" type="submit">Search</Button>
       </form>
     </div>
   );
