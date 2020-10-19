@@ -1,9 +1,56 @@
 .BootstrapCard {
-  /* border: 3px solid blue; */
   margin: 1rem;
+  transition: all 0.1s ease-out;
+  position: relative;
+  text-align: center;
+}
+
+/* ===== TITLE ===== */
+.BootstrapCard-title {
+  color: white;
+  position: absolute;
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: all 0.1s ease-out;
 }
 
-.BootstrapCard:hover {
-  transform: scale(1.02);
+/* for making the title disappear when you hover over the card */
+.BootstrapCard:hover .BootstrapCard-title {
+  color: transparent;
+}
+
+/* ===== DESCRIPTION ===== */
+.BootstrapCard-description {
+  /* text styles */
+  color: white;
+  font-size: 2rem;
+
+  /* positioning the overlay directly over the card */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+
+  /* centering the description text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* fitting the overlay to the bootstrapCard container */
+  width: 100%;
+  height: 100%;
+  
+  /* for overlay animation - text is currently hidden */
+  opacity: 0;
+  transition: .5s ease;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); 
+}
+
+/* overlay animation - text will appear */
+.BootstrapCard:hover .BootstrapCard-description {
+  opacity: 1;
 }
