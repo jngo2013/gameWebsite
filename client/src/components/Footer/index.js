@@ -46,11 +46,12 @@ function Footer() {
             <div className="Footer-text">
               <h4>Contact</h4>
               <ul className="Footer-ul">
+                <li><a href="DrunkonGamesChannel@gmail.com">DrunkonGamesChannel@gmail.com</a></li>
+                <li><a href="DrunkonGamesChannel@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-google Footer-google"></i></a></li>
+                {/* <li>something</li>
                 <li>something</li>
                 <li>something</li>
-                <li>something</li>
-                <li>something</li>
-                <li>something</li>
+                <li>something</li> */}
               </ul>
             </div>
           </Col>
