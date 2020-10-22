@@ -35,9 +35,13 @@
   padding: 0;
 }
 
-.Footer-div-li {
+.Footer-icon-row {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.fab {
+  padding: 0.5rem;
 }
 
 .Footer-youtube {
@@ -49,6 +53,23 @@
   font-size: 3rem;
   color: #4267B2;
 }
+
+.Footer-instagram {
+  /* https://stackoverflow.com/questions/37751375/instagram-new-logo-css-background */
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  /* Also define standard property for compatibility */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  font-size: 3rem; 
+}
+
+.Footer-twitter {
+  font-size: 3rem;
+  color:  #1DA1F2;
+}
+
+
 
 .Footer-div {
   /* border: 3px solid black;

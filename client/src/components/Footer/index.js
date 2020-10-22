@@ -17,9 +17,15 @@ function Footer() {
             <div className="Footer-text">
               <h4>Social Media</h4>
               <ul className="Footer-ul">
-                <div className="Footer-div-li">
-                  <li><a href="https://www.facebook.com/DrunkOnGamesChannel" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook Footer-facebook"></i></a></li>
-                  <li><a href="https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube Footer-youtube"></i></a></li>
+                <div>
+                  <Row className="Footer-icon-row">
+                    <li><a href="https://www.facebook.com/DrunkOnGamesChannel" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook Footer-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube Footer-youtube"></i></a></li>
+                  </Row>
+                  <Row className="Footer-icon-row">
+                    <li><a href="https://www.instagram.com/drunkongameschannel/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram Footer-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/DrnkOnGames" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter Footer-twitter"></i></a></li>
+                  </Row>
                 </div>
               </ul>
             </div>
