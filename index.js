@@ -1,6 +1,7 @@
 // Express Setup
 // ===================================
 const express = require("express");
+const mongoose = require("mongoose")
 const app = express();
 const PORT = 3001;
 // ===================================
@@ -10,7 +11,12 @@ const PORT = 3001;
 // ===================================
 
 // ENTER MONGOOSE CODE HERE
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gamewebsite", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+});
 // ===================================
 
 
