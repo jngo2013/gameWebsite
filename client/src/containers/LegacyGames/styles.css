@@ -9,3 +9,12 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.LegacyGames-card {
+  color: black;
+}
+
+.LegacyGames-card:hover {
+  text-decoration: none;
+  color: black;
+}
