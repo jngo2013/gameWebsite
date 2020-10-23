@@ -37,7 +37,7 @@
 }
 
 /* Padding and size for all the icons */
-.fab, .fas {
+.Footer-facebook, .Footer-youtube, .Footer-instagram, .Footer-twitter, .Footer-envelope {
   padding: 0.5rem;
   font-size: 3rem;
 }
