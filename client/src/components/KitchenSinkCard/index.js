@@ -19,10 +19,6 @@ function KitchenSinkCard(props) {
           <ListGroupItem><i class="fas fa-clock"></i> {props.time}</ListGroupItem>
         </ListGroup>
 
-        <Card.Body>
-          <Card.Link href={props.realRulesLink}>Real Rules</Card.Link>
-          <Card.Link href={props.drunkRulesLink}>Drunk Rules</Card.Link>
-        </Card.Body>
       </Card>
     </div>
   );
