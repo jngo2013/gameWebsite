@@ -2,20 +2,20 @@
   /* background-color: red; */
   background-image: url("./images/wood4.jpg");
   display: flex;
-  
-  
+  height: 60px !important;
 }
 
-.NavPhoto{
+.navPadding{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  /* height: 50%; */
 }
 
 .navbar-brand {
   /* border: 3px solid black; */
-  width: 10%;
-  /* padding: 10px; */
+  width: 60px !important;
+}
+
+.nav-link{
+  color: ivory !important;
 }
