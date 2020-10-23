@@ -9,3 +9,12 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.ShortTermGames-card {
+  color: black;
+}
+
+.ShortTermGames-card:hover {
+  text-decoration: none;
+  color: black;
+}

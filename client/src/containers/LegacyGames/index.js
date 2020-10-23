@@ -163,15 +163,17 @@ class LegacyGames extends Component {
   // MAP FUNCTION TO CREATE A CARD FOR EVERY GAME
   // for every game in the data, render a kitchen sink card with the information
   const allGames = this.props.legacyGames.map(game => 
-    <KitchenSinkCard 
-      src={game.src}
-      name={game.name}
-      description={game.description}
-      players={game.players}
-      time={game.time}
-      realRulesLink={game.realRulesLink}
-      drunkRulesLink={game.drunkRulesLink}
-    /> 
+    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
+      <KitchenSinkCard 
+        src={game.src}
+        name={game.name}
+        description={game.description}
+        players={game.players}
+        time={game.time}
+        realRulesLink={game.realRulesLink}
+        drunkRulesLink={game.drunkRulesLink}
+      /> 
+    </a>
   );
 
 
