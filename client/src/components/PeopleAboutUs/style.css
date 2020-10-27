@@ -1,17 +1,27 @@
-.borderPeople{
-  border:3px solid black
-};
+.JG{
+  border:3px solid black;
+  width: 240px;
+  transform: rotate(-15deg) ;
+}
+
+.AL{
+  border:3px solid black;
+  width: 240px;
+}
+
+.GG{
+  border:3px solid black;
+  width: 240px;
+  height: 300px;
+}
 
 .titleCenter{
   text-align: center;
 }
 
-/* .textDes{
-  text-align: center;
-} */
-
-.test6 {
-  border: 3px solid black;
+.textCenter{
   display: flex;
   align-items: center;
+  font-size: 20px;
+  /* border:3px solid black; */
 }
