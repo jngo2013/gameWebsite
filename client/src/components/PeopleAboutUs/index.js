@@ -22,7 +22,7 @@ function People(){
       roundedCircle
       
     /></Col>
-    <Col>
+    <Col className="test6">
     <div>Hi my name is spongebob and I live in a pineapple under the sea with my pet name Gary!</div>
     </Col>
       </Row>

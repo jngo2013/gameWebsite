@@ -1,7 +1,8 @@
 // Express Setup
 // ===================================
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const routes = require('./routes');
 const app = express();
 const PORT = 3001;
 // ===================================
@@ -36,9 +37,10 @@ app.get("/", function(req, res) {
 });
 
 // test route (to be deleted)
-app.get("/api", function(req, res) {
-  res.send("Entrance to the API routes!");
-});
+// app.get("/api", function(req, res) {
+//   res.send("Entrance to the API routes!");
+// });
+app.use(routes);
 // ===================================
 
 
