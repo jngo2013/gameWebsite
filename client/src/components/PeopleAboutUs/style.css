@@ -9,3 +9,9 @@
 /* .textDes{
   text-align: center;
 } */
+
+.test6 {
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+}
