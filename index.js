@@ -18,6 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gamewebsite", {
   useUnifiedTopology: true,
   useFindAndModify: false,
 });
+
 // ===================================
 
 
@@ -36,11 +37,11 @@ app.get("/", function(req, res) {
   res.send("Hello world!");
 });
 
-// test route (to be deleted)
-// app.get("/api", function(req, res) {
-//   res.send("Entrance to the API routes!");
-// });
+// Routes to the database
 app.use(routes);
+
+
+
 // ===================================
 
 

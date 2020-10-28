@@ -1,8 +1,14 @@
-// create a test function to run when the route is hit
-// functions will be used in the routes folder
+const { Legacy } = require('./../models');
 
 module.exports = {
-  getAllLegacyGames: () => {
-    console.log("You hit the legacy route!");
+  getAllLegacyGames: (req, res) => {
+    // res.send("you reached the route");
+    Legacy.find({})
+      .then(game => {
+        res.json(game);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }, 
 }

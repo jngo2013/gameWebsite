@@ -1,5 +1,5 @@
-const Game = require ('./Game');
+const Legacy = require('./LegacyGame');
 
 module.exports = {
-  Game,
+  Legacy,
 };
