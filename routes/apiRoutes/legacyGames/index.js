@@ -3,7 +3,6 @@ const router = require("express").Router();
 const { getAllLegacyGames } = require('./../../../controllers/legacyGamesContoller');
 
 // route reached here: "/api/legacygames/"
-router.route("/")
-  .get(getAllLegacyGames)
+router.get("/", getAllLegacyGames);
 
 module.exports = router;

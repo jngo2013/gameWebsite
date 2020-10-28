@@ -1,6 +1,7 @@
-const { Schema, model} = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const GameSchema = new Schema({
+const LegacyGameSchema = new Schema({
   title:{
     type: String,
     required: true
@@ -19,4 +20,7 @@ const GameSchema = new Schema({
   }
 })
 
-module.exports = model ('Game' , GameSchema);
+
+const Legacy = mongoose.model('Legacy', LegacyGameSchema);
+
+module.exports = Legacy;
