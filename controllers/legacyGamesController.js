@@ -1,4 +1,4 @@
-const { Legacy } = require('./../models');
+const { Legacy } = require('../models');
 
 module.exports = {
   getAllLegacyGames: (req, res) => {
