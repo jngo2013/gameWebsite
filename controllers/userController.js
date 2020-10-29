@@ -10,5 +10,21 @@ module.exports = {
     } catch (e) {
       return res.status(403).json({ e });
     }
-  }
+  },
+  addLegacyCard: async (req, res) => {
+    const { data } = req.body;
+    if (!data) {
+      return res
+        .status(400)
+        .json({ error: "You must provide information of your card" });
+    }
+    try {
+      const newLegacyCard = await new Legacy({ data, host: req.user._id }).save();
+      req.user.legacy.push(newLegacyCard);
+      await req.user.save();
+      return res.status(200).json(newLegacyCard);
+    } catch (e) {
+      return res.status(403).json({ e });
+    }
+  },
 }
