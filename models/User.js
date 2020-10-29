@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { isEmail, isLength } = required("validator");
+const { isEmail, isLength } = require("validator");
 const bcrypt = require("bcryptjs");
 
 const { Schema, model } = mongoose;
