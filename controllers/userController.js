@@ -27,4 +27,17 @@ module.exports = {
       return res.status(403).json({ e });
     }
   },
+  deleteUserLegacyById: async (req, res) => {
+    const { legacyId } = req.params;
+    try {
+      const legacyToDelete = await Legacy.findById(legacyId);
+      if (!legacyToDelete) {
+        return res.status(401).json({ error: "No legacy with that Id" });
+      }
+      const deletedLegacy = await Legacy.findByIdAndDelete(legacyId);
+      return res.json(deletedLegacy);
+    } catch (e) {
+      return res.status(403).json({ e });
+    }
+  },
 }
