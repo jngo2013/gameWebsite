@@ -40,4 +40,22 @@ module.exports = {
       return res.status(403).json({ e });
     }
   },
+  updateTodoById: async (req, res) => {
+    const { legacyId } = req.params;
+    const { title, description, time, players } = req.body;
+    try {
+      const legacyToUpdate = await Legacy.findById(legacyId);
+      if (!legacyToUpdate) {
+        return res.status(401).json({ error: "No legacy with that Id" });
+      }
+      const updatedLegacy = await Legacy.findByIdAndUpdate(
+        legacyId,
+        { title, description, time, players },
+        { new: true }
+      );
+      return res.json(updatedLegacy);
+    } catch (e) {
+      return res.status(403).json({ e });
+    }
+  },
 }
