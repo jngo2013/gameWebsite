@@ -40,7 +40,7 @@ module.exports = {
       return res.status(403).json({ e });
     }
   },
-  updateTodoById: async (req, res) => {
+  updateLegacyById: async (req, res) => {
     const { legacyId } = req.params;
     const { title, description, time, players } = req.body;
     try {
