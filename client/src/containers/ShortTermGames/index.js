@@ -2,159 +2,25 @@ import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import axios from 'axios';
 import './styles.css';
 
 class ShortTermGames extends Component {
-  // ===== DEFAULT DATA FOR TESTING =====
-  static defaultProps = {
-    shortTermGames: [
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Charterstone",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-4",
-        time: "60min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "SeaFall",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-2",
-        time: "30min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Charterstone",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-4",
-        time: "60min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "SeaFall",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-2",
-        time: "30min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Charterstone",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-4",
-        time: "60min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "SeaFall",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-2",
-        time: "30min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Charterstone",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-4",
-        time: "60min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "SeaFall",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-2",
-        time: "30min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1563811771046-ba984ff30900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-        name: "Gloomhaven",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        players: "1-20",
-        time: "90min",
-        realRulesLink: "https://www.facebook.com/DrunkOnGamesChannel",
-        drunkRulesLink: "https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg",
-      },
-    ]
+  state = {
+    shortTermGameData: [],
   }
-
+  
+  // API call to the backend
+  async componentDidMount() {
+    try {
+      // when "/api/shorttermgames/" is hit, you'll get a response from the database, which is then saved to the "response" variable.
+      let response = await axios.get("/api/shorttermgames/");
+      // set the "shortTermGameData" state to be the data from the response
+      this.setState({ shortTermGameData : response.data });
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   render() {
 
@@ -162,8 +28,8 @@ class ShortTermGames extends Component {
 
   // MAP FUNCTION TO CREATE A CARD FOR EVERY GAME
   // for every game in the data, render a kitchen sink card with the information
-  const allGames = this.props.shortTermGames.map(game => 
-    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="ShortTermGames-card">
+  const allGames = this.state.shortTermGameData.map(game => 
+    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
       <KitchenSinkCard 
         src={game.src}
         name={game.name}
@@ -172,7 +38,7 @@ class ShortTermGames extends Component {
         time={game.time}
         realRulesLink={game.realRulesLink}
         drunkRulesLink={game.drunkRulesLink}
-      /> 
+      />
     </a>
   );
 
@@ -195,3 +61,17 @@ class ShortTermGames extends Component {
 }
 
 export default ShortTermGames;
+
+// ========== NOTES ==========
+//  INFORMATION FOR THE KITCHENSINKCARD
+  //     <KitchenSinkCard 
+        // src={game.src}
+        // name={game.name}
+        // description={game.description}
+        // players={game.players}
+        // time={game.time}
+        // realRulesLink={game.realRulesLink}
+        // drunkRulesLink={game.drunkRulesLink}
+  //     /> 
+  //   </a>
+  // );
