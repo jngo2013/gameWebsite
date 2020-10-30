@@ -2,7 +2,7 @@ const passport = require ('passport');
 const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
 const LocalStrategy = require('passport-local');
 const { secret } = require ('../config');
-// const User = require ('../models/User');
+const User = require ('../models/User');
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
@@ -11,11 +11,11 @@ const jwtOptions = {
 
 const jwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
   try {
-    const user = await user.findById(payload.sub).select('-password');
+    const user = await User.findById(payload.sub).select('-password');
     if (!user) {
       return done(null, false);
     }
-    return done(null, false);
+    return done(null, user);
   } catch (e) {
     return done (e, false);
   }

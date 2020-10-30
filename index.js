@@ -2,7 +2,7 @@
 // ===================================
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require('./routes');
+// const routes = require('./routes');
 const app = express();
 const PORT = 3001;
 // ===================================
@@ -28,6 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // ===================================
 
+// app.use(routes);
+// require("./services/passport");
 
 // API Routes
 // ===================================
@@ -36,9 +38,6 @@ app.use(express.json());
 app.get("/", function(req, res) {
   res.send("Hello world!");
 });
-
-// Routes to the database
-app.use(routes);
 
 
 

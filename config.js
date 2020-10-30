@@ -1,3 +1,3 @@
 module.export = {
-  secret= 'mvniofnijghoirjioj4954j05j0gjir0vi04nvijo3jif3ojioovcmdkvmoiejf3jf0393jf0iv0fvnodmckdmovmkowdpwkdsplmlcmvjfinuri78f8yg'
+  secret: 'y67757yyfyfuyfufymvniofjkknbietnbueru3egejvhkvjhjvgch7vhjvgfgvyugdraszdzs'
 }

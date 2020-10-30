@@ -10,6 +10,6 @@ router.use("/legacygames", legacyGames);
 router.use("/shorttermgames", shortTermGames);
 
 // log in for admin
-router.use('/doga', adminRoutes)
+router.use('/admin', adminRoutes)
 
 module.exports = router;
