@@ -1,11 +1,14 @@
 const { response } = require("express");
-
 const router = require("express").Router();
-// require functions from shortTermGamesController (not yet made)
-// function that will be made is "getAllShortTermGames"
-const { getAllShortTermGames } = require('./../../../controllers/shortTermGamesController');
+
+// functions from the shortTermGamesController
+const { getAllShortTermGames, getOneShortTermGame } = require('./../../../controllers/shortTermGamesController');
 
 // route reached here: "/api/shorttermgames/"
 router.get("/", getAllShortTermGames);
+
+// route reached here: "/api/shorttermgames/:id"
+router.route("/:id")
+  .get(getOneShortTermGame)
 
 module.exports = router;
