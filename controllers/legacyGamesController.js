@@ -12,4 +12,18 @@ module.exports = {
         console.log(err);
       });
   }, 
+  getOneLegacyGame: (req, res) => {
+    console.log("you reached the getOneLegacyGame function!");
+    // get the game id (from the url using 'req.params.id')
+    let gameId = req.params.id;
+    
+    // use the gameId to look through the database for the game
+    Legacy.findById(gameId)
+      .then(game => {
+        res.json(game);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 }
