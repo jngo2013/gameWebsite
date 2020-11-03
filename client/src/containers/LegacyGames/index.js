@@ -17,6 +17,7 @@ class LegacyGames extends Component {
       let response = await axios.get("/api/legacygames/");
       // set the "legacyGameData" state to be the data from the response
       this.setState({ legacyGameData: response.data });
+      console.log(this.state.legacyGameData, "line 20");
     } catch (err) {
       console.log(err);
     }
@@ -29,9 +30,15 @@ class LegacyGames extends Component {
   // MAP FUNCTION TO CREATE A CARD FOR EVERY GAME
   // for every game in the database, render a KitchenSinkCard with the information
   const allGames = this.state.legacyGameData.map(game => 
-    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
+    <a href={`/LegacyGames/${game._id}`} target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
       <KitchenSinkCard 
+        src={game.src}
         name={game.title}
+        description={game.description}
+        players={game.players}
+        time={game.time}
+        realRulesLink={game.realRulesLink}
+        drunkRulesLink={game.drunkRulesLink}
       />
     </a>
   );
@@ -44,7 +51,7 @@ class LegacyGames extends Component {
             {/* ===== Game cards ===== */}
             {allGames}
           </Row>
-          
+
         </Container>
         
         
