@@ -13,7 +13,7 @@ export default (props) => (
       <Nav.Link href="AboutUs" className="navPadding" >About Us</Nav.Link>
       <NavDropdown title="Games" id="basic-nav-dropdown"  className="navPadding">
         <NavDropdown.Item href="/LegacyGames">Legacy</NavDropdown.Item>
-        <NavDropdown.Item href="#Events">Events</NavDropdown.Item>
+        <NavDropdown.Item href="/ShortTermGames">ShortGames</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Hooplah</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>
