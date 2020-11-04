@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import './styles.css';
 
 class LegacyDetails extends Component {
   state = {
@@ -14,7 +16,7 @@ class LegacyDetails extends Component {
       // get a response and use response data
       let response = await axios.get(`/api/legacygames/${gameId}`);
       // set gameData state to be 'response.data'
-      this.setState({ gameData:response.data });
+      this.setState({ gameData: response.data });
       console.log(this.state.gameData, "line 19");
     } catch (err) {
       console.log(err);
@@ -26,14 +28,20 @@ class LegacyDetails extends Component {
     // get data from the state
     const { src, name, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
     return (
-      <div>
-        <p>{src}</p>
-        <p>{name}</p>
-        <p>{description}</p>
-        <p>{players}</p>
-        <p>{time}</p>
-        <p>{realRulesLink}</p>
-        <p>{drunkRulesLink}</p>
+      <div className="LegacyGames-div">
+        
+  
+          {/* <p>{src}</p> */}
+          <p>Name: {name}</p>
+          <p>Description: {description}</p>
+          <p>Number of Players: {players}</p>
+          <p>Time: {time}</p>
+          <a href={realRulesLink}><Button variant="warning">Real Rules</Button></a>
+          <a href={drunkRulesLink}><Button variant="danger">Drunk Rules</Button></a>
+          <Button variant="info">Edit</Button>
+          <Button variant="dark">Delete</Button>
+          
+        
       </div>
     );
   }
