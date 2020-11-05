@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import EditModal from './../../components/EditModal';
 import axios from 'axios';
 import './styles.css';
 
 class LegacyDetails extends Component {
   state = {
-    gameData: ""
+    gameData: "",
   }
 
   async componentDidMount() {
@@ -23,6 +24,14 @@ class LegacyDetails extends Component {
     }
   }
 
+  // FUNCTIONS
+
+  // handleEdit = () => {
+  //   // alert("you clicked on the edit button! a modal should pop up");
+  //   this.setState({showModal: true});
+  //   alert(this.state.showModal);
+  // }
+
 
   render() {
     // get data from the state
@@ -38,9 +47,12 @@ class LegacyDetails extends Component {
           <p>Time: {time}</p>
           <a href={realRulesLink}><Button variant="warning">Real Rules</Button></a>
           <a href={drunkRulesLink}><Button variant="danger">Drunk Rules</Button></a>
-          <Button variant="info">Edit</Button>
+          {/* <Button variant="info" >Edit</Button> */}
+          <EditModal gameData={this.state.gameData} />
           <Button variant="dark">Delete</Button>
-          
+
+
+      
         
       </div>
     );
