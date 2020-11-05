@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
-import EditModal from './../../components/EditModal';
+import EditModal from '../EditModal';
 import axios from 'axios';
 import './styles.css';
 
