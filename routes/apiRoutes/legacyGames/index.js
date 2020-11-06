@@ -13,7 +13,8 @@ router.route("/:id")
   .get(getOneLegacyGame)
   .put(function(req, res){
     console.log("you reached the legacygames put route!");
-    res.send("You hit the legacygames put route!");
+    // res.send("You hit the legacygames put route!");
+    console.log(req.body);
   })
 
 module.exports = router;
