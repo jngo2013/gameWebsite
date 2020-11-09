@@ -25,5 +25,21 @@ module.exports = {
       .catch(err => {
         console.log(err);
       });
+  },
+  updateLegacyGame: (req, res) => {
+    console.log("you reached the legacygames put route!");
+    // get the game id (from the url using 'req.params.id')
+    let gameId = req.params.id;
+
+    // get the updated game data (using req.body.gameData)
+    let gameData = req.body.gameData;
+    // use mongoose to findbyid and update
+    Legacy.findByIdAndUpdate(gameId, gameData, { new: true } )
+      .then(game => {
+        res.json(game);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 }

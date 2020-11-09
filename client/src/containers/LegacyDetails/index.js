@@ -24,6 +24,10 @@ class LegacyDetails extends Component {
     }
   }
 
+  // function for the child component to pass data to this component so it can rerender
+  passDataToParent = (childData) => {
+    this.setState({ gameData: childData });
+  }
 
   render() {
     // get data from the state
@@ -41,6 +45,7 @@ class LegacyDetails extends Component {
           {/* <Button variant="info" >Edit</Button> */}
           <EditModal
             id={_id}
+            passDataToParent={this.passDataToParent}
           />
           <Button variant="dark">Delete</Button>
 
