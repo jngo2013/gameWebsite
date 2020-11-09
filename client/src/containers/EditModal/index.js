@@ -9,6 +9,7 @@ class EditModal extends Component {
     gameData: "",
   }
 
+
   handleEdit = async () => {
     // get the game id from props
     let gameId = this.props.id;
@@ -38,17 +39,19 @@ class EditModal extends Component {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.value} });
   }
 
-  handleOnSubmit = event => {
+  handleOnSubmit = async event => {
     event.preventDefault();
 
     // send the data to the backend and get a response
-    axios.put(`/api/legacygames/${this.state.gameData._id}`, { gameData: this.state.gameData });
+    let { data } = await axios.put(`/api/legacygames/${this.state.gameData._id}`, { gameData: this.state.gameData });
 
     // change the state of the gameData to be the response after updating the database
+    this.setState({ gameData: data });
 
-    // fix the backend API route
+    // send data to parent for rerendering of details page
+    this.props.passDataToParent(data);
     
-    // alert("You've submitted!");
+    // close modal
     this.handleClose();
   }
 

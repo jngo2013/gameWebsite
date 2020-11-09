@@ -2,8 +2,9 @@
 const router = require("express").Router();
 
 const { response } = require("express");
+const Legacy = require("../../../models/LegacyGame");
 // functions from the LegacyGamesController
-const { getAllLegacyGames, getOneLegacyGame } = require('./../../../controllers/legacyGamesController');
+const { getAllLegacyGames, getOneLegacyGame, updateLegacyGame } = require('./../../../controllers/legacyGamesController');
 
 // route reached here: "/api/legacygames/"
 router.get("/", getAllLegacyGames);
@@ -11,10 +12,6 @@ router.get("/", getAllLegacyGames);
 // route reached here: "/api/legacygames/:id"
 router.route("/:id")
   .get(getOneLegacyGame)
-  .put(function(req, res){
-    console.log("you reached the legacygames put route!");
-    // res.send("You hit the legacygames put route!");
-    console.log(req.body);
-  })
+  .put(updateLegacyGame)
 
 module.exports = router;
