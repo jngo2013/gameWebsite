@@ -41,5 +41,21 @@ module.exports = {
       .catch(err => {
         console.log(err);
       });
+  },
+  deleteLegacyGame: (req, res) => {
+    console.log("you reached the legacygames delete route!");
+    // get the game id (from the url using req.params.id)
+    let gameId = req.params.id;
+
+    // use mongoose to findbyid and delete
+    Legacy.findByIdAndDelete(gameId)
+      .then(game => {
+        // respond back with the deleted game
+        res.json(game);
+        console.log(game);
+      })
+      .catch(err => {
+        console.log(err);
+      }); 
   }
 }

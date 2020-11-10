@@ -51,9 +51,36 @@ class EditModal extends Component {
     // send data to parent for rerendering of details page
     this.props.passDataToParent(data);
     
+    // alert user they successfully edited 
+    alert("Edits saved!");
+
     // close modal
     this.handleClose();
   }
+
+  handleDelete = async () => {
+    // get the gameId from props
+    let gameId = this.props.id;
+    
+    try {
+      // send the request to the backend
+      let response = axios.delete(`/api/legacygames/${gameId}`);
+      console.log("Game that got deleted: " + response.data);
+
+      // Alert user they deleted a game
+      alert("You successfully deleted the game!");
+
+      // close modal
+      this.handleClose();
+
+      // send back "true" to the parent so it can redirect back to the "/LegacyGames/" page
+      this.props.redirect(true);
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
 
   render() {
 
@@ -107,9 +134,7 @@ class EditModal extends Component {
               <Button variant="secondary" onClick={this.handleOnSubmit}>
                 Save Changes
               </Button>
-              {/* <Button variant="primary" onClick={this.handleClose}>
-                {this.state.gameid}
-              </Button> */}
+              <Button variant="danger" onClick={this.handleDelete}>Delete</Button>
 
             </Modal.Footer>
           </Form>

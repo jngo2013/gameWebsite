@@ -7,6 +7,7 @@ import './styles.css';
 class LegacyDetails extends Component {
   state = {
     gameData: "",
+    redirect: false
   }
 
   async componentDidMount() {
@@ -29,27 +30,47 @@ class LegacyDetails extends Component {
     this.setState({ gameData: childData });
   }
 
+  // function for the child component to get the new route so the parent can redirect
+  redirect = (childData) => {
+    this.setState({ redirect: childData });
+  }
+
   render() {
     // get data from the state
     const { _id, src, name, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
     return (
-      <div className="LegacyGames-div">
-        
-          {/* <p>{src}</p> */}
-          <p>Name: {name}</p>
-          <p>Description: {description}</p>
-          <p>Number of Players: {players}</p>
-          <p>Time: {time}</p>
-          <a href={realRulesLink}><Button variant="warning">Real Rules</Button></a>
-          <a href={drunkRulesLink}><Button variant="danger">Drunk Rules</Button></a>
-          {/* <Button variant="info" >Edit</Button> */}
-          <EditModal
-            id={_id}
-            passDataToParent={this.passDataToParent}
-          />
-          <Button variant="dark">Delete</Button>
 
+      <div>
+        {
+          // if this.state.redirect is "true"...
+          this.state.redirect
+          ? 
+          // ...then go to "/LegacyGames/" route...
+          this.props.history.push("/LegacyGames/")
+          :
+          // otherwise, display the game info
+          <div className="LegacyGames-div">
+
+            {/* <p>{src}</p> */}
+            <p>Name: {name}</p>
+            <p>Description: {description}</p>
+            <p>Number of Players: {players}</p>
+            <p>Time: {time}</p>
+            <a href={realRulesLink}><Button variant="warning">Real Rules</Button></a>
+            <a href={drunkRulesLink}><Button variant="danger">Drunk Rules</Button></a>
+            {/* <Button variant="info" >Edit</Button> */}
+            <EditModal
+              id={_id}
+              passDataToParent={this.passDataToParent}
+              redirect={this.redirect}
+            />
+
+          </div>
+
+        }
+        
       </div>
+
     );
   }
 }
