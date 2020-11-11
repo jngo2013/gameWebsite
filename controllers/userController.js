@@ -7,7 +7,7 @@ module.exports = {
     const { email } = req.body
     console.log(req.body)
     try {
-      const userEmail = await User.findOne({email}, "email");
+      const userEmail = await User.find({}, "email");
       return res.status(200).json(userEmail);
     } catch (e) {
       return res.status(403).json({ e });
