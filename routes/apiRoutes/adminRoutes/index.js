@@ -3,7 +3,7 @@ const {
   getUserEmail,
   addLegacyCard,
   deleteUserLegacyById,
-  updateLegacyById
+  updateLegacyById,
 } = require("../../../controllers/userController");
 
 const  { requireAuth } = require("../../../middlewares/index");
@@ -18,5 +18,5 @@ router
   .route("admin/:adminId")
   .delete(requireAuth, deleteUserLegacyById)
   .put(requireAuth, updateLegacyById);
-
+  
   module.exports = router;

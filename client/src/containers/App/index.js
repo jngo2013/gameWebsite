@@ -5,6 +5,7 @@ import LegacyGames from './../../containers/LegacyGames';
 import ShortTermGames from './../../containers/ShortTermGames';
 import ShortTermDetails from './../ShortTermDetails';
 import LegacyDetails from './../LegacyDetails';
+import SignIn from './../SignIn';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/ShortTermGames" component={ShortTermGames} />
             <Route exact path="/ShortTermGames/:id" component={ShortTermDetails} />
             <Route exact path="/LegacyGames/:id" component={LegacyDetails} />
+            <Route exact path="/SignIn" component={SignIn}/>
             <Footer />
           </Router>
         </Container>

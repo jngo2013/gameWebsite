@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar/index"
 import sample2 from "./images/sample2.jpg"
 
 export default (props) => (
-<Navbar fixed='top'  className="NavbarBG" expand="lg">
+<Navbar   className="NavbarBG" expand="lg">
   <Navbar.Toggle  aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">

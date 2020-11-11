@@ -7,7 +7,12 @@ const app = express();
 const PORT = 3001;
 // ===================================
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+app.use(routes);
+
+require("./services/passport");
 // Mongoose Setup
 // ===================================
 
@@ -24,12 +29,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gamewebsite", {
 
 // Body Parser Middleware
 // ===================================
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 // ===================================
-
-
-require("./services/passport");
 
 // API Routes
 // ===================================
@@ -39,7 +40,7 @@ app.get("/", function(req, res) {
   res.send("Hello world!");
 });
 
-app.use(routes);
+
 
 // ===================================
 
