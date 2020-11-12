@@ -1,8 +1,10 @@
-import React from 'react'
-import { NavDropdown, Nav, Form, Navbar, Image } from 'react-bootstrap';
+import React from 'react';
+import { NavDropdown, Nav, Form, Navbar, Image, Button } from 'react-bootstrap';
+import AddLegacyModal from './../../containers/AddLegacyModal';
 import "./style.css";
 import SearchBar from "../SearchBar/index"
 import sample2 from "./images/sample2.jpg"
+
 
 export default (props) => (
 <Navbar   className="NavbarBG" expand="lg">
@@ -22,6 +24,7 @@ export default (props) => (
     <Form inline>
       <SearchBar />
     </Form>
+    <AddLegacyModal />
   </Navbar.Collapse>
 </Navbar>
 );

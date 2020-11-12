@@ -9,7 +9,6 @@ class EditModal extends Component {
     gameData: "",
   }
 
-
   handleEdit = async () => {
     // get the game id from props
     let gameId = this.props.id;
@@ -85,7 +84,7 @@ class EditModal extends Component {
   render() {
 
     // get game data from the state
-    const { _id, src, name, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
+    const { _id, src, title, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
 
     return (
       <>
@@ -99,7 +98,7 @@ class EditModal extends Component {
           <Form>
 
             <Modal.Header closeButton>
-              <Modal.Title>{name}</Modal.Title>
+              <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>

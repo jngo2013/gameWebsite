@@ -23,7 +23,6 @@ class LegacyGames extends Component {
     }
   }
 
-
   render() {
 
   // ===== FUNCTIONS =====
