@@ -9,11 +9,14 @@ class SignIn extends Component {
   }
  
   onSubmit = async (inputValues) => {
+    console.log(inputValues)
     try{
       const { data } = await axios.post("/api/auth/signin", inputValues);
+      console.log(data)
       localStorage.setItem("token", data.token);
+      
     } catch (e) {
-      console.log("wrong info")
+      console.log("it was not submitted corectly line 16");
     }
   };
   // handleInputChange = events => {
@@ -40,18 +43,19 @@ class SignIn extends Component {
 
   
   render() {
+    const { email, password } = this.state 
     return(
-      <Form onSubmit={this.handleSubmit}>
+      <Form >
       <Form.Group controlId="formBasicEmail" onChange={this.handleEmailChange}>
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email"  />
+        <Form.Control type="email" placeholder="Enter email"  value={email} />
       </Form.Group>
     
       <Form.Group controlId="formBasicPassword" onChange={this.handlePasswordChange}>
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password"/>
+        <Form.Control type="password" placeholder="Password" value={password}/>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={this.onSubmit}>
         Submit
       </Button>
     </Form>
