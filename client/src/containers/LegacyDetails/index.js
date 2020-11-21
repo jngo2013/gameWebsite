@@ -63,6 +63,7 @@ class LegacyDetails extends Component {
               id={_id}
               passDataToParent={this.passDataToParent}
               redirect={this.redirect}
+              apiRoute="/api/legacygames/"
             />
 
           </div>
