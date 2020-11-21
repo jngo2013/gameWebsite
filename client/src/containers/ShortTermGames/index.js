@@ -30,7 +30,7 @@ class ShortTermGames extends Component {
     <a href={`/ShortTermGames/${game._id}`} target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
       <KitchenSinkCard 
         src={game.src}  // <--- for the image
-        name={game.name}
+        name={game.title}
         description={game.description}
         players={game.players}
         time={game.time}
