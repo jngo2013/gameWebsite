@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 import JG from "./images/JG.jpg";
 import AL from "./images/AL.jpg";
 import GG from "./images/GG.jpg";
+import May from "./images/May3.jpg";
 import "./style.css"
 
 
@@ -67,6 +68,28 @@ function People(){
     
     </Container>
     <h1>Gabe Golden</h1>
+    <hr></hr>
+    <br></br>
+
+    <Container fluid>
+      <Row>
+        <Col lg={3}><Image 
+      className="May"
+      src={May}
+      roundedCircle
+      
+    /></Col>
+    <Col className="textCenter">
+    <div>Hello! Maybeline here, at your service!
+
+I love the board game world! There is something wonderful about sitting around a table with people and a game in front of us that brings closer connections with one other. An extra bonus is when there are drinking rules (alcoholic beverages and non-alcoholic beverages). My strategy when playing a strategic game (whether it is co-op or not) is to be in my own world and analyze other player's moves. I'll be that "quiet player" that does their own thing and everyone forgets about and ends up winning the game. It works like a charm (most of the time).
+
+I spend most of my time behind the scene for Drunk on Games as a video editor providing great content for the viewers. So if you see me in a video, comment on that video a cherry blossom flower "🌸" emoji!</div>
+    </Col>
+      </Row>
+    
+    </Container>
+    <h1>Maybeline</h1>
     <hr></hr>
     <br></br>
     </div>

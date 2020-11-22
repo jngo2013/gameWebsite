@@ -15,6 +15,12 @@
   height: 300px;
 }
 
+.May{
+  border:3px solid black;
+  width: 240px;
+  height: 300px
+}
+
 .titleCenter{
   text-align: center;
 }
