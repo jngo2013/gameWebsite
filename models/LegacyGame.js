@@ -20,7 +20,6 @@ const LegacyGameSchema = new Schema({
   }
 })
 
-
 const Legacy = mongoose.model('Legacy', LegacyGameSchema);
 
 module.exports = Legacy;

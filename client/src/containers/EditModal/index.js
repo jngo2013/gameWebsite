@@ -9,14 +9,16 @@ class EditModal extends Component {
     gameData: "",
   }
 
-
   handleEdit = async () => {
+    // get the api route from props ("/api/legacygames/")
+    let apiRoute = this.props.apiRoute;
     // get the game id from props
     let gameId = this.props.id;
 
     // make an API call to get the data from the database
     try {
-      let response = await axios.get(`/api/legacygames/${gameId}`);
+      // let response = await axios.get(`/api/legacygames/${gameId}`);
+      let response = await axios.get(`${apiRoute}${gameId}`);
       // set the gameData to be 'response.data'
       this.setState({ gameData: response.data });
     } catch (err) {
@@ -42,8 +44,11 @@ class EditModal extends Component {
   handleOnSubmit = async event => {
     event.preventDefault();
 
+    let apiRoute = this.props.apiRoute;
+
     // send the data to the backend and get a response
-    let { data } = await axios.put(`/api/legacygames/${this.state.gameData._id}`, { gameData: this.state.gameData });
+    // let { data } = await axios.put(`/api/legacygames/${this.state.gameData._id}`, { gameData: this.state.gameData });
+    let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, { gameData: this.state.gameData });
 
     // change the state of the gameData to be the response after updating the database
     this.setState({ gameData: data });
@@ -59,12 +64,16 @@ class EditModal extends Component {
   }
 
   handleDelete = async () => {
+    // get the api route from props ("/api/legacygames/")
+    let apiRoute = this.props.apiRoute;
+
     // get the gameId from props
     let gameId = this.props.id;
     
     try {
       // send the request to the backend
-      let response = axios.delete(`/api/legacygames/${gameId}`);
+      // let response = axios.delete(`/api/legacygames/${gameId}`);
+      let response = axios.delete(`${apiRoute}${gameId}`);
       console.log("Game that got deleted: " + response.data);
 
       // Alert user they deleted a game
@@ -85,7 +94,7 @@ class EditModal extends Component {
   render() {
 
     // get game data from the state
-    const { _id, src, name, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
+    const { _id, src, title, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
 
     return (
       <>
@@ -99,7 +108,7 @@ class EditModal extends Component {
           <Form>
 
             <Modal.Header closeButton>
-              <Modal.Title>{name}</Modal.Title>
+              <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>

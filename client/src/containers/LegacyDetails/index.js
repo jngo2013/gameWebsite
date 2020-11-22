@@ -37,7 +37,7 @@ class LegacyDetails extends Component {
 
   render() {
     // get data from the state
-    const { _id, src, name, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
+    const { _id, src, title, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
     return (
 
       <div>
@@ -52,7 +52,7 @@ class LegacyDetails extends Component {
           <div className="LegacyGames-div">
 
             {/* <p>{src}</p> */}
-            <p>Name: {name}</p>
+            <p>Name: {title}</p>
             <p>Description: {description}</p>
             <p>Number of Players: {players}</p>
             <p>Time: {time}</p>
@@ -63,6 +63,7 @@ class LegacyDetails extends Component {
               id={_id}
               passDataToParent={this.passDataToParent}
               redirect={this.redirect}
+              apiRoute="/api/legacygames/"
             />
 
           </div>

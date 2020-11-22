@@ -57,5 +57,22 @@ module.exports = {
       .catch(err => {
         console.log(err);
       }); 
-  }
+  },
+  addLegacyGame: (req, res) => {
+    // console.log("you reached the legacygames post route!");
+    // console.log(req.body);
+    // get information from the front end (req.body is already an object)
+    const { body } = req;
+    // create a new document instance to be entered in to the database
+    let newLegacyGame = new Legacy(body);
+    // save the model to the database
+    newLegacyGame.save({})
+      .then(legacyGame => {
+        console.log(legacyGame, "game saved!");
+        res.json(legacyGame);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
 }
