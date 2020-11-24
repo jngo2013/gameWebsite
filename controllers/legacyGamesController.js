@@ -33,7 +33,7 @@ module.exports = {
 
     // get the updated game data (using req.body.gameData)
     let gameData = req.body.gameData;
-    // use mongoose to findbyid and update
+    // use mongoose to findbyid and update ({ new: true } gives you back the updated data)
     Legacy.findByIdAndUpdate(gameId, gameData, { new: true } )
       .then(game => {
         res.json(game);
