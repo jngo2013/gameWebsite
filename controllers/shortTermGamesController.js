@@ -42,4 +42,20 @@ module.exports = {
         console.log(err);
       });
   },
+  deleteShortTermGame: (req, res) => {
+    console.log("you reached the deleteShortTermGame function!");
+    // get the game id (from the url using req.params.id)
+    let gameId = req.params.id;
+    
+    // use mongoose to findbyid and delete
+    Short.findByIdAndDelete(gameId)
+      .then(game => {
+        // respond back with the deleted game
+        res.json(game);
+        console.log(game);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
 }

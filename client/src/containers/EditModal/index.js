@@ -64,7 +64,7 @@ class EditModal extends Component {
   }
 
   handleDelete = async () => {
-    // get the api route from props ("/api/legacygames/")
+    // get the api route from props
     let apiRoute = this.props.apiRoute;
 
     // get the gameId from props
@@ -82,7 +82,7 @@ class EditModal extends Component {
       // close modal
       this.handleClose();
 
-      // send back "true" to the parent so it can redirect back to the "/LegacyGames/" page
+      // send back "true" to the parent so it can redirect back to the "/LegacyGames/" or "/ShortTermGames/" page
       this.props.redirect(true);
 
     } catch (err) {
