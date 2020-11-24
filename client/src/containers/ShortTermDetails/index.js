@@ -27,26 +27,33 @@ class ShortTermDetails extends Component {
     } 
   }
 
+  // function for the child component to pass data to this component so it can rerender
+  passDataToParent = (childData) => {
+    this.setState({ gameData: childData });
+    console.log(this.state.gameData, "line 33");
+  }
+
   render() {
     // get info from gameData state
-    const { _id, description, drunkRulesLink, name, players, realRulesLink, src, time } = this.state.gameData;
+    const { _id, description, drunkRulesLink, title, players, realRulesLink, src, time } = this.state.gameData;
 
     return (
       <div className="ShortTermDetails-div">
         {/* <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1314&q=80" /> */}
-        <p>{description}</p>
-        <p>{drunkRulesLink}</p>
-        <p>{name}</p>
-        <p>{players}</p>
-        <p>{realRulesLink}</p>
-        <p>{src}</p>
-        <p>{time}</p>
+        <p>Name: {title}</p>
+        <p>Description: {description}</p>
+        <p>Players: {players}</p>
+        <p>Time: {time}</p>
+        {/* <p>{drunkRulesLink}</p> */}
+        {/* <p>{realRulesLink}</p> */}
+        {/* <p>{src}</p> */}
 
         <Button variant="warning">Real Rules</Button>
         <Button variant="danger">Drunk Rules</Button>
         <EditModal 
           id={_id}
           apiRoute="/api/shorttermgames/"
+          passDataToParent={this.passDataToParent}
         />
       </div>
     );
