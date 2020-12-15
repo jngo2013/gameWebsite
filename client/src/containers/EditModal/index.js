@@ -107,8 +107,12 @@ class EditModal extends Component {
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Form>
 
+            {/* This is the game name */}
             <Modal.Header closeButton>
-              <Modal.Title>{title}</Modal.Title>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" name="title" value={title} onChange={this.handleInputChange}/>
+              </Form.Group>
             </Modal.Header>
 
             <Modal.Body>
