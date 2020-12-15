@@ -97,15 +97,15 @@ class AddShortModal extends Component {
                 <Form.Control type="text" placeholder="90" name="time" onChange={this.handleInputChange}/>
               </Form.Group>
 
-              {/* <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Real Rules</Form.Label>
-                <Form.Control type="text" placeholder="name@example.com" name="realRules" onChange={this.handleInputChange}/>
+                <Form.Control type="text" placeholder="https://www.google.com/" name="realRules" onChange={this.handleInputChange}/>
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Drunk Rules</Form.Label>
-                <Form.Control type="text" placeholder="name@example.com" name="drunkRules" onChange={this.handleInputChange}/>
-              </Form.Group> */}
+                <Form.Control as="textarea" rows={3} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" name="drunkRules" onChange={this.handleInputChange}/>
+              </Form.Group>
             </Modal.Body>
 
             <Modal.Footer>

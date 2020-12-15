@@ -41,7 +41,7 @@ class ShortTermDetails extends Component {
 
   render() {
     // get info from gameData state
-    const { _id, description, drunkRulesLink, title, players, realRulesLink, src, time } = this.state.gameData;
+    const { _id, description, drunkRules, title, players, realRules, src, time } = this.state.gameData;
 
     return (
 
@@ -60,12 +60,9 @@ class ShortTermDetails extends Component {
             <p>Description: {description}</p>
             <p>Players: {players}</p>
             <p>Time: {time}</p>
-            {/* <p>{drunkRulesLink}</p> */}
-            {/* <p>{realRulesLink}</p> */}
-            {/* <p>{src}</p> */}
-
-            <Button variant="warning">Real Rules</Button>
-            <Button variant="danger">Drunk Rules</Button>
+            <p>Drunk Rules: {drunkRules}</p>
+            <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="warning">Real Rules</Button></a>
+           
             <EditModal 
               id={_id}
               passDataToParent={this.passDataToParent}
