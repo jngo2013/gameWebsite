@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import axios from 'axios';
 
-class AddLegacyModal extends Component {
+class AddShortModal extends Component {
   state = {
     // state for showing/hiding the modal
     show: false,
@@ -40,9 +40,10 @@ class AddLegacyModal extends Component {
   handleOnSubmit = async event => {
     event.preventDefault();
 
-    // send the data to the backend and get a response
+    
+    // send the data (from 'this.state.gameData') to the backend and get a response
     try {
-      const { data } = await axios.post("/api/legacygames/", this.state.gameData);
+      const { data } = await axios.post("/api/shorttermgames/", this.state.gameData);
       console.log(data);
       this.setState({gameData: data});
     } catch (err) {
@@ -51,7 +52,7 @@ class AddLegacyModal extends Component {
 
     // alert the user the game was saved
     alert("Game saved!");
-
+    
     // close modal
     this.handleClose();
 
@@ -65,14 +66,14 @@ class AddLegacyModal extends Component {
       <>
         {/* Button to activate the modal */}
         <Button variant="primary" onClick={this.handleShow}>
-          Add a Legacy Game
+          Add a Short Term Game
         </Button>
 
         {/* This is the actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Form>
             <Modal.Header closeButton>
-              <Modal.Title>Add a Legacy Game!</Modal.Title>
+              <Modal.Title>Add a Short Term Game!</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
@@ -124,4 +125,4 @@ class AddLegacyModal extends Component {
   }
 }
 
-export default AddLegacyModal;
+export default AddShortModal;

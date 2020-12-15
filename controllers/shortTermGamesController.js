@@ -58,4 +58,21 @@ module.exports = {
         console.log(err);
       });
   },
+  addShortTermGame: (req, res) => {
+    console.log("you reached the addShortTermGame function!");
+    // 1. get the data from the front end
+    // console.log(req.body, "line 64");
+    const { body } = req;
+    // 2. create a new document instance to be entered into the database
+    let newShortTermGame = new Short(body);
+    // 3. save the model to the database and respond with json
+    newShortTermGame.save({})
+      .then(shortTermGame => {
+        console.log(shortTermGame, "game saved!");
+        res.json(shortTermGame);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
 }
