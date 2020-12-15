@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavDropdown, Nav, Form, Navbar, Image, Button } from 'react-bootstrap';
 import AddLegacyModal from './../../containers/AddLegacyModal';
+import AddShortModal from './../../containers/AddShortModal';
 import "./style.css";
 import SearchBar from "../SearchBar/index"
 import sample2 from "./images/sample2.jpg"
@@ -25,6 +26,7 @@ export default (props) => (
       <SearchBar />
     </Form>
     <AddLegacyModal />
+    <AddShortModal />
   </Navbar.Collapse>
 </Navbar>
 );
