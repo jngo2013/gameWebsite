@@ -90,6 +90,13 @@ class EditModal extends Component {
     }
   }
 
+  handleConfirmation = () => {
+    let confirmation = window.confirm("Are you sure you want to delete this game?");
+    // if user clicks "ok", run the "handleDelete" function
+    if(confirmation){
+      this.handleDelete();
+    }
+  }
 
   render() {
 
@@ -147,11 +154,16 @@ class EditModal extends Component {
               <Button variant="secondary" onClick={this.handleOnSubmit}>
                 Save Changes
               </Button>
-              <Button variant="danger" onClick={this.handleDelete}>Delete</Button>
+        
+              <Button variant="danger" onClick={this.handleConfirmation}>
+                Delete
+              </Button>
 
             </Modal.Footer>
           </Form>
         </Modal>
+
+        
       </>
     );
   }
