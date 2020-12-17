@@ -1,10 +1,7 @@
-const router = require("express").Router();
-const apiRoutes = require("./apiRoutes");
+const router = require('express').Router();
+const apiRoutes = require('./apiRoutes');
 
-
-// "/" is prepended to every route.  if "/api" is hit, go to the "apiRoutes" folder.
-router.use("/api", apiRoutes);
-
+router.use('/api', apiRoutes);
 
 module.exports = router;
 
