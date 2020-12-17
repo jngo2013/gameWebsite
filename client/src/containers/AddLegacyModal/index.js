@@ -11,8 +11,8 @@ class AddLegacyModal extends Component {
       description: "",
       players: "",
       time: "",
-      // realRules: "",
-      // drunkRules: ""
+      realRules: "",
+      drunkRules: ""
     },
   }
 

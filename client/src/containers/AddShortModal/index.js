@@ -11,8 +11,8 @@ class AddShortModal extends Component {
       description: "",
       players: "",
       time: "",
-      // realRules: "",
-      // drunkRules: ""
+      realRules: "",
+      drunkRules: ""
     },
   }
 
