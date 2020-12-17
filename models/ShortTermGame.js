@@ -17,7 +17,15 @@ const ShortTermGameSchema = new Schema({
   players:{
     type:String,
     required:true,
-  }
+  },
+  drunkRules: {
+    type: String,
+    required: true,
+  },
+  realRules: {
+    type: String,
+    required: true,
+  },
 });
 
 const Short = mongoose.model('Short', ShortTermGameSchema);

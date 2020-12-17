@@ -37,7 +37,8 @@ class LegacyDetails extends Component {
 
   render() {
     // get data from the state
-    const { _id, src, title, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
+    const { _id, src, title, description, players, time, realRules, drunkRules } = this.state.gameData;
+    
     return (
 
       <div>
@@ -51,14 +52,12 @@ class LegacyDetails extends Component {
           // otherwise, display the game info
           <div className="LegacyGames-div">
 
-            {/* <p>{src}</p> */}
             <p>Name: {title}</p>
             <p>Description: {description}</p>
             <p>Number of Players: {players}</p>
             <p>Time: {time}</p>
-            <a href={realRulesLink}><Button variant="warning">Real Rules</Button></a>
-            <a href={drunkRulesLink}><Button variant="danger">Drunk Rules</Button></a>
-            {/* <Button variant="info" >Edit</Button> */}
+            <p>Drunk Rules: {drunkRules}</p>
+            <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="warning">Real Rules</Button></a>
             <EditModal
               id={_id}
               passDataToParent={this.passDataToParent}

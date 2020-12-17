@@ -94,7 +94,7 @@ class EditModal extends Component {
   render() {
 
     // get game data from the state
-    const { _id, src, title, description, players, time, realRulesLink, drunkRulesLink } = this.state.gameData;
+    const { _id, src, title, description, players, time, realRules, drunkRules } = this.state.gameData;
 
     return (
       <>
@@ -133,12 +133,12 @@ class EditModal extends Component {
 
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Real Rules</Form.Label>
-                <Form.Control type="text" name="realRulesLink" value={realRulesLink} onChange={this.handleInputChange}/>
+                <Form.Control type="text" name="realRules" value={realRules} onChange={this.handleInputChange}/>
               </Form.Group>
 
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Drunk Rules</Form.Label>
-                <Form.Control type="text" name="drunkRulesLink" value={drunkRulesLink} onChange={this.handleInputChange}/>
+                <Form.Control as="textarea" rows={3} name="drunkRules" value={drunkRules} onChange={this.handleInputChange}/>
               </Form.Group>
 
             </Modal.Body>
