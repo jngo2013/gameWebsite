@@ -7,24 +7,6 @@ class SignIn extends Component {
     email: "",
     password: "",
   }
- 
-  // onSubmit = async (inputValues) => {
-  //   console.log(inputValues)
-  //   try{
-  //     const { data } = await axios.post("/api/auth/signin", inputValues);
-  //     console.log(data, "this is the data");
-  //     localStorage.setItem("token", data.token);
-      
-  //   } catch (e) {
-  //     console.log("it was not submitted corectly line 16");
-  //   }
-  // }
-  // handleInputChange = events => {
-  //   this.setState({
-  //     email:events.target.value,
-  //     password:events.target.value,
-  //   })
-  // }
    
   handlePasswordChange = events => {
     this.setState({
@@ -40,13 +22,12 @@ class SignIn extends Component {
     events.preventDefault();
     try{
       const { data } = await axios.post("/api/auth/signin", this.state);
-    // console.log(data, "this is the data");
+    console.log(data, "this is the data");
     localStorage.setItem("token", data.token);
-    
+    this.props.history.push('/')
   }
     catch (e) {
-      // console.log(this.state)
-      console.log("it was not submitted corectly handle submit");
+      console.log("it was not submitted correctly handle submit");
     }
   };
 
