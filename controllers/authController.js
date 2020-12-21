@@ -43,4 +43,9 @@ module.exports = {
   },
   signIn: (req, res) => res.json({ token: tokenForUser(req.user) }),
   // signIn: (req, res) => console.log(req)
+
+  signOut: () =>  {
+    localStorage.removeItem('token');
+    console.log(token)
+  }
 };
