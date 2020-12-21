@@ -26,6 +26,10 @@ const ShortTermGameSchema = new Schema({
     type: String,
     required: true,
   },
+  src: {
+    type: String,
+    required: true,
+  }
 });
 
 const Short = mongoose.model('Short', ShortTermGameSchema);

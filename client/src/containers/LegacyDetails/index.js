@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import { Button, Container, Card } from 'react-bootstrap';
 import EditModal from '../EditModal';
 import axios from 'axios';
 import './styles.css';
