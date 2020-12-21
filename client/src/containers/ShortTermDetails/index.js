@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container, Card } from 'react-bootstrap';
 import EditModal from './../EditModal/';
 import axios from 'axios';
 import './styles.css';
@@ -54,29 +54,49 @@ class ShortTermDetails extends Component {
           this.props.history.push("/ShortTermGames")
           :
           // otherwise, display the game info
-          <div className="ShortTermDetails-div">
+          <Container>
+            <Card className="ShortTermGames-details text-center">
+              
+              <Card.Img 
+                variant="top" 
+                src={src}
+                alt="board game" 
+              />
             
-            <p>Name: {title}</p>
-            <p>Description: {description}</p>
-            <p>Players: {players}</p>
-            <p>Time: {time}</p>
-            <p>Drunk Rules: {drunkRules}</p>
-            <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="warning">Real Rules</Button></a>
-           
-            <EditModal 
-              id={_id}
-              passDataToParent={this.passDataToParent}
-              redirect={this.redirect}
-              apiRoute="/api/shorttermgames/"
-            />
-          </div>
+              <Card.Header className="ShortTermGames-header">{title}</Card.Header>
+              <Card.Body>
+                <Card.Title className="ShortTermGames-title">Description</Card.Title>
+                <Card.Text>
+                  {description}
+                </Card.Text>
+                <hr className="ShortTermGames-hr" />
+                <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
+                <Card.Text>
+                  {players} player(s)
+                </Card.Text>
+                <hr className="ShortTermGames-hr" />
+                <Card.Title className="ShortTermGames-title">Time</Card.Title>
+                <Card.Text>
+                  {time} min.
+                </Card.Text>
+                <hr className="ShortTermGames-hr" />
+                <Card.Title className="ShortTermGames-title">Drunk Rules</Card.Title>
+                <Card.Text>
+                  {drunkRules}
+                </Card.Text>
+                <hr className="ShortTermGames-hr" />
+                <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="ShortTermGames-real">Real Rules</Button></a>
+                <EditModal
+                  id={_id}
+                  passDataToParent={this.passDataToParent}
+                  redirect={this.redirect}
+                  apiRoute="/api/shorttermgames/"
+                />
+              </Card.Body>
+            </Card>
+          </Container> 
         }
-      </div>
-
-
-
-
-      
+      </div>  
     );
   }
 }
