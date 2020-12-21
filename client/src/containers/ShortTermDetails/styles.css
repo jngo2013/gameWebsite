@@ -1,4 +1,19 @@
-.ShortTermDetails-div {
-  border: 3px solid black;
-  margin-top: 5rem;
+.ShortTermGames-details {
+  margin-top: 3rem;
+}
+
+.ShortTermGames-header {
+  font-size: 6rem;
+}
+
+.ShortTermGames-title {
+  font-size: 3rem;
+}
+
+.ShortTermGames-hr {
+  height: 1px;
+}
+
+.ShortTermGames-real {
+  margin-right: 1rem;
 }
