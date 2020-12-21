@@ -6,9 +6,9 @@ import "./style.css";
 import SearchBar from "../SearchBar/index"
 import sample2 from "./images/sample2.jpg"
 
-
-export default (props) => (
-<Navbar   className="NavbarBG" expand="lg">
+function NavBar() {
+  return (
+<Navbar  className="NavbarBG" expand="lg">
   <Navbar.Toggle  aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
@@ -29,4 +29,7 @@ export default (props) => (
     <AddShortModal />
   </Navbar.Collapse>
 </Navbar>
-);
+  )
+}
+
+export default NavBar;

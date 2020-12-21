@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './../../components/Navbar'
+import NavBar from './../../components/Navbar'
 import ScrollToTop from './../../components/ScrollToTop';
 import LegacyGames from './../../containers/LegacyGames';
 import ShortTermGames from './../../containers/ShortTermGames';
@@ -20,7 +20,7 @@ class App extends Component {
         <Container fluid className="background">
           <Router>
             <ScrollToTop />
-            <Navbar />
+            <NavBar />
             <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/" component={Home} />
             <Route exact path="/LegacyGames" component={LegacyGames} />
