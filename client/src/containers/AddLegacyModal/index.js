@@ -12,7 +12,8 @@ class AddLegacyModal extends Component {
       players: "",
       time: "",
       realRules: "",
-      drunkRules: ""
+      drunkRules: "",
+      src: "",
     },
   }
 
@@ -84,6 +85,11 @@ class AddLegacyModal extends Component {
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" rows={3} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" name="description" onChange={this.handleInputChange}/>
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control type="text" placeholder="Put image URL here." name="src" onChange={this.handleInputChange} />
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">

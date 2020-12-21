@@ -54,11 +54,13 @@ class LegacyDetails extends Component {
           // otherwise, display the game info
           <Container>
             <Card className="LegacyGames-details text-center">
+              
               <Card.Img 
                 variant="top" 
-                src="https://images.unsplash.com/photo-1597764894768-df73d7fde605?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" 
+                src={src}
                 alt="board game" 
               />
+            
               <Card.Header className="LegacyGames-header">{title}</Card.Header>
               <Card.Body>
                 <Card.Title className="LegacyGames-title">Description</Card.Title>
