@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import EditModal from '../EditModal';
 import axios from 'axios';
@@ -50,27 +52,47 @@ class LegacyDetails extends Component {
           this.props.history.push("/LegacyGames/")
           :
           // otherwise, display the game info
-          <div className="LegacyGames-div">
-
-            <p>Name: {title}</p>
-            <p>Description: {description}</p>
-            <p>Number of Players: {players}</p>
-            <p>Time: {time}</p>
-            <p>Drunk Rules: {drunkRules}</p>
-            <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="warning">Real Rules</Button></a>
-            <EditModal
-              id={_id}
-              passDataToParent={this.passDataToParent}
-              redirect={this.redirect}
-              apiRoute="/api/legacygames/"
-            />
-
-          </div>
-
-        }
-        
+          <Container>
+            <Card className="LegacyGames-details text-center">
+              <Card.Img 
+                variant="top" 
+                src="https://images.unsplash.com/photo-1597764894768-df73d7fde605?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" 
+                alt="board game" 
+              />
+              <Card.Header className="LegacyGames-header">{title}</Card.Header>
+              <Card.Body>
+                <Card.Title className="LegacyGames-title">Description</Card.Title>
+                <Card.Text>
+                  {description}
+                </Card.Text>
+                <hr className="LegacyGames-hr" />
+                <Card.Title className="LegacyGames-title">Number of Players</Card.Title>
+                <Card.Text>
+                  {players} player(s)
+                </Card.Text>
+                <hr className="LegacyGames-hr" />
+                <Card.Title className="LegacyGames-title">Time</Card.Title>
+                <Card.Text>
+                  {time} min.
+                </Card.Text>
+                <hr className="LegacyGames-hr" />
+                <Card.Title className="LegacyGames-title">Drunk Rules</Card.Title>
+                <Card.Text>
+                  {drunkRules}
+                </Card.Text>
+                <hr className="LegacyGames-hr" />
+                <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="LegacyGames-real">Real Rules</Button></a>
+                <EditModal
+                  id={_id}
+                  passDataToParent={this.passDataToParent}
+                  redirect={this.redirect}
+                  apiRoute="/api/legacygames/"
+                />
+              </Card.Body>
+            </Card>
+          </Container>
+        }  
       </div>
-
     );
   }
 }
