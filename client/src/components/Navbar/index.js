@@ -6,8 +6,12 @@ import "./style.css";
 import SearchBar from "../SearchBar/index"
 import sample2 from "./images/sample2.jpg"
 
-function NavBar() {
+
+
+function NavBar(props) {
+  console.log(props.authenticated)
   return (
+  // export default (props) => (
 <Navbar  className="NavbarBG" expand="lg">
   <Navbar.Toggle  aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -17,10 +21,8 @@ function NavBar() {
       <NavDropdown title="Games" id="basic-nav-dropdown"  className="navPadding">
         <NavDropdown.Item href="/LegacyGames">Legacy</NavDropdown.Item>
         <NavDropdown.Item href="/ShortTermGames">ShortGames</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Hooplah</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="/SignOut">Sign Out</NavDropdown.Item>
       </NavDropdown>
+      { props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
     </Nav>
     <Form inline>
       <SearchBar />
@@ -29,7 +31,7 @@ function NavBar() {
     <AddShortModal />
   </Navbar.Collapse>
 </Navbar>
-  )
+  );
 }
 
 export default NavBar;

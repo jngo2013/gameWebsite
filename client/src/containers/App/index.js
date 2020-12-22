@@ -14,14 +14,27 @@ import Home from "../Home";
 import AboutUs from '../AboutUs';
 import "./style.css"
 
+
+
 class App extends Component {
+  state ={
+    authenticated : false
+  }
+  
+  componentDidMount(){
+    if( localStorage.getItem('token') !== null){
+      this.setState({authenticated : true})
+    } 
+  }
+  
   render() {
+    
     return (
       <div className="App" >
         <Container fluid className="background">
           <Router>
             <ScrollToTop />
-            <NavBar />
+            <NavBar authenticated ={this.state.authenticated}/>
             <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/" component={Home} />
             <Route exact path="/LegacyGames" component={LegacyGames} />

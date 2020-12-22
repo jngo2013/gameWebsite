@@ -25,6 +25,7 @@ class SignIn extends Component {
     console.log(data, "this is the data");
     localStorage.setItem("token", data.token);
     this.props.history.push('/')
+    window.location.reload()
   }
     catch (e) {
       console.log("it was not submitted correctly handle submit");
