@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavDropdown, Nav, Form, Navbar, Image, Button } from 'react-bootstrap';
+import { NavDropdown, Nav, Form, Navbar, Image } from 'react-bootstrap';
 import AddLegacyModal from './../../containers/AddLegacyModal';
 import AddShortModal from './../../containers/AddShortModal';
 import "./style.css";
@@ -19,7 +19,7 @@ function NavBar() {
         <NavDropdown.Item href="/ShortTermGames">ShortGames</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Hooplah</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Sign Out</NavDropdown.Item>
+        <NavDropdown.Item href="/SignOut">Sign Out</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Form inline>
