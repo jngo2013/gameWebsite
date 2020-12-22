@@ -101,7 +101,7 @@ class EditModal extends Component {
   render() {
 
     // get game data from the state
-    const { _id, src, title, description, players, time, realRules, drunkRules } = this.state.gameData;
+    const { src, title, description, players, time, realRules, drunkRules } = this.state.gameData;
 
     return (
       <>
@@ -126,6 +126,11 @@ class EditModal extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" rows={3} type="text" name="description" value={description} onChange={this.handleInputChange}/>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control type="text" name="src" value={src} onChange={this.handleInputChange}/>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
