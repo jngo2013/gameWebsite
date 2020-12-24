@@ -65,9 +65,12 @@ class AddLegacyModal extends Component {
     return (
       <>
         {/* Button to activate the modal */}
-        <Button variant="primary" onClick={this.handleShow}>
-          Add a Legacy Game
-        </Button>
+        <div>
+          <Button variant="dark" size="sm"  onClick={this.handleShow}>
+            Add a Legacy Game
+          </Button>
+        </div>
+        
 
         {/* This is the actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>

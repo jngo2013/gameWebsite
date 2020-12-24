@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
+import AddShortModal from './../AddShortModal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import axios from 'axios';
@@ -41,7 +42,10 @@ class ShortTermGames extends Component {
     return (
       <div>
         <Container fluid className="ShortTermGames-container">
-          <h1>Short Term Games</h1>
+          <Row>
+            <h1>Short Term Games</h1>
+            <AddShortModal />
+          </Row> 
           <Row className="ShortTermGames-row">
             {/* ===== Game cards ===== */}
             {allGames}

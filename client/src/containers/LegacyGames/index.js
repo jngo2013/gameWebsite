@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
+import AddLegacyModal from './../AddLegacyModal';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import axios from 'axios';
@@ -45,7 +46,11 @@ class LegacyGames extends Component {
     return (
       <div>
         <Container fluid className="LegacyGames-container">
-          <h1>Legacy Games</h1>
+          <Row>
+              <h1>Legacy Games</h1>
+              <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
+          </Row>
+          
           <Row className="LegacyGames-row">
             {/* ===== Game cards ===== */}
             {allGames}
