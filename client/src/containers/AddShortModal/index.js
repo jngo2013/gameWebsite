@@ -65,7 +65,7 @@ class AddShortModal extends Component {
     return (
       <>
         {/* Button to activate the modal */}
-        <Button variant="primary" onClick={this.handleShow}>
+        <Button variant="dark" size="sm" onClick={this.handleShow}>
           Add a Short Term Game
         </Button>
 

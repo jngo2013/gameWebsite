@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavDropdown, Nav, Form, Navbar, Image } from 'react-bootstrap';
-import AddShortModal from './../../containers/AddShortModal';
 import "./style.css";
 import SearchBar from "../SearchBar/index"
 import sample2 from "./images/sample2.jpg"
@@ -24,7 +23,6 @@ function NavBar(props) {
         <Form inline>
           <SearchBar />
         </Form>
-        <AddShortModal />
       </Navbar.Collapse>
     </Navbar>
   );
