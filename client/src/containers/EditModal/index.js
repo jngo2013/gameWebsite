@@ -115,10 +115,10 @@ class EditModal extends Component {
           <Form>
 
             {/* This is the game name */}
-            <Modal.Header closeButton>
+            <Modal.Header>
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" name="title" value={title} onChange={this.handleInputChange}/>
+                <Form.Control type="text" name="title" value={title} onChange={this.handleInputChange} style={{width: "467px"}}/>
               </Form.Group>
             </Modal.Header>
 
@@ -156,8 +156,12 @@ class EditModal extends Component {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="secondary" onClick={this.handleOnSubmit}>
+              <Button variant="primary" onClick={this.handleOnSubmit}>
                 Save Changes
+              </Button>
+
+              <Button variant="secondary" onClick={this.handleClose}>
+                Cancel Changes
               </Button>
         
               <Button variant="danger" onClick={this.handleConfirmation}>
