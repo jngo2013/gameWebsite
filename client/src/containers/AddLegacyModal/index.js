@@ -15,6 +15,7 @@ class AddLegacyModal extends Component {
       drunkRules: "",
       src: "",
     },
+    validated: false,
   }
 
   // function to hide modal
@@ -37,8 +38,26 @@ class AddLegacyModal extends Component {
     window.location.reload(true);
   }
 
+  // function to validate the form
+  validateForm = (event) => {
+    // check to see if the form is completely filled out every time the user tries to submit
+    // if the form isn't completely filled out, don't allow the user to submit the form
+    const form = event.currentTarget;
+    if(form.checkValidity() === false){
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // change validated to "true" after checking the form
+    this.setState({validated: true});
+  }
+
   // function to submit data to the database
   handleOnSubmit = async event => {
+    // check to make sure the form is filled properly filled out
+    this.validateForm(event);
+
+    // then run the below code when it is
     event.preventDefault();
 
     // send the data to the backend and get a response
@@ -74,7 +93,8 @@ class AddLegacyModal extends Component {
 
         {/* This is the actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Form>
+
+          <Form noValidate validated={this.state.validated} onSubmit={this.handleOnSubmit}>
             <Modal.Header closeButton>
               <Modal.Title>Add a Legacy Game!</Modal.Title>
             </Modal.Header>
@@ -82,44 +102,58 @@ class AddLegacyModal extends Component {
             <Modal.Body>
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Name of Game</Form.Label>
-                <Form.Control type="text" placeholder="Pandemic Legacy" name="title" onChange={this.handleInputChange} />
+                <Form.Control required type="text" placeholder="Pandemic Legacy" name="title" onChange={this.handleInputChange} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Fill out the name of the game.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" rows={3} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" name="description" onChange={this.handleInputChange}/>
+                <Form.Control required as="textarea" rows={3} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" name="description" onChange={this.handleInputChange}/>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Fill out the description of the game.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Image URL</Form.Label>
-                <Form.Control type="text" placeholder="Put image URL here." name="src" onChange={this.handleInputChange} />
+                <Form.Control required type="text" placeholder="Put image URL here." name="src" onChange={this.handleInputChange} />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please provide an image URL.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Number of Players</Form.Label>
-                <Form.Control type="text" placeholder="2-4" name="players" onChange={this.handleInputChange}/>
+                <Form.Control required type="text" placeholder="2-4" name="players" onChange={this.handleInputChange}/>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Add the number of players.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Time (min.)</Form.Label>
-                <Form.Control type="text" placeholder="90" name="time" onChange={this.handleInputChange}/>
+                <Form.Control required type="text" placeholder="90" name="time" onChange={this.handleInputChange}/>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Fill out the time.</Form.Control.Feedback>
               </Form.Group>
 
               {/* Will be a link to official game rules */}
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Real Rules</Form.Label>
-                <Form.Control type="text" placeholder="https://www.google.com/" name="realRules" onChange={this.handleInputChange}/>
+                <Form.Control required type="text" placeholder="https://www.google.com/" name="realRules" onChange={this.handleInputChange}/>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please provide a link to the real rules.</Form.Control.Feedback>
               </Form.Group>
 
               
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Drunk Rules</Form.Label>
-                <Form.Control as="textarea" rows={3} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" name="drunkRules" onChange={this.handleInputChange}/>
+                <Form.Control required as="textarea" rows={3} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" name="drunkRules" onChange={this.handleInputChange}/>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Please provide your drunk rules.</Form.Control.Feedback>
               </Form.Group>
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="primary" onClick={this.handleOnSubmit}>
+              <Button variant="primary" type="submit">
                 Submit
               </Button>
 
