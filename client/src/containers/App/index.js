@@ -12,7 +12,6 @@ import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
 import Home from "../Home";
 import AboutUs from '../AboutUs';
-import FormExample from './../../components/TestValidation';
 import "./style.css"
 
 
@@ -48,7 +47,6 @@ class App extends Component {
           </Router>
         </Container>
 
-        <FormExample />
       </div>
     )
   }
