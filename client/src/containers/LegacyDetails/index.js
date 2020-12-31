@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Container, Card } from 'react-bootstrap';
+import { Button, Container, Card, Row, Col } from 'react-bootstrap';
 import EditModal from '../EditModal';
 import axios from 'axios';
 import './styles.css';
@@ -52,35 +52,45 @@ class LegacyDetails extends Component {
           // otherwise, display the game info
           <Container>
             <Card className="LegacyGames-details text-center">
-              
-              <Card.Img 
-                variant="top" 
-                src={src}
-                alt="board game" 
-              />
-            
               <Card.Header className="LegacyGames-header">{title}</Card.Header>
+              
+              <Row className="LegacyGames-row1">
+                <Col className="LegacyGames-col1">
+                  <Card.Title className="LegacyGames-title">Number of Players</Card.Title>
+                  <Card.Text>
+                    {players} player(s)
+                  </Card.Text>
+                  <hr className="LegacyGames-hr" />
+                  <Card.Title className="LegacyGames-title">Time</Card.Title>
+                <Card.Text>
+                  {time} min.
+                </Card.Text>
+                </Col>
+
+                <Col id="LegacyGames-col2">
+                  <Card.Img 
+                    variant="top" 
+                    src={src}
+                    alt="board game" 
+                  />
+                </Col>
+              </Row>
+
               <Card.Body>
                 <Card.Title className="LegacyGames-title">Description</Card.Title>
                 <Card.Text>
                   {description}
                 </Card.Text>
+                
                 <hr className="LegacyGames-hr" />
-                <Card.Title className="LegacyGames-title">Number of Players</Card.Title>
-                <Card.Text>
-                  {players} player(s)
-                </Card.Text>
-                <hr className="LegacyGames-hr" />
-                <Card.Title className="LegacyGames-title">Time</Card.Title>
-                <Card.Text>
-                  {time} min.
-                </Card.Text>
-                <hr className="LegacyGames-hr" />
+
                 <Card.Title className="LegacyGames-title">Drunk Rules</Card.Title>
                 <Card.Text>
                   {drunkRules}
                 </Card.Text>
+
                 <hr className="LegacyGames-hr" />
+                
                 <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="LegacyGames-real">Real Rules</Button></a>
                 <EditModal
                   id={_id}

@@ -1,5 +1,6 @@
 .ShortTermGames-details {
   margin-top: 3rem;
+  width: 100% !important;
 }
 
 .ShortTermGames-header {
@@ -16,4 +17,19 @@
 
 .ShortTermGames-real {
   margin-right: 1rem;
+}
+
+.ShortTermGames-col1 {
+  margin: auto 0;
+}
+
+.ShortTermGames-row1.row {
+  margin-right: 0;
+  margin-left: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#ShortTermGames-col2 {
+  padding-left: 0;
+  padding-right: 0;
 }
