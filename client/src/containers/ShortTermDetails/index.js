@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Container, Card } from 'react-bootstrap';
+import { Button, Container, Card, Row, Col } from 'react-bootstrap';
 import EditModal from './../EditModal/';
 import axios from 'axios';
 import './styles.css';
@@ -56,35 +56,46 @@ class ShortTermDetails extends Component {
           // otherwise, display the game info
           <Container>
             <Card className="ShortTermGames-details text-center">
-              
-              <Card.Img 
-                variant="top" 
-                src={src}
-                alt="board game" 
-              />
-            
               <Card.Header className="ShortTermGames-header">{title}</Card.Header>
+              
+              <Row className="ShortTermGames-row1">
+                <Col className="ShortTermGames-col1">
+                  <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
+                  <Card.Text>
+                    {players} player(s)
+                  </Card.Text>
+                  <hr className="ShortTermGames-hr" />
+                  <Card.Title className="ShortTermGames-title">Time</Card.Title>
+                  <Card.Text>
+                    {time} min.
+                  </Card.Text>
+                </Col>
+
+                <Col id="ShortTermGames-col2">
+                  <Card.Img 
+                    variant="top" 
+                    src={src}
+                    alt="board game" 
+                  />
+                </Col>
+                
+              </Row>
+              
               <Card.Body>
                 <Card.Title className="ShortTermGames-title">Description</Card.Title>
                 <Card.Text>
                   {description}
                 </Card.Text>
+                
                 <hr className="ShortTermGames-hr" />
-                <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
-                <Card.Text>
-                  {players} player(s)
-                </Card.Text>
-                <hr className="ShortTermGames-hr" />
-                <Card.Title className="ShortTermGames-title">Time</Card.Title>
-                <Card.Text>
-                  {time} min.
-                </Card.Text>
-                <hr className="ShortTermGames-hr" />
+
                 <Card.Title className="ShortTermGames-title">Drunk Rules</Card.Title>
                 <Card.Text>
                   {drunkRules}
                 </Card.Text>
+
                 <hr className="ShortTermGames-hr" />
+                
                 <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="ShortTermGames-real">Real Rules</Button></a>
                 <EditModal
                   id={_id}
@@ -94,7 +105,7 @@ class ShortTermDetails extends Component {
                 />
               </Card.Body>
             </Card>
-          </Container> 
+          </Container>
         }
       </div>  
     );

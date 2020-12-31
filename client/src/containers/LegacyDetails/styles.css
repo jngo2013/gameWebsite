@@ -1,8 +1,3 @@
-/* .LegacyGames-div {
-  border: 3px solid black;
-  margin-top: 5rem;
-} */
-
 .LegacyGames-details {
   margin-top: 3rem;
 }
@@ -21,4 +16,19 @@
 
 .LegacyGames-real {
   margin-right: 1rem;
+}
+
+.LegacyGames-col1 {
+  margin: auto 0;
+}
+
+.LegacyGames-row1.row {
+  margin-right: 0;
+  margin-left: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#LegacyGames-col2 {
+  padding-left: 0;
+  padding-right: 0;
 }
