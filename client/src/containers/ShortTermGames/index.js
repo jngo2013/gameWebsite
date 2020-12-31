@@ -43,7 +43,7 @@ class ShortTermGames extends Component {
       <div>
         <Container fluid className="ShortTermGames-container">
           <Row>
-            <h1>Short Term Games</h1>
+            <h1>Board Games</h1>
             <div className="ShortTermGames-modal-div"><AddShortModal /></div>
           </Row> 
           <Row className="ShortTermGames-row">
