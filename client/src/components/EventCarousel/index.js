@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Carousel, Container } from 'react-bootstrap';
-import './style.css'
+import jol4 from './images/jol4.jpeg';
+import jol3 from './images/jol3.jpeg';
+import jol1 from './images/jol3.jpeg';
+import './style.css';
  
 
 
@@ -17,37 +20,37 @@ function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1489850846882-35ef10a4b480?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2706&q=80"
+          src={jol4}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Episode 4</h3>
+          <p>Will Chet ever manage to kill a single Stone Golem?</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1489850846882-35ef10a4b480?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2706&q=80"
+          src={jol3}
           alt="Second slide"
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Episode 3</h3>
+          <p>What are the zealots up to?</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images.unsplash.com/photo-1489850846882-35ef10a4b480?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2706&q=80"
+          src={jol1}
           alt="Third slide"
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Episode 1</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            The start of our journey to the Jaws of the Lion!
           </p>
         </Carousel.Caption>
       </Carousel.Item>
