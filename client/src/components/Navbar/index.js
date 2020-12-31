@@ -16,7 +16,7 @@ function NavBar(props) {
           <Nav.Link href="AboutUs" className="navPadding" >About Us</Nav.Link>
           <NavDropdown title="Games" id="basic-nav-dropdown"  className="navPadding">
             <NavDropdown.Item href="/LegacyGames">Legacy</NavDropdown.Item>
-            <NavDropdown.Item href="/ShortTermGames">ShortGames</NavDropdown.Item>
+            <NavDropdown.Item href="/ShortTermGames">Board Games</NavDropdown.Item>
           </NavDropdown>
           { props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
         </Nav>
