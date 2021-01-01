@@ -13,7 +13,7 @@ class CardSection extends Component {
         description:  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
-        title: "Short Term Games",
+        title: "Board Games",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
       }
     ]
