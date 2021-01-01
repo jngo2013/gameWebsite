@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
+import './styles.css';
 
 class EditModal extends Component {
   state = {
@@ -106,7 +107,7 @@ class EditModal extends Component {
     return (
       <>
         {/* Button to activate the Modal */}
-        <Button variant="info" onClick={this.handleEdit}>
+        <Button variant="info" onClick={this.handleEdit} className="EditModal-button">
           Edit
         </Button>
 

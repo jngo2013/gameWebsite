@@ -103,7 +103,7 @@ class LegacyDetails extends Component {
 
                 <hr className="LegacyGames-hr" />
                 
-                <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="LegacyGames-real">Real Rules</Button></a>
+                <a href={realRules} target="_blank" rel="noopener noreferrer"><Button className="LegacyGames-real">Real Rules</Button></a>
                 <EditModal
                   id={_id}
                   passDataToParent={this.passDataToParent}
