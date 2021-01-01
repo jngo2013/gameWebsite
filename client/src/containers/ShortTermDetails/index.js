@@ -59,23 +59,35 @@ class ShortTermDetails extends Component {
               <Card.Header className="ShortTermGames-header">{title}</Card.Header>
               
               <Row className="ShortTermGames-row1">
-                <Col className="ShortTermGames-col1">
-                  <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
-                  <Card.Text>
-                    {players} player(s)
-                  </Card.Text>
-                  <hr className="ShortTermGames-hr" />
-                  <Card.Title className="ShortTermGames-title">Time</Card.Title>
-                  <Card.Text>
-                    {time} min.
-                  </Card.Text>
+                <Col className="ShortTermGames-col1" lg>
+                  <div className="ShortTermGames-col1-div">
+                    <div>
+                      <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
+                      
+                      <Card.Text >
+                        {players} player(s)
+                      </Card.Text>
+                    </div> 
+                  </div>
+
+                  <hr/>
+
+                  <div className="ShortTermGames-col1-div">
+                    <div>
+                      <Card.Title className="ShortTermGames-title">Time</Card.Title>
+                      <Card.Text>
+                        {time} min.
+                      </Card.Text>
+                    </div>
+                  </div>
                 </Col>
 
-                <Col id="ShortTermGames-col2">
+                <Col id="ShortTermGames-col2" lg>
                   <Card.Img 
                     variant="top" 
                     src={src}
-                    alt="board game" 
+                    alt="board game"
+                    className="ShortTermGames-details-img"
                   />
                 </Col>
                 
