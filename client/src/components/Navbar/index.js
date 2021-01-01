@@ -10,7 +10,7 @@ function NavBar(props) {
   // export default (props) => (
     <Navbar  className="NavbarBG" expand="lg">
       <Navbar.Toggle  aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse className="navCollapsePadding" id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/"><Image   src={sample2} className="navbar-brand" roundedCircle></Image></Nav.Link>
           <Nav.Link href="AboutUs" className="navPadding" >About Us</Nav.Link>
