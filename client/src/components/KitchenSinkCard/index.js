@@ -11,7 +11,7 @@ function KitchenSinkCard(props) {
 
   return (
     <div className="KitchenSinkCard-div">
-      <Card style={{ width: '21rem' }} bg="secondary" >
+      <Card style={{ width: '21rem' }} bg="secondary">
 
         <Card.Img variant="top" src={props.src === undefined ? "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=859&q=80" : props.src} className="KitchenSinkCard-img" />
 

@@ -60,9 +60,10 @@ class LegacyGames extends Component {
               <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
             </Row>
             :
-            <Row><h1 className="LegacyGames-container-header">Legacy Games</h1></Row>
-          }
-          
+            <Row className="LegacyGames-container-header-row">
+              <h1 className="LegacyGames-container-header">Legacy Games</h1>
+            </Row>
+          }     
           
           <Row className="LegacyGames-row">
             {/* ===== Game cards ===== */}
