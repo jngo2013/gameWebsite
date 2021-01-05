@@ -54,8 +54,9 @@ class LegacyGames extends Component {
         <Container fluid className="LegacyGames-container">
           { this.state.authenticated 
             ?
-            <Row>   
+            <Row className="LegacyGames-container-header-row">   
               <h1 className="LegacyGames-container-header">Legacy Games</h1>
+              <div className="LegacyGames-break"></div>
               <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
             </Row>
             :

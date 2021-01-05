@@ -4,10 +4,28 @@
   width: 90%;
 }
 
+.ShortTermGames-container-header-row {
+  /* border: 3px solid red; */
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ShortTermGames-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
 .ShortTermGames-row {
   /* border: 3px dotted red; */
   display: flex;
   justify-content: space-evenly;
+}
+
+.ShortTermGames-container-header {
+  font-size: 6rem;
+  padding-bottom: 1rem;
 }
 
 .ShortTermGames-card {
