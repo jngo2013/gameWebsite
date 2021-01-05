@@ -9,10 +9,16 @@ import './styles.css';
 class LegacyGames extends Component {
   state = {
     legacyGameData: [],
+    authenticated: false,
   }
 
   // API call to the backend
   async componentDidMount() {
+    // check to see if the user has been authenticated
+    if(localStorage.getItem('token') !== null){
+      this.setState({ authenticated : true });
+    } 
+
     try {
       // when "/api/legacygames/" is hit, you'll get a response from the database, which is then saved to the "response" variable.
       let response = await axios.get("/api/legacygames/");
@@ -46,10 +52,16 @@ class LegacyGames extends Component {
     return (
       <div>
         <Container fluid className="LegacyGames-container">
-          <Row>
+          { this.state.authenticated 
+            ?
+            <Row>   
               <h1 className="LegacyGames-container-header">Legacy Games</h1>
               <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
-          </Row>
+            </Row>
+            :
+            <Row><h1 className="LegacyGames-container-header">Legacy Games</h1></Row>
+          }
+          
           
           <Row className="LegacyGames-row">
             {/* ===== Game cards ===== */}
