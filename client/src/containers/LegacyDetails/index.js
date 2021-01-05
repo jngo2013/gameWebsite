@@ -7,10 +7,16 @@ import './styles.css';
 class LegacyDetails extends Component {
   state = {
     gameData: "",
-    redirect: false
+    redirect: false,
+    authenticated: false,
   }
 
   async componentDidMount() {
+    // check to see if the user has been authenticated
+    if(localStorage.getItem('token') !== null){
+      this.setState({ authenticated : true });
+    } 
+
     // get game id from url (using react router)
     let gameId = this.props.match.params.id;
     // pass the game id to axios to make the api call
@@ -104,12 +110,18 @@ class LegacyDetails extends Component {
                 <hr className="LegacyGames-hr" />
                 
                 <a href={realRules} target="_blank" rel="noopener noreferrer"><Button className="LegacyGames-real">Real Rules</Button></a>
-                <EditModal
-                  id={_id}
-                  passDataToParent={this.passDataToParent}
-                  redirect={this.redirect}
-                  apiRoute="/api/legacygames/"
-                />
+                
+                { this.state.authenticated
+                  ?
+                  <EditModal
+                    id={_id}
+                    passDataToParent={this.passDataToParent}
+                    redirect={this.redirect}
+                    apiRoute="/api/legacygames/"
+                  />
+                  :
+                  null
+                }   
               </Card.Body>
             </Card>
           </Container>

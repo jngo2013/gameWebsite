@@ -9,10 +9,16 @@ import './styles.css';
 class ShortTermGames extends Component {
   state = {
     shortTermGameData: [],
+    authenticated: false,
   }
   
   // API call to the backend
   async componentDidMount() {
+    // check to see if the user has been authenticated
+    if(localStorage.getItem('token') !== null){
+      this.setState({ authenticated : true });
+    } 
+
     try {
       // when "/api/shorttermgames/" is hit, you'll get a response from the database, which is then saved to the "response" variable.
       let response = await axios.get("/api/shorttermgames/");
@@ -42,10 +48,16 @@ class ShortTermGames extends Component {
     return (
       <div>
         <Container fluid className="ShortTermGames-container">
-          <Row>
-            <h1>Board Games</h1>
-            <div className="ShortTermGames-modal-div"><AddShortModal /></div>
-          </Row> 
+          { this.state.authenticated
+            ?
+            <Row>
+              <h1>Board Games</h1>
+              <div className="ShortTermGames-modal-div"><AddShortModal /></div>
+            </Row> 
+            :
+            <Row><h1>Board Games</h1></Row>
+          }
+          
           <Row className="ShortTermGames-row">
             {/* ===== Game cards ===== */}
             {allGames}

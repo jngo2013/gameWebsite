@@ -8,12 +8,18 @@ class ShortTermDetails extends Component {
   state = {
     gameData: "",
     redirect: false,
+    authenticated: false,
   }
 
   // for componentDidMount():
   // when the page loads perform an API call to the backend (shortTermGames)
   // the route we would like to hit is "/api/shorttermgames/:id/"
   async componentDidMount() {
+    // check to see if the user has been authenticated
+    if(localStorage.getItem('token') !== null){
+      this.setState({ authenticated : true });
+    } 
+
     // get the id from the url (using react router)
     let gameId = this.props.match.params.id;
     // pass the game id to axios to make the api all
@@ -109,12 +115,20 @@ class ShortTermDetails extends Component {
                 <hr className="ShortTermGames-hr" />
                 
                 <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="ShortTermGames-real">Real Rules</Button></a>
-                <EditModal
-                  id={_id}
-                  passDataToParent={this.passDataToParent}
-                  redirect={this.redirect}
-                  apiRoute="/api/shorttermgames/"
-                />
+                
+                { this.state.authenticated
+                  ?
+                  <EditModal
+                    id={_id}
+                    passDataToParent={this.passDataToParent}
+                    redirect={this.redirect}
+                    apiRoute="/api/shorttermgames/"
+                  />
+                  :
+                  null
+                }
+                
+                
               </Card.Body>
             </Card>
           </Container>
