@@ -61,4 +61,8 @@
   .ShortTermGames-row1.row {
     border: none;
   }
+
+  .ShortTermGames-real.btn-primary {
+    width: 100%;
+  }
 }

@@ -1,8 +1,18 @@
-.NavbarBG{
-  /* background-color: red; */
+/* .NavbarBG{
+  background-color: red;
   background-image: url("./images/wood4.jpg");
   display: flex;
   height: 60px !important;
+} */
+
+.NavbarBG {
+  height: 60px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navPadding{
@@ -25,4 +35,30 @@
 
 .nav-link{
   color: ivory !important;
+}
+
+.bg-dark {
+  background-image: url("./images/wood4.jpg");
+}
+
+.dropdown-menu {
+  top: 90%;
+}
+
+@media screen and (max-width: 991px) {
+  .NavbarBG {
+    height: auto !important;
+  }
+
+  .navbar-nav {
+    display: block;
+  }
+
+  .dropdown-menu {
+    max-width: 25%;
+  }
+
+  div.dropdown-menu.show {
+    margin-bottom: 0.5rem !important;
+  }
 }

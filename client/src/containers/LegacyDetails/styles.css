@@ -61,5 +61,9 @@
   .LegacyGames-row1.row {
     border: none;
   }
+
+  .LegacyGames-real.btn-primary {
+    width: 100%;
+  }
 }
 

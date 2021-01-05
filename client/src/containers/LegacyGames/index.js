@@ -47,7 +47,7 @@ class LegacyGames extends Component {
       <div>
         <Container fluid className="LegacyGames-container">
           <Row>
-              <h1>Legacy Games</h1>
+              <h1 className="LegacyGames-container-header">Legacy Games</h1>
               <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
           </Row>
           
