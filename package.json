@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently -n 'Server,Client' -c 'red,blue' \"nodemon index.js\" \"npm run client\"",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node index.js",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'Server,Client' -c 'red,blue' \"nodemon index.js\" \"npm run client\""
+    "start:dev": "concurrently -n 'Server,Client' -c 'red,blue' \"nodemon index.js\" \"npm run client\""
   },
   "repository": {
     "type": "git",
