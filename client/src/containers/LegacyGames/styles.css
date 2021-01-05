@@ -1,6 +1,4 @@
 .LegacyGames-container {
-  /* border: 3px solid black; */
-  /* margin-top: 300px; */
   width: 90%;
 }
 
@@ -19,9 +17,12 @@
 }
 
 .LegacyGames-row {
-  /* border: 3px dotted red; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  /* https://ishadeed.com/article/spacing-in-css/#css-flexbox-gap */
+  flex-wrap: wrap;
+  gap: 5rem;
 }
 
 .LegacyGames-container-header {
@@ -49,6 +50,4 @@
     font-size: 6rem;
     text-align: center;
   }
-
 }
-

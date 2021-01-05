@@ -56,7 +56,9 @@ class ShortTermGames extends Component {
               <div className="ShortTermGames-modal-div"><AddShortModal /></div>
             </Row> 
             :
-            <Row><h1>Board Games</h1></Row>
+            <Row className="ShortTermGames-container-header-row">
+              <h1 className="ShortTermGames-container-header">Board Games</h1>
+            </Row>
           }
           
           <Row className="ShortTermGames-row">

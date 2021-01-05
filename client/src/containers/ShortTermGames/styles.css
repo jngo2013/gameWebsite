@@ -18,9 +18,12 @@
 }
 
 .ShortTermGames-row {
-  /* border: 3px dotted red; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  /* https://ishadeed.com/article/spacing-in-css/#css-flexbox-gap */
+  flex-wrap: wrap;
+  gap: 5rem;
 }
 
 .ShortTermGames-container-header {
