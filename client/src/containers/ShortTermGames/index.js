@@ -50,8 +50,9 @@ class ShortTermGames extends Component {
         <Container fluid className="ShortTermGames-container">
           { this.state.authenticated
             ?
-            <Row>
-              <h1>Board Games</h1>
+            <Row className="ShortTermGames-container-header-row">
+              <h1 className="ShortTermGames-container-header">Board Games</h1>
+              <div className="ShortTermGames-break"></div>
               <div className="ShortTermGames-modal-div"><AddShortModal /></div>
             </Row> 
             :
