@@ -21,6 +21,13 @@
   align-items: center;
 }
 
+.navCollapsePadding{
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar-brand {
   /* border: 3px solid black; */
   width: 60px !important;

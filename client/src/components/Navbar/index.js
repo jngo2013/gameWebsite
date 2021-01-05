@@ -24,6 +24,7 @@ function NavBar(props) {
           </Form>
         </Navbar.Collapse>
       </Navbar>
+
   );
 }
 

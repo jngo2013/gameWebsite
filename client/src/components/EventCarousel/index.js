@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import jol4 from './images/jol4.jpeg';
 import jol3 from './images/jol3.jpeg';
-import jol1 from './images/jol3.jpeg';
+import jol1 from './images/jol1.jpeg';
 import './style.css';
  
 
