@@ -16,7 +16,7 @@ function NavBar(props) {
             {/* <Nav.Link href="/AboutUs">About Us</Nav.Link> */}
             <Link to="/AboutUs">About Us</Link>
             <NavDropdown title="Games" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/LegacyGames">Legacy</NavDropdown.Item>
+              <NavDropdown.Item href="https://arcane-shelf-59376.herokuapp.com/LegacyGames">Legacy</NavDropdown.Item>
               <NavDropdown.Item href="/ShortTermGames">Board Games</NavDropdown.Item>
             </NavDropdown>
             { props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
