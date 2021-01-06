@@ -35,8 +35,8 @@ class App extends Component {
           <Router>
             <ScrollToTop />
             <NavBar authenticated ={this.state.authenticated}/>
-            <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/" component={Home} />
+            <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/LegacyGames" component={LegacyGames} />
             <Route exact path="/ShortTermGames" component={ShortTermGames} />
             <Route exact path="/ShortTermGames/:id" component={ShortTermDetails} />
