@@ -14,10 +14,10 @@ function NavBar(props) {
           <Nav className="mr-auto">
             <Nav.Link href="/"><Image src={sample2} className="navbar-brand" roundedCircle></Image></Nav.Link>
             {/* <Nav.Link href="/AboutUs">About Us</Nav.Link> */}
-            <Link to="/AboutUs">About Us</Link>
+            <Link className="aboutUs"to="/AboutUs">About Us</Link>
             <NavDropdown title="Games" id="basic-nav-dropdown">
-              <Link to="/LegacyGames">LegacyGames</Link>
-              <Link to="/ShortTermGames">BoardGames</Link>
+              <Link className="drop" to="/LegacyGames">LegacyGames</Link>
+              <Link className="drop" to="/ShortTermGames">BoardGames</Link>
               {/* <NavDropdown.Item to="/LegacyGames">Legacy</NavDropdown.Item>
               <NavDropdown.Item href="/ShortTermGames">Board Games</NavDropdown.Item> */}
             </NavDropdown>
