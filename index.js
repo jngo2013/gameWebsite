@@ -22,6 +22,7 @@ app.use(routes);
 require('./services/passport');
 // Connect database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamewebsite',
+//mongoose.connect("mongodb+srv://User21:K973Mjs7DJPLVDU@dogweb.oqxs2.mongodb.net/gamewebsite?retryWrites=true&w=majority",
  { useNewUrlParser: true,
    useCreateIndex: true,
    useUnifiedTopology: true,
