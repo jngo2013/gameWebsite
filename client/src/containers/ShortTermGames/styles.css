@@ -45,3 +45,10 @@
   align-items: center;
   margin-left: 1rem;
 }
+
+@media screen and (max-width: 991px) {
+  .ShortTermGames-container-header {
+    font-size: 6rem;
+    text-align: center;
+  }
+}
