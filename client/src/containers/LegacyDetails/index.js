@@ -9,6 +9,7 @@ class LegacyDetails extends Component {
     gameData: "",
     redirect: false,
     authenticated: false,
+    // authenticated: true,
   }
 
   async componentDidMount() {
