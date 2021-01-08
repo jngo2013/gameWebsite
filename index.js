@@ -7,9 +7,27 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+app.use(routes);
+require('./services/passport');
+
+// Connect database
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamewebsite',
+ { useNewUrlParser: true,
+   useCreateIndex: true,
+   useUnifiedTopology: true,
+   useFindAndModify: false });
+
+// Message informing user database has connected
+mongoose.connection.on("connected", () => {
+  console.log("Mongoose is connected to the database!")
+});
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -18,14 +36,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.use(routes);
-require('./services/passport');
-// Connect database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamewebsite',
-//mongoose.connect("mongodb+srv://User21:K973Mjs7DJPLVDU@dogweb.oqxs2.mongodb.net/gamewebsite?retryWrites=true&w=majority",
- { useNewUrlParser: true,
-   useCreateIndex: true,
-   useUnifiedTopology: true,
-   useFindAndModify: false });
-
-app.listen(PORT);
+app.listen(PORT, function() {
+  console.log(`App listening on port: ${PORT}!`);
+});
