@@ -9,7 +9,8 @@ import './styles.css';
 class LegacyGames extends Component {
   state = {
     legacyGameData: [],
-    authenticated: false,
+    // authenticated: false,
+    authenticated: true,
   }
 
   // API call to the backend
