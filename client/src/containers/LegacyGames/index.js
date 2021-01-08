@@ -25,7 +25,7 @@ class LegacyGames extends Component {
       let response = await axios.get("/api/legacygames/");
       // set the "legacyGameData" state to be the data from the response
       this.setState({ legacyGameData: response.data });
-      console.log(this.state.legacyGameData, "line 20");
+      // console.log(this.state.legacyGameData, "line 20");
     } catch (err) {
       console.log(err);
     }
