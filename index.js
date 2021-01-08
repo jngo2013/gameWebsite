@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-const MONGODB_URI = "mongodb+srv://gameWebsiteForkGCM:GCMForkWebsitegame@gamewebsitejnfork.eq3dc.mongodb.net/gamewebsite?retryWrites=true&w=majority";
 
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
@@ -24,7 +23,7 @@ app.use(routes);
 require('./services/passport');
 
 // Connect database
-mongoose.connect(MONGODB_URI || 'mongodb://localhost/gamewebsite',
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamewebsite',
  { useNewUrlParser: true,
    useCreateIndex: true,
    useUnifiedTopology: true,
