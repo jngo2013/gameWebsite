@@ -19,13 +19,13 @@ class LegacyGames extends Component {
     if(localStorage.getItem('token') !== null){
       this.setState({ authenticated : true });
     } 
-    console.log('component did mount')
+    
     try {
       // when "/api/legacygames/" is hit, you'll get a response from the database, which is then saved to the "response" variable.
       let response = await axios.get("/api/legacygames/");
       // set the "legacyGameData" state to be the data from the response
       this.setState({ legacyGameData: response.data });
-      // console.log(this.state.legacyGameData, "line 20");
+      console.log(this.state.legacyGameData, "line 20");
     } catch (err) {
       console.log(err);
     }

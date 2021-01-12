@@ -4,6 +4,7 @@ import ControlledCarousel from "../EventCarousel";
 import "./styles.css"
 
 class Home extends Component {
+  
   render(){
     return(
       <div>
@@ -11,7 +12,7 @@ class Home extends Component {
         <h1 className="H1Text">Welcome</h1>
         
         <hr></hr>
-        <ControlledCarousel/>
+        <ControlledCarousel />
         <CardSection />
       </div>
       

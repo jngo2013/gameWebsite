@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import EditCarouselModal from '../EditCarouselModal';
+import axios from 'axios';
 import jol4 from './images/jol4.jpeg';
 import jol3 from './images/jol3.jpeg';
 import jol1 from './images/jol1.jpeg';
 import './style.css';
 
 
+
 class ControlledCarousel extends Component {
   state = {
     index: 0,
-    carouselData: {
-      slide1: "4",
-      slide1desc: "Will Chet ever manage to kill a single Stone Golem?",
-      slide2: "3",
-      slide2desc: "What are the zealots up to?",
-      slide3: "1",
-      slide3desc: "The start of our journey to the Jaws of the Lion!",
+    // carouselData: {
+    //   slide1: "4",
+    //   slide1desc: "Will Chet ever manage to kill a single Stone Golem?",
+    //   slide2: "3",
+    //   slide2desc: "What are the zealots up to?",
+    //   slide3: "1",
+    //   slide3desc: "The start of our journey to the Jaws of the Lion!",
+    // }
+    carouselData: ""
+  }
+
+  async componentDidMount() {
+    try {
+      let response = await axios.get("/api/eventcarousel");
+      // console.log(response.data, "line 28");
+      this.setState({carouselData: response.data});
+      console.log(this.state.carouselData);
+    } catch (err) {
+      console.log(err)
     }
   }
+
 
   handleSelect = (selectedIndex, event) => {
     this.setState({ index: selectedIndex });
@@ -31,6 +46,7 @@ class ControlledCarousel extends Component {
 
 
   render() {
+
     return (
       <Container fluid className="Container">
         <Carousel className="Carousel" activeIndex={this.state.index} onSelect={this.handleSelect}>
@@ -41,10 +57,12 @@ class ControlledCarousel extends Component {
                 src={jol4}
                 alt="First slide"
               />
-              <Carousel.Caption>
+              
+              {/* <Carousel.Caption>
+                <p>{this.state.carouselData.slide1}</p>
                 <h3>Episode {this.state.carouselData.slide1}</h3>
                 <p>{this.state.carouselData.slide1desc}</p>
-              </Carousel.Caption>
+              </Carousel.Caption> */}
             </Carousel.Item>
 
             {/* Slide 2 */}
@@ -54,10 +72,10 @@ class ControlledCarousel extends Component {
                 src={jol3}
                 alt="Second slide"
               />
-              <Carousel.Caption>
+              {/* <Carousel.Caption>
                 <h3>Episode {this.state.carouselData.slide2}</h3>
                 <p>{this.state.carouselData.slide2desc}</p>
-              </Carousel.Caption>
+              </Carousel.Caption> */}
             </Carousel.Item>
 
             {/* Slide 3 */}
@@ -67,15 +85,17 @@ class ControlledCarousel extends Component {
                 src={jol1}
                 alt="Third slide"
               />
-              <Carousel.Caption>
+              {/* <Carousel.Caption>
                 <h3>Episode {this.state.carouselData.slide3}</h3>
                 <p>{this.state.carouselData.slide3desc}</p>
-              </Carousel.Caption>
+              </Carousel.Caption> */}
             </Carousel.Item>
 
           </Carousel>
     
-        <EditCarouselModal passDataToParent={this.passDataToParent} carouselData={this.state.carouselData}/>
+        {/* <EditCarouselModal passDataToParent={this.passDataToParent} carouselData={this.state.carouselData}/> */}
+
+        
       </Container>
     );
   }

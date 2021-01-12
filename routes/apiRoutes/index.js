@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const legacyGames = require('./legacyGames');
 const shortTermGames = require('./shortTermGames');
+const eventCarousel = require('./eventCarousel');
 const adminRoutes = require('./adminRoutes');
 const authRoutes = require ('./authRoutes')
 // "/api" prepended here
@@ -9,6 +10,9 @@ router.use("/legacygames", legacyGames);
 
 // short term games route
 router.use("/shorttermgames", shortTermGames);
+
+// eventCarousel routes
+router.use("/eventcarousel", eventCarousel);
 
 // log in for admin
 router.use('/admin', adminRoutes);
