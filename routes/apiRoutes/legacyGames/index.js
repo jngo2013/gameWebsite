@@ -2,7 +2,7 @@
 const router = require("express").Router();
 
 const { response } = require("express");
-const Legacy = require("../../../models/LegacyGame");
+
 // functions from the LegacyGamesController
 const { getAllLegacyGames, getOneLegacyGame, updateLegacyGame, deleteLegacyGame, addLegacyGame } = require('./../../../controllers/legacyGamesController');
 
