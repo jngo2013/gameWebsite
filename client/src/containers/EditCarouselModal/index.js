@@ -7,9 +7,6 @@ class EditCarouselModal extends Component {
     carouselData: {slide1: "", slide1desc: "", slide2: "", slide2desc: "", slide3: "", slide3desc: ""},
   }
 
-  componentDidMount() {
-    this.setState({carouselData: this.props.carouselData});
-  }
 
   handleShow = () => {
     this.setState({ show: true });
@@ -21,20 +18,27 @@ class EditCarouselModal extends Component {
 
   handleInputChange = event => {
     this.setState({ carouselData: {...this.state.carouselData, [event.target.name]: event.target.value }});
-    // this.setState({carouselData: event.target.value})
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    console.log(this.state.carouselData, "line 29");
+
+    // console.log(this.state.carouselData, "line 29");
+    // 1.  send the edited data to the backend and get a response (PUT REQUEST)
+    // 2.  change the state to be the response after updating data
+    // X 3.  send data to parent for rerendering of the carousel
     this.props.passDataToParent(this.state.carouselData);
-    // close modal
+
+    // X 4.  alert user they successfully edited
+    alert("Edits saved!");
+    
+    // X 5.  close modal
     this.handleClose();
   }
 
 
   render() {
-
+    console.log(this.props.carouselData, "THIS IS MODAL DATA")
 
     return (
       <>
@@ -55,34 +59,34 @@ class EditCarouselModal extends Component {
                 <h3>Slide 1</h3>
                 <Form.Label>Episode Number</Form.Label>
                 {/* <p>{this.state.carouselData.slide1}</p> */}
-                <Form.Control type="text" name="slide1" value={this.state.carouselData.slide1} onChange={this.handleInputChange} placeholder="Enter the episode number." />
+                <Form.Control type="text" name="slide1" value={this.state.carouselData.slide1} onChange={this.handleInputChange} placeholder={this.props.carouselData.slide1} />
               </Form.Group>
   
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description of the episode</Form.Label>
-                <Form.Control as="textarea" name="slide1desc" value={this.state.carouselData.slide1desc} onChange={this.handleInputChange} rows={3} placeholder="Enter a brief description."/>
+                <Form.Control as="textarea" name="slide1desc" value={this.state.carouselData.slide1desc} onChange={this.handleInputChange} rows={3} placeholder={this.props.carouselData.slide1desc} />
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <h3>Slide 2</h3>
                 <Form.Label>Episode Number</Form.Label>
-                <Form.Control type="text" name="slide2" value={this.state.carouselData.slide2} onChange={this.handleInputChange} placeholder="Enter the episode number." />
+                <Form.Control type="text" name="slide2" value={this.state.carouselData.slide2} onChange={this.handleInputChange} placeholder={this.props.carouselData.slide2} />
               </Form.Group>
   
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description of the episode</Form.Label>
-                <Form.Control as="textarea" name="slide2desc" value={this.state.carouselData.slide2desc} onChange={this.handleInputChange} rows={3} placeholder="Enter a brief description."/>
+                <Form.Control as="textarea" name="slide2desc" value={this.state.carouselData.slide2desc} onChange={this.handleInputChange} rows={3} placeholder={this.props.carouselData.slide2desc} />
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <h3>Slide 3</h3>
                 <Form.Label>Episode Number</Form.Label>
-                <Form.Control type="text" name="slide3" value={this.state.carouselData.slide3} onChange={this.handleInputChange} placeholder="Enter the episode number." />
+                <Form.Control type="text" name="slide3" value={this.state.carouselData.slide3} onChange={this.handleInputChange} placeholder={this.props.carouselData.slide3} />
               </Form.Group>
   
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description of the episode</Form.Label>
-                <Form.Control as="textarea" name="slide3desc" value={this.state.carouselData.slide3desc} onChange={this.handleInputChange} rows={3} placeholder="Enter a brief description."/>
+                <Form.Control as="textarea" name="slide3desc" value={this.state.carouselData.slide3desc} onChange={this.handleInputChange} rows={3} placeholder={this.props.carouselData.slide3desc} />
               </Form.Group>
             </Form>
 
