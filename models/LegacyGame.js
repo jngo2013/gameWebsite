@@ -29,8 +29,8 @@ const LegacyGameSchema = new Schema({
   src: {
     type: String,
     required: true,
-  }
-})
+  },
+});
 
 const Legacy = mongoose.model('Legacy', LegacyGameSchema);
 
