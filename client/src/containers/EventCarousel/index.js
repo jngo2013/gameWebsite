@@ -18,11 +18,7 @@ class ControlledCarousel extends Component {
     this.setState({ index: selectedIndex });
   }
 
-  passDataToParent = childData => {
-    console.log("i'm connected to the caorusel");
-    this.setState({carouselData: childData});
-  }
-
+  
 
   render() {
 
