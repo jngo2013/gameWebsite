@@ -12,28 +12,7 @@ import './style.css';
 class ControlledCarousel extends Component {
   state = {
     index: 0,
-    // carouselData: {
-    //   slide1: "4",
-    //   slide1desc: "Will Chet ever manage to kill a single Stone Golem?",
-    //   slide2: "3",
-    //   slide2desc: "What are the zealots up to?",
-    //   slide3: "1",
-    //   slide3desc: "The start of our journey to the Jaws of the Lion!",
-    // }
-    carouselData: ""
   }
-
-  async componentDidMount() {
-    try {
-      let response = await axios.get("/api/eventcarousel");
-      // console.log(response.data, "line 28");
-      this.setState({carouselData: response.data});
-      console.log(this.state.carouselData);
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
 
   handleSelect = (selectedIndex, event) => {
     this.setState({ index: selectedIndex });
@@ -52,50 +31,48 @@ class ControlledCarousel extends Component {
         <Carousel className="Carousel" activeIndex={this.state.index} onSelect={this.handleSelect}>
           {/* Slide 1 */}
           <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={jol4}
-                alt="First slide"
-              />
-              
-              {/* <Carousel.Caption>
-                <p>{this.state.carouselData.slide1}</p>
-                <h3>Episode {this.state.carouselData.slide1}</h3>
-                <p>{this.state.carouselData.slide1desc}</p>
-              </Carousel.Caption> */}
-            </Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={jol4}
+              alt="First slide"
+            />
+          
+            <Carousel.Caption>
+              <h3>Episode {this.props.carouselData.slide1}</h3>
+              <p>{this.props.carouselData.slide1desc}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-            {/* Slide 2 */}
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={jol3}
-                alt="Second slide"
-              />
-              {/* <Carousel.Caption>
-                <h3>Episode {this.state.carouselData.slide2}</h3>
-                <p>{this.state.carouselData.slide2desc}</p>
-              </Carousel.Caption> */}
-            </Carousel.Item>
+          {/* Slide 2 */}
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={jol3}
+              alt="Second slide"
+            />
+            <Carousel.Caption>
+              <h3>Episode {this.props.carouselData.slide2}</h3>
+              <p>{this.props.carouselData.slide2desc}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
 
-            {/* Slide 3 */}
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={jol1}
-                alt="Third slide"
-              />
-              {/* <Carousel.Caption>
-                <h3>Episode {this.state.carouselData.slide3}</h3>
-                <p>{this.state.carouselData.slide3desc}</p>
-              </Carousel.Caption> */}
-            </Carousel.Item>
+          {/* Slide 3 */}
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={jol1}
+              alt="Third slide"
+            />
+            <Carousel.Caption>
+              <h3>Episode {this.props.carouselData.slide3}</h3>
+              <p>{this.props.carouselData.slide3desc}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
 
           </Carousel>
     
         {/* <EditCarouselModal passDataToParent={this.passDataToParent} carouselData={this.state.carouselData}/> */}
 
-        
       </Container>
     );
   }
