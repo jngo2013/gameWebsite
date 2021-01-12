@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CardSection from "../CardSection";
-import ControlledCarousel from "../../components/EventCarousel"
+import ControlledCarousel from "../EventCarousel";
 import "./styles.css"
 
 class Home extends Component {
