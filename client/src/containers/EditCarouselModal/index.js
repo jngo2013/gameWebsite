@@ -10,14 +10,15 @@ class EditCarouselModal extends Component {
 
   // handleEdit
   handleEdit = async () => {
-    // 1.  makes an api call to get the data from the database
+    
     let carouselId = this.props._id;
     
     try {
+      // make an api call to get the data from the database
       let response = await axios.get(`/api/eventcarousel/${carouselId}`);
-      // 2.  set the carouselData state to be 'response.data'
+
+      // set the carouselData state to be 'response.data'
       this.setState({ carouselData: response.data });
-      // console.log(response.data, "line 20 in event carousel");
     } catch (err) {
       console.log(err);
     }
@@ -41,9 +42,8 @@ class EditCarouselModal extends Component {
 
     // send the edited data to the backend and get a response (PUT REQUEST)
     let { data } = await axios.put("/api/eventcarousel", { carouselData: this.state.carouselData });
-    // console.log(data, "updated data");
 
-    // send data to parent for rerendering of the carousel
+    // send updated data to parent for rerendering of the carousel
     this.props.passDataToParent(data);
 
     // alert user they successfully edited
@@ -103,8 +103,6 @@ class EditCarouselModal extends Component {
                 <Form.Control as="textarea" name="slide3desc" value={this.state.carouselData.slide3desc} onChange={this.handleInputChange} rows={3} />
               </Form.Group>
             </Form>
-
-        
 
           </Modal.Body>
           <Modal.Footer>

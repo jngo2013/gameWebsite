@@ -3,56 +3,71 @@ import CardSection from "../CardSection";
 import axios from 'axios';
 import ControlledCarousel from "../EventCarousel";
 import EditCarouselModal from './../EditCarouselModal';
-import "./styles.css"
+import "./styles.css";
 
 class Home extends Component {
   state = {
     carouselData: "",
+    authenticated: true,
   }
 
+  // function to get data from the child so the carouselData rerenders
   passDataToParent = childData => {
-    console.log("i'm connected to the caorusel");
     this.setState({carouselData: childData});
   }
 
-  // get data from the database for the carousel
   async componentDidMount() {
+    // check to see if the user has been authenticated
+    if(localStorage.getItem('token') !== null){
+      this.setState({ authenticated : true });
+    } 
+
+    // get data from the database for the carousel
     try {
       let response = await axios.get("/api/eventcarousel/");
-      console.log(response.data, "line 23")
       
       // convert response.data into an array
       let carouselDataArr = Object.entries(response.data)[0][1];
 
       this.setState({carouselData: carouselDataArr});
-      // console.log(this.state.carouselData, "line 29")
 
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   }
   
   render(){
+    // get data from this.state.carouselData
+    const { slide1, slide2, slide3, slide1desc, slide2desc, slide3desc, _id } = this.state.carouselData;
+
     return (
       <div>
         <br></br>
         <h1 className="H1Text">Welcome</h1>
         
         <hr></hr>
+
         <ControlledCarousel 
-          slide1={this.state.carouselData.slide1}
-          slide2={this.state.carouselData.slide2}
-          slide3={this.state.carouselData.slide3}
-          slide1desc={this.state.carouselData.slide1desc}
-          slide2desc={this.state.carouselData.slide2desc}
-          slide3desc={this.state.carouselData.slide3desc}
+          slide1={slide1}
+          slide2={slide2}
+          slide3={slide3}
+          slide1desc={slide1desc}
+          slide2desc={slide2desc}
+          slide3desc={slide3desc}
         />
 
-        <EditCarouselModal passDataToParent={this.passDataToParent} _id={this.state.carouselData._id}/>
+        {/* if this.state.authenticated is true, show EditCarouselmodal */}
+        { this.state.authenticated
+          ?
+          <EditCarouselModal passDataToParent={this.passDataToParent} _id={_id}/>
+          :
+          null
+        }
+        
         <CardSection />
       </div>
     );
   }
 }
 
-export default Home
+export default Home;
