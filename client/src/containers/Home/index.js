@@ -8,7 +8,6 @@ import "./styles.css"
 class Home extends Component {
   state = {
     carouselData: "",
-    editModalData: ""
   }
 
   passDataToParent = childData => {
@@ -16,33 +15,43 @@ class Home extends Component {
     this.setState({carouselData: childData});
   }
 
-
   // get data from the database for the carousel
   async componentDidMount() {
     try {
-      let response = await axios.get("/api/eventcarousel");
+      let response = await axios.get("/api/eventcarousel/");
+      console.log(response.data, "line 23")
       
       // convert response.data into an array
       let carouselDataArr = Object.entries(response.data)[0][1];
-      
-      this.setState({carouselData: carouselDataArr, editModalData: carouselDataArr});
+
+      this.setState({carouselData: carouselDataArr});
+      // console.log(this.state.carouselData, "line 29")
+
     } catch (err) {
       console.log(err)
     }
   }
   
   render(){
-    return(
+    return (
       <div>
         <br></br>
         <h1 className="H1Text">Welcome</h1>
         
         <hr></hr>
-        <ControlledCarousel carouselData={this.state.carouselData} />
-        <EditCarouselModal carouselData={this.state.carouselData} passDataToParent={this.passDataToParent}/>
+        <ControlledCarousel 
+          slide1={this.state.carouselData.slide1}
+          slide2={this.state.carouselData.slide2}
+          slide3={this.state.carouselData.slide3}
+          slide1desc={this.state.carouselData.slide1desc}
+          slide2desc={this.state.carouselData.slide2desc}
+          slide3desc={this.state.carouselData.slide3desc}
+        />
+
+        <EditCarouselModal passDataToParent={this.passDataToParent} _id={this.state.carouselData._id}/>
         <CardSection />
       </div>
-    )
+    );
   }
 }
 

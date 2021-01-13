@@ -22,6 +22,7 @@ class EditModal extends Component {
       let response = await axios.get(`${apiRoute}${gameId}`);
       // set the gameData to be 'response.data'
       this.setState({ gameData: response.data });
+      console.log(response.data, "line 25 in edit modal")
     } catch (err) {
       console.log(err);
     }
