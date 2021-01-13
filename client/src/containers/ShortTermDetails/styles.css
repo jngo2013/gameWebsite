@@ -49,6 +49,19 @@
   object-fit: cover;
 }
 
+/* https://stackoverflow.com/questions/30593103/preserve-line-breaks-in-textarea */
+.ShortTermGames-drunk {
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ShortTermGames-drunkRules {
+  width: 50%;
+  text-align: left;
+}
+
 @media screen and (max-width: 991px) {
   .ShortTermGames-col1-div {
     padding: 1rem;
