@@ -63,7 +63,7 @@ class ShortTermGames extends Component {
           
           <Row className="ShortTermGames-row">
             {/* ===== Game cards ===== */}
-            {allGames}
+            {allGames.reverse()}
           </Row>
           
         </Container>
