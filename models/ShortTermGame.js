@@ -11,7 +11,7 @@ const ShortTermGameSchema = new Schema({
     required:true,
   },
   time:{
-    type:Number,
+    type:String,
     required:true,
   },
   players:{
