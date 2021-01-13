@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal, Form, Container } from 'react-bootstrap';
+import './styles.css';
 
 class EditCarouselModal extends Component {
   state = {
@@ -57,9 +58,12 @@ class EditCarouselModal extends Component {
     return (
       <>
         {/* Button to show the modal */}
-        <Button variant="primary" onClick={this.handleEdit}>
-          Edit Slides
-        </Button>
+        <Container className="EditCarouselModal-container">
+          <Button variant="info" className="EditCarouselModal-button" onClick={this.handleEdit}>
+            Edit Slides
+          </Button>
+        </Container>
+        
 
         {/* The actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>

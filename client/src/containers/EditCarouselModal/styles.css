@@ -1,0 +1,9 @@
+.EditCarouselModal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.EditCarouselModal-button {
+  margin-top: 2rem;
+}
