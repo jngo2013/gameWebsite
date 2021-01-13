@@ -18,7 +18,6 @@ class ControlledCarousel extends Component {
     this.setState({ index: selectedIndex });
   }
 
-  
 
   render() {
 
@@ -34,8 +33,8 @@ class ControlledCarousel extends Component {
             />
           
             <Carousel.Caption>
-              <h3>Episode {this.props.carouselData.slide1}</h3>
-              <p>{this.props.carouselData.slide1desc}</p>
+              <h3>Episode {this.props.slide1}</h3>
+              <p>{this.props.slide1desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -47,8 +46,8 @@ class ControlledCarousel extends Component {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Episode {this.props.carouselData.slide2}</h3>
-              <p>{this.props.carouselData.slide2desc}</p>
+              <h3>Episode {this.props.slide2}</h3>
+              <p>{this.props.slide2desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -60,8 +59,8 @@ class ControlledCarousel extends Component {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Episode {this.props.carouselData.slide3}</h3>
-              <p>{this.props.carouselData.slide3desc}</p>
+              <h3>Episode {this.props.slide3}</h3>
+              <p>{this.props.slide3desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
 
