@@ -104,8 +104,8 @@ class LegacyDetails extends Component {
                 <hr className="LegacyGames-hr" />
 
                 <Card.Title className="LegacyGames-title">Drunk Rules</Card.Title>
-                <Card.Text>
-                  {drunkRules}
+                <Card.Text className="LegacyGames-drunk">
+                    <div className="LegacyGames-drunkRules">{drunkRules}</div>
                 </Card.Text>
 
                 <hr className="LegacyGames-hr" />

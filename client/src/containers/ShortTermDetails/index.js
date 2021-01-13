@@ -9,6 +9,7 @@ class ShortTermDetails extends Component {
     gameData: "",
     redirect: false,
     authenticated: false,
+    // authenticated: true,
   }
 
   // for componentDidMount():
@@ -108,8 +109,8 @@ class ShortTermDetails extends Component {
                 <hr className="ShortTermGames-hr" />
 
                 <Card.Title className="ShortTermGames-title">Drunk Rules</Card.Title>
-                <Card.Text>
-                  {drunkRules}
+                <Card.Text className="ShortTermGames-drunk">
+                  <div className="ShortTermGames-drunkRules">{drunkRules}</div>
                 </Card.Text>
 
                 <hr className="ShortTermGames-hr" />
