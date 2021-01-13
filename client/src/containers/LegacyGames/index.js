@@ -80,17 +80,3 @@ class LegacyGames extends Component {
 }
 
 export default LegacyGames;
-
-// ========== NOTES ==========
-//  INFORMATION FOR THE KITCHENSINKCARD
-  //     <KitchenSinkCard 
-  //       src={game.src}
-  //       name={game.name}
-  //       description={game.description}
-  //       players={game.players}
-  //       time={game.time}
-  //       realRulesLink={game.realRulesLink}
-  //       drunkRulesLink={game.drunkRulesLink}
-  //     /> 
-  //   </a>
-  // );

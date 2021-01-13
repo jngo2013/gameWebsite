@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Carousel, Container } from 'react-bootstrap';
-import EditCarouselModal from '../EditCarouselModal';
-import axios from 'axios';
 import jol4 from './images/jol4.jpeg';
 import jol3 from './images/jol3.jpeg';
 import jol1 from './images/jol1.jpeg';
 import './style.css';
-
-
 
 class ControlledCarousel extends Component {
   state = {
@@ -18,8 +14,9 @@ class ControlledCarousel extends Component {
     this.setState({ index: selectedIndex });
   }
 
-
   render() {
+    // get data from props
+    const { slide1, slide2, slide3, slide1desc, slide2desc, slide3desc } = this.props;
 
     return (
       <Container fluid className="Container">
@@ -33,8 +30,8 @@ class ControlledCarousel extends Component {
             />
           
             <Carousel.Caption>
-              <h3>Episode {this.props.slide1}</h3>
-              <p>{this.props.slide1desc}</p>
+              <h3>Episode {slide1}</h3>
+              <p>{slide1desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -46,8 +43,8 @@ class ControlledCarousel extends Component {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Episode {this.props.slide2}</h3>
-              <p>{this.props.slide2desc}</p>
+              <h3>Episode {slide2}</h3>
+              <p>{slide2desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -59,15 +56,12 @@ class ControlledCarousel extends Component {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Episode {this.props.slide3}</h3>
-              <p>{this.props.slide3desc}</p>
+              <h3>Episode {slide3}</h3>
+              <p>{slide3desc}</p>
             </Carousel.Caption>
           </Carousel.Item>
 
           </Carousel>
-    
-        {/* <EditCarouselModal passDataToParent={this.passDataToParent} carouselData={this.state.carouselData}/> */}
-
       </Container>
     );
   }
