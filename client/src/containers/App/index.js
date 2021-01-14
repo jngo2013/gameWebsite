@@ -8,6 +8,7 @@ import LegacyDetails from './../LegacyDetails';
 import SignIn from './../SignIn';
 import SignOut from './../SignOut'
 import GameNotFound from './../../components/GameNotFound';
+import PageNotFound from './../../components/PageNotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
@@ -46,7 +47,8 @@ class App extends Component {
               <Route exact path="/LegacyGames/:id" component={LegacyDetails} />
               <Route exact path="/SignIn" component={SignIn}/>
               <Route exact path='/SignOut' component={SignOut}/>
-              <Route component={GameNotFound} />
+              <Route exact path="/notfound" component={GameNotFound} />
+              <Route component={PageNotFound} />
             </Switch>
             
             <Footer />
