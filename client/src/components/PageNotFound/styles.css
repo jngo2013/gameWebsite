@@ -1,0 +1,30 @@
+.PageNotFound-container {
+  /* border: 3px solid black; */
+  text-align: center;
+  width: 100%;
+  padding-top: 4rem;
+}
+
+.PageNotFound-container h1 {
+  font-size: 3.75rem;
+}
+
+.PageNotFound-img {
+  width: 75%;
+  margin-top: 3rem;
+}
+
+.PageNotFound-link {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.PageNotFound-link a {
+  color: black;
+}
+
+@media screen and (max-width: 991px) {
+  .PageNotFound-container h1 {
+    font-size: 2.75rem;
+  }
+}
