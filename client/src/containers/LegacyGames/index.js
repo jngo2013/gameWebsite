@@ -68,7 +68,7 @@ class LegacyGames extends Component {
           
           <Row className="LegacyGames-row">
             {/* ===== Game cards ===== */}
-            {allGames}
+            {allGames.reverse()}
           </Row>
 
         </Container>

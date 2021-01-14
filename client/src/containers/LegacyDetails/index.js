@@ -20,13 +20,20 @@ class LegacyDetails extends Component {
 
     // get game id from url (using react router)
     let gameId = this.props.match.params.id;
+    
     // pass the game id to axios to make the api call
     try {
       // get a response and use response data
       let response = await axios.get(`/api/legacygames/${gameId}`);
-      // set gameData state to be 'response.data'
-      this.setState({ gameData: response.data });
-      console.log(this.state.gameData, "response data line 21!!");
+      
+      // check to see if the game exists...
+      if(response.data !== null) {
+        // ...if it does set gameData state to be 'response.data'
+        this.setState({ gameData: response.data });
+      } else {
+        // ...else push to the '/notfound' route
+        this.props.history.push("/notfound");
+      }
     } catch (err) {
       console.log(err);
     }
