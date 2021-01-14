@@ -1,4 +1,5 @@
 const { Short } = require('./../models');
+var mongoose = require('mongoose');
 
 module.exports = {
   getAllShortTermGames: (req, res) => {
@@ -16,14 +17,34 @@ module.exports = {
     // get the gameId
     let gameId = req.params.id;
     
-    // use the gameId to look through the database for the game
-    Short.findById(gameId)
+    // https://stackoverflow.com/questions/53686554/validate-mongodb-objectid
+    // check to see if the gameId is a valid ObjectId using mongoose
+    var isValid = mongoose.Types.ObjectId.isValid(gameId);
+
+    // https://stackoverflow.com/questions/17223517/mongoose-casterror-cast-to-objectid-failed-for-value-object-object-at-path
+    // check to see if the id is valid...
+    if(isValid) {
+      // if id is valid, run the database query
+      console.log("id is valid!");
+      Short.findById(gameId)
       .then(game => {
-        res.json(game);
+          // ...if it is check to see if the game exists; if it doesn't, return the data with "null"
+          if(!game) {
+            console.log("that game doesn't exist!");
+            res.json(game);
+          } else {
+            // ...else return the game data
+            res.json(game);
+          }   
       })
       .catch(err => {
         console.log(err);
       }); 
+    // if id isn't valid, return with "null"  
+    } else {
+      console.log("id is not valid!");
+      res.json(null);
+    }
   },
   updateShortTermGame: (req, res) => {
     console.log("you reached the updateShortTermGame function!");

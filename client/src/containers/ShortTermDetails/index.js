@@ -23,13 +23,21 @@ class ShortTermDetails extends Component {
 
     // get the id from the url (using react router)
     let gameId = this.props.match.params.id;
+
     // pass the game id to axios to make the api all
     try {
       // get a response and use the response data
       let response = await axios.get(`/api/shorttermgames/${gameId}`);
-      // set gameData state to be 'response.data'
-      this.setState({ gameData: response.data });
-      console.log(this.state.gameData, "in the shortterm details");
+      
+      // check to see if the game doesn't exist...
+      if(response.data !== null) {
+        // ...if it does set gameData state to be 'response.data'
+        this.setState({ gameData: response.data });
+        
+      } else {
+        // ...else push to the '/notfound' route
+        this.props.history.push("/notfound");
+      }
     } catch(err) {
       console.log(err);
     } 
