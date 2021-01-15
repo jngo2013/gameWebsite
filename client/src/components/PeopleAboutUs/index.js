@@ -24,7 +24,7 @@ function People() {
             <h1>Jonathan Grothe</h1>
           </Col>
 
-          <Col className="textCenter People-col2">
+          <Col className="textCenter">
             <p>
               Jonathan is a long running board game enthusiast. Founder of Drunk on Games when taking his top two passions and mixing them together. You'll find him at his local board game club SJ Gamekrackers making sure everyone learns some new games and has a good time. Lives by the motto "Everyone loves board games, most just don't know it yet."
             </p>
@@ -42,7 +42,7 @@ function People() {
           <h1>Albert Lee</h1>
         </Col>
 
-        <Col className="textCenter People-col2">
+        <Col className="textCenter">
           <p>
             The local rules lawyer, co-op advocate, and camera coordinator, I am constantly looking to optimize in both games and recording content. When a specific issue comes up, I'm either asking about it, or...using it to my advantage.
           </p>
@@ -60,7 +60,7 @@ function People() {
           <h1>Gabe Golden</h1>
         </Col>
 
-        <Col className="textCenter People-col2">
+        <Col className="textCenter">
           <p>
             Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or his projects under Passionfruit Education on all social media sites or <a href="https://www.passionfruiteducation.com" target="_blank" rel="noopener noreferrer">PassionfruitEducation.com</a>
           </p>
@@ -71,14 +71,14 @@ function People() {
     <hr></hr>
     <br></br>
 
-    <Container className="People-container">
+    <Container>
       <Row>
         <Col lg={3} className="People-col1">
           <Image className="May" src={May} roundedCircle />
           <h1>Maybeline</h1>
         </Col>
 
-        <Col className="textCenter People-col2">
+        <Col className="textCenter">
           <div>
             <p>Hello! Maybeline here, at your service!</p>
 
