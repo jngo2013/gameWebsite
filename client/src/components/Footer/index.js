@@ -9,7 +9,7 @@ function Footer() {
     <div>
         <Container fluid className="Footer-container">
         <Row className="Footer-row">
-          <Col className="Footer-col"></Col>
+          <Col className="Footer-col1"></Col>
 
           {/* ========== Logo ========== */}
           <Col className="Footer-col" lg={4} md={6} sm={12}>

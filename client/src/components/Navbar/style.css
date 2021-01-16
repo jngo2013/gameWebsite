@@ -1,12 +1,7 @@
-/* .NavbarBG{
-  background-color: red;
-  background-image: url("./images/wood4.jpg");
-  display: flex;
-  height: 60px !important;
-} */
 .aboutUs{
   color: white
 }
+
 .drop{
   display: flex;
   align-items: center;
@@ -38,7 +33,6 @@
 }
 
 .navbar-brand {
-  /* border: 3px solid black; */
   width: 60px !important;
 }
 
@@ -54,6 +48,12 @@
   top: 90%;
 }
 
+#basic-nav-dropdown {
+  /* border: 3px solid black; */
+  margin: auto 1rem;
+}
+
+/* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 991px) {
   .NavbarBG {
     height: auto !important;
@@ -69,5 +69,9 @@
 
   div.dropdown-menu.show {
     margin-bottom: 0.5rem !important;
+  }
+
+  #basic-nav-dropdown {
+    margin: 0;
   }
 }

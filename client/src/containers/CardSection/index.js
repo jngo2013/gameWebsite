@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import BootstrapCard from './../../components/BootstrapCard';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import './CardSection.css';
-
 
 class CardSection extends Component {
   static defaultProps = {
@@ -18,6 +16,7 @@ class CardSection extends Component {
       }
     ]
   }
+
   render() {
     return (
       <Container fluid className="CardSection-container">
@@ -30,7 +29,6 @@ class CardSection extends Component {
 
         </div>
       </Container>
-
     );
   }
 }

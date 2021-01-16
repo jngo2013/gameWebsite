@@ -18,3 +18,15 @@
   height: 500px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 767px) {
+  .Carousel {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Carousel {
+    width: 90% !important;
+  }
+}

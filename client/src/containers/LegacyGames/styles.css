@@ -45,9 +45,16 @@
   margin-left: 1rem;
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 991px) {
   .LegacyGames-container-header {
     font-size: 6rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 802px) {
+  .LegacyGames-container-header {
+    font-size: 4rem;
   }
 }

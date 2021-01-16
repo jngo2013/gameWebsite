@@ -1,24 +1,12 @@
 .JG{
-  border:3px solid black;
-  width: 240px;
-  transform: rotate(-15deg) ;
+  border: 3px solid black;
+  width: 100%;
+  transform: rotate(-15deg);
 }
 
-.AL{
+.AL, .GG, .May {
   border:3px solid black;
-  width: 240px;
-}
-
-.GG{
-  border:3px solid black;
-  width: 240px;
-  height: 300px;
-}
-
-.May{
-  border:3px solid black;
-  width: 240px;
-  height: 300px
+  width: 100%;
 }
 
 .titleCenter{
@@ -29,5 +17,19 @@
   display: flex;
   align-items: center;
   font-size: 20px;
-  /* border:3px solid black; */
+}
+
+.People-col1 {
+  text-align: center;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 991px) {
+  .JG, .AL, .GG, .May {
+    width: 75%;
+  }
+
+  .People-col1 h1 {
+    margin: 2rem auto;
+  }
 }

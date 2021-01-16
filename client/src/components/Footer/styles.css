@@ -64,14 +64,32 @@
 }
 
 /* ===== Media Queries ===== */
-@media screen and (max-width: 767px) {
-  .Footer-logo {
-    width: 45%;
-  }
-}
-
 @media screen and (max-width: 1183px) {
   .Footer-col-fill {
     display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .Footer-col1 {
+    display: none;
+  }
+
+  .Footer-row {
+    display: block;
+  }
+
+  .Footer-col {
+    margin: 2rem auto;
+  }
+
+  .Footer-logo {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Footer-logo {
+    width: 45%;
   }
 }

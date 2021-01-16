@@ -14,3 +14,10 @@
   height: 25vh;
   object-fit: cover;
 }
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 802px) {
+  .KitchenSinkCard {
+    height: 36rem !important;
+  }
+}

@@ -12,7 +12,6 @@ function BootstrapCard(props) {
           <h2 className="BootstrapCard-title">{props.title}</h2>
           <h3 className="BootstrapCard-description">{props.description}</h3>
         </Link>
-        
       </Card>
     </div>
   );
