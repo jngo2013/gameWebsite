@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import AddLegacyModal from './../AddLegacyModal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import './styles.css';
 
@@ -68,7 +67,7 @@ class LegacyGames extends Component {
           
           <Row className="LegacyGames-row">
             {/* ===== Game cards ===== */}
-            {allGames}
+            {allGames.reverse()}
           </Row>
 
         </Container>

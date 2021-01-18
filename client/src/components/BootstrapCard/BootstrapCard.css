@@ -54,3 +54,12 @@
 .BootstrapCard:hover .BootstrapCard-description {
   opacity: 1;
 }
+
+/* ===== Media Queries ===== */
+@media screen and (max-width: 991px) {
+  .BootstrapCard.card {
+    /* border: 5px solid black; */
+    width: 75% !important;
+    margin: 2rem auto;
+  }
+}
