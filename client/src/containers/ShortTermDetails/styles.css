@@ -79,3 +79,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .ShortTermGames-header {
+    font-size: 4rem;
+  }
+}
