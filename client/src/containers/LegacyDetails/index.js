@@ -104,7 +104,7 @@ class LegacyDetails extends Component {
               
               <Card.Body>
                 <Card.Title className="LegacyGames-title">Description</Card.Title>
-                <Card.Text>
+                <Card.Text className="LegacyGames-title-description">
                   {description}
                 </Card.Text>
                 

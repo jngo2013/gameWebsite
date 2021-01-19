@@ -10,7 +10,12 @@
 .LegacyGames-title {
   font-size: 3rem;
 }
-
+.LegacyGames-title-description{
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .LegacyGames-hr {
   height: 1px;
 }

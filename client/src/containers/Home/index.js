@@ -30,7 +30,7 @@ class Home extends Component {
       let carouselDataArr = Object.entries(response.data)[0][1];
 
       this.setState({carouselData: carouselDataArr});
-      console.log(this.state.carouselData, "line 33 in home");
+      console.log(this.state.carouselData)
     } catch (err) {
       console.log(err);
     }

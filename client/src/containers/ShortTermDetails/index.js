@@ -110,7 +110,7 @@ class ShortTermDetails extends Component {
               
               <Card.Body>
                 <Card.Title className="ShortTermGames-title">Description</Card.Title>
-                <Card.Text>
+                <Card.Text className="ShortTermGame-description">
                   {description}
                 </Card.Text>
                 
