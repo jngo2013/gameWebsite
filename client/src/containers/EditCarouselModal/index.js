@@ -79,12 +79,12 @@ class EditCarouselModal extends Component {
               {/* Slide 1 Info */}
               <Form.Group controlId="slide1epi">
                 <h3>Slide 1</h3>
-                <Form.Label>Episode Number</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <Form.Control type="text" name="slide1" value={slide1} onChange={this.handleInputChange}  />
               </Form.Group>
 
               <Form.Group controlId="slide1desc">
-                <Form.Label>Description of the episode</Form.Label>
+                <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" name="slide1desc" value={slide1desc} onChange={this.handleInputChange} rows={3}  />
               </Form.Group>
 
@@ -101,12 +101,12 @@ class EditCarouselModal extends Component {
               {/* Slide 2 Info */}
               <Form.Group controlId="slide2epi">
                 <h3>Slide 2</h3>
-                <Form.Label>Episode Number</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <Form.Control type="text" name="slide2" value={slide2} onChange={this.handleInputChange}  />
               </Form.Group>
   
               <Form.Group controlId="slide2desc">
-                <Form.Label>Description of the episode</Form.Label>
+                <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" name="slide2desc" value={slide2desc} onChange={this.handleInputChange} rows={3}  />
               </Form.Group>
 
@@ -123,12 +123,12 @@ class EditCarouselModal extends Component {
               {/* Slide 3 Info */}
               <Form.Group controlId="slide3epi">
                 <h3>Slide 3</h3>
-                <Form.Label>Episode Number</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <Form.Control type="text" name="slide3" value={slide3} onChange={this.handleInputChange}  />
               </Form.Group>
   
               <Form.Group controlId="slide3desc">
-                <Form.Label>Description of the episode</Form.Label>
+                <Form.Label>Description</Form.Label>
                 <Form.Control as="textarea" name="slide3desc" value={slide3desc} onChange={this.handleInputChange} rows={3} />
               </Form.Group>
 

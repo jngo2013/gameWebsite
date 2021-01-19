@@ -32,7 +32,7 @@ class ControlledCarousel extends Component {
               </a>
               
               <Carousel.Caption>
-                <h3>Episode {slide1}</h3>
+                <h3> {slide1}</h3>
                 <p>{slide1desc}</p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -48,7 +48,7 @@ class ControlledCarousel extends Component {
               </a>
               
               <Carousel.Caption>
-                <h3>Episode {slide2}</h3>
+                <h3> {slide2}</h3>
                 <p>{slide2desc}</p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -64,7 +64,7 @@ class ControlledCarousel extends Component {
               </a>
               
               <Carousel.Caption>
-                <h3>Episode {slide3}</h3>
+                <h3> {slide3}</h3>
                 <p>{slide3desc}</p>
               </Carousel.Caption>
             </Carousel.Item>
