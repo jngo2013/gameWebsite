@@ -20,6 +20,7 @@ class EditCarouselModal extends Component {
 
       // set the carouselData state to be 'response.data'
       this.setState({ carouselData: response.data });
+      console.log(this.state.carouselData, "line 23 in edit carousel")
     } catch (err) {
       console.log(err);
     }
@@ -86,6 +87,18 @@ class EditCarouselModal extends Component {
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Image URL</Form.Label>
+                {/* <p>{this.state.carouselData.slide1}</p> */}
+                <Form.Control type="text" name="slide1src" value={this.state.carouselData.slide1src} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>News Link</Form.Label>
+                {/* <p>{this.state.carouselData.slide1}</p> */}
+                <Form.Control type="text" name="slide1link" value={this.state.carouselData.slide1link} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
                 <h3>Slide 2</h3>
                 <Form.Label>Episode Number</Form.Label>
                 <Form.Control type="text" name="slide2" value={this.state.carouselData.slide2} onChange={this.handleInputChange}  />
@@ -94,6 +107,18 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Description of the episode</Form.Label>
                 <Form.Control as="textarea" name="slide2desc" value={this.state.carouselData.slide2desc} onChange={this.handleInputChange} rows={3}  />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Image URL</Form.Label>
+                {/* <p>{this.state.carouselData.slide1}</p> */}
+                <Form.Control type="text" name="slide2src" value={this.state.carouselData.slide2src} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>News Link</Form.Label>
+                {/* <p>{this.state.carouselData.slide1}</p> */}
+                <Form.Control type="text" name="slide2link" value={this.state.carouselData.slide2link} onChange={this.handleInputChange}  />
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">
@@ -107,6 +132,18 @@ class EditCarouselModal extends Component {
                 <Form.Control as="textarea" name="slide3desc" value={this.state.carouselData.slide3desc} onChange={this.handleInputChange} rows={3} />
               </Form.Group>
             </Form>
+
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label>Image URL</Form.Label>
+              {/* <p>{this.state.carouselData.slide1}</p> */}
+              <Form.Control type="text" name="slide3src" value={this.state.carouselData.slide3src} onChange={this.handleInputChange}  />
+            </Form.Group>
+
+            <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>News Link</Form.Label>
+                {/* <p>{this.state.carouselData.slide1}</p> */}
+                <Form.Control type="text" name="slide3link" value={this.state.carouselData.slide3link} onChange={this.handleInputChange}  />
+              </Form.Group>
 
           </Modal.Body>
           <Modal.Footer>
