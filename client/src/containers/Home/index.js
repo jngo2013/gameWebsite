@@ -25,12 +25,12 @@ class Home extends Component {
     // get data from the database for the carousel
     try {
       let response = await axios.get("/api/eventcarousel/");
-      
+      // console.log(response.data, "line 28 in home");
       // convert response.data into an array
       let carouselDataArr = Object.entries(response.data)[0][1];
 
       this.setState({carouselData: carouselDataArr});
-
+      console.log(this.state.carouselData, "line 33 in home");
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +38,7 @@ class Home extends Component {
   
   render(){
     // get data from this.state.carouselData
-    const { slide1, slide2, slide3, slide1desc, slide2desc, slide3desc, _id } = this.state.carouselData;
+    const { _id, slide1, slide2, slide3, slide1desc, slide2desc, slide3desc, slide1src, slide2src, slide3src, slide1link, slide2link, slide3link } = this.state.carouselData;
 
     return (
       <div>
@@ -54,6 +54,12 @@ class Home extends Component {
           slide1desc={slide1desc}
           slide2desc={slide2desc}
           slide3desc={slide3desc}
+          slide1src={slide1src}
+          slide2src={slide2src}
+          slide3src={slide3src}
+          slide1link={slide1link}
+          slide2link={slide2link}
+          slide3link={slide3link}
         />
 
         {/* if this.state.authenticated is true, show EditCarouselmodal */}
