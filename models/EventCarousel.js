@@ -10,11 +10,27 @@ const EventCarouselSchema = new Schema({
     type: String,
     required: true
   },
+  slide1src: {
+    type: String,
+    required: true
+  },
+  slide1link: {
+    type: String,
+    required: true
+  },
   slide2: {
     type: String,
     required: true
   },
   slide2desc: {
+    type: String,
+    required: true
+  },
+  slide2src: {
+    type: String,
+    required: true
+  },
+  slide2link: {
     type: String,
     required: true
   },
@@ -26,6 +42,14 @@ const EventCarouselSchema = new Schema({
     type: String,
     required: true
   },
+  slide3src: {
+    type: String,
+    required: true
+  },
+  slide3link: {
+    type: String,
+    required: true
+  }
 });
 
 const EventCarousel = mongoose.model('Event', EventCarouselSchema);
