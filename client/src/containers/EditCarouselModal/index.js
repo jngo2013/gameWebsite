@@ -11,15 +11,14 @@ class EditCarouselModal extends Component {
 
   // handleEdit
   handleEdit = async () => {
-    
     let carouselId = this.props._id;
     
     try {
       // make an api call to get the data from the database
-      let response = await axios.get(`/api/eventcarousel/${carouselId}`);
+      let { data } = await axios.get(`/api/eventcarousel/${carouselId}`);
 
       // set the carouselData state to be 'response.data'
-      this.setState({ carouselData: response.data });
+      this.setState({ carouselData: data });
     } catch (err) {
       console.log(err);
     }
@@ -55,6 +54,9 @@ class EditCarouselModal extends Component {
   }
 
   render() {
+    // destructure data from this.state.carouselData
+    const { slide1, slide2, slide3, slide1desc, slide2desc, slide3desc, slide1src, slide2src, slide3src, slide1link, slide2link, slide3link } = this.state.carouselData;
+
     return (
       <>
         {/* Button to show the modal */}
@@ -72,43 +74,76 @@ class EditCarouselModal extends Component {
           </Modal.Header>
           <Modal.Body>
 
+            {/* Form inside modal */}
             <Form>
-              <Form.Group controlId="exampleForm.ControlInput1">
+              {/* Slide 1 Info */}
+              <Form.Group controlId="slide1epi">
                 <h3>Slide 1</h3>
                 <Form.Label>Episode Number</Form.Label>
-                {/* <p>{this.state.carouselData.slide1}</p> */}
-                <Form.Control type="text" name="slide1" value={this.state.carouselData.slide1} onChange={this.handleInputChange}  />
-              </Form.Group>
-  
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Description of the episode</Form.Label>
-                <Form.Control as="textarea" name="slide1desc" value={this.state.carouselData.slide1desc} onChange={this.handleInputChange} rows={3}  />
+                <Form.Control type="text" name="slide1" value={slide1} onChange={this.handleInputChange}  />
               </Form.Group>
 
-              <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group controlId="slide1desc">
+                <Form.Label>Description of the episode</Form.Label>
+                <Form.Control as="textarea" name="slide1desc" value={slide1desc} onChange={this.handleInputChange} rows={3}  />
+              </Form.Group>
+
+              <Form.Group controlId="slide1img">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control type="text" name="slide1src" value={slide1src} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              <Form.Group controlId="slide1link">
+                <Form.Label>News Link</Form.Label>
+                <Form.Control type="text" name="slide1link" value={slide1link} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              {/* Slide 2 Info */}
+              <Form.Group controlId="slide2epi">
                 <h3>Slide 2</h3>
                 <Form.Label>Episode Number</Form.Label>
-                <Form.Control type="text" name="slide2" value={this.state.carouselData.slide2} onChange={this.handleInputChange}  />
+                <Form.Control type="text" name="slide2" value={slide2} onChange={this.handleInputChange}  />
               </Form.Group>
   
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Group controlId="slide2desc">
                 <Form.Label>Description of the episode</Form.Label>
-                <Form.Control as="textarea" name="slide2desc" value={this.state.carouselData.slide2desc} onChange={this.handleInputChange} rows={3}  />
+                <Form.Control as="textarea" name="slide2desc" value={slide2desc} onChange={this.handleInputChange} rows={3}  />
               </Form.Group>
 
-              <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Group controlId="slide2img">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control type="text" name="slide2src" value={slide2src} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              <Form.Group controlId="slide2link">
+                <Form.Label>News Link</Form.Label>
+                <Form.Control type="text" name="slide2link" value={slide2link} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              {/* Slide 3 Info */}
+              <Form.Group controlId="slide3epi">
                 <h3>Slide 3</h3>
                 <Form.Label>Episode Number</Form.Label>
-                <Form.Control type="text" name="slide3" value={this.state.carouselData.slide3} onChange={this.handleInputChange}  />
+                <Form.Control type="text" name="slide3" value={slide3} onChange={this.handleInputChange}  />
               </Form.Group>
   
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Group controlId="slide3desc">
                 <Form.Label>Description of the episode</Form.Label>
-                <Form.Control as="textarea" name="slide3desc" value={this.state.carouselData.slide3desc} onChange={this.handleInputChange} rows={3} />
+                <Form.Control as="textarea" name="slide3desc" value={slide3desc} onChange={this.handleInputChange} rows={3} />
+              </Form.Group>
+
+              <Form.Group controlId="slide3img">
+                <Form.Label>Image URL</Form.Label>
+                <Form.Control type="text" name="slide3src" value={slide3src} onChange={this.handleInputChange}  />
+              </Form.Group>
+
+              <Form.Group controlId="slide3link">
+                <Form.Label>News Link</Form.Label>
+                <Form.Control type="text" name="slide3link" value={slide3link} onChange={this.handleInputChange}  />
               </Form.Group>
             </Form>
-
           </Modal.Body>
+          
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
               Close

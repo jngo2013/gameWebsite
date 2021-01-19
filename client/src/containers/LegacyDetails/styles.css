@@ -80,3 +80,8 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .LegacyGames-header {
+    font-size: 4rem;
+  }
+}
