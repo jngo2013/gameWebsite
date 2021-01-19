@@ -22,9 +22,8 @@ class ControlledCarousel extends Component {
       <Container fluid className="Container">
         <Carousel className="Carousel" activeIndex={this.state.index} onSelect={this.handleSelect}>
           {/* Slide 1 */}
-          
             <Carousel.Item>
-              <a href={slide1link}>
+              <a href={slide1link} target="_blank" rel="noopener noreferrer">
                 <img
                   className="d-block w-100"
                   src={slide1src}
@@ -32,18 +31,15 @@ class ControlledCarousel extends Component {
                 />
               </a>
               
-            
               <Carousel.Caption>
                 <h3>Episode {slide1}</h3>
                 <p>{slide1desc}</p>
               </Carousel.Caption>
             </Carousel.Item>
           
-
           {/* Slide 2 */}
-          
             <Carousel.Item>
-              <a href={slide2link}>
+              <a href={slide2link} target="_blank" rel="noopener noreferrer">
                 <img
                   className="d-block w-100"
                   src={slide2src}
@@ -57,12 +53,9 @@ class ControlledCarousel extends Component {
               </Carousel.Caption>
             </Carousel.Item>
           
-          
-
           {/* Slide 3 */}
-          
             <Carousel.Item>
-              <a href={slide3link}>
+              <a href={slide3link} target="_blank" rel="noopener noreferrer">
                 <img
                   className="d-block w-100"
                   src={slide3src}
@@ -76,8 +69,6 @@ class ControlledCarousel extends Component {
               </Carousel.Caption>
             </Carousel.Item>
           
-          
-
           </Carousel>
       </Container>
     );
