@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavDropdown, Nav, Form, Navbar, Image } from 'react-bootstrap';
 import "./style.css";
-import SearchBar from "../SearchBar/index";
+import SearchBar from "./../../containers/SearchBar";
 import sample2 from "./images/sample2.jpg";
 import { Link } from "react-router-dom";
 

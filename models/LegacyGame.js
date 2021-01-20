@@ -32,6 +32,9 @@ const LegacyGameSchema = new Schema({
   },
 });
 
+// Full text search using MongoDB and mongoose:  https://stackoverflow.com/questions/28775051/best-way-to-perform-a-full-text-search-in-mongodb-and-mongoose
+LegacyGameSchema.index({"$**": "text"});
+
 const Legacy = mongoose.model('Legacy', LegacyGameSchema);
 
 module.exports = Legacy;
