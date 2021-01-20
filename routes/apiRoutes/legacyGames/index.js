@@ -19,7 +19,7 @@ router.route("/:id")
   .put(updateLegacyGame)
   .delete(deleteLegacyGame)
 
-// route reached here: "/api/legacygames/:game"
+// route reached here: "/api/legacygames/search/:game"
 router.get("/search/:game", findLegacyGames);
 
 module.exports = router;

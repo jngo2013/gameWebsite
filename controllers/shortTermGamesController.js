@@ -96,4 +96,18 @@ module.exports = {
         console.log(err);
       });
   },
+  findShortTermGames: (req, res) => {
+    console.log("you reached the findShortTermGames function!");
+
+    // Full text search using MongoDB and mongoose:  https://stackoverflow.com/questions/28775051/best-way-to-perform-a-full-text-search-in-mongodb-and-mongoose
+    // search the database for that game
+    Short.find({ $text: {$search: req.params.game} })
+      .then(game => {
+        res.json(game);
+        console.log(game);
+      })
+      .catch(err => {
+        console.log(err);
+      }); 
+  }
 }
