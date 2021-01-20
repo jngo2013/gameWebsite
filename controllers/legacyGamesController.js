@@ -96,4 +96,18 @@ module.exports = {
         console.log(err);
       });
   },
+  findLegacyGames: (req, res) => {
+    console.log("you reached the search game route!");
+    
+    // Full text search using MongoDB and mongoose:  https://stackoverflow.com/questions/28775051/best-way-to-perform-a-full-text-search-in-mongodb-and-mongoose
+    // search the database for that game
+    Legacy.find({ $text: {$search: req.params.game}})
+      .then(game => {
+        res.json(game);
+        console.log(game);
+      })
+      .catch(err => {
+        console.log(err);
+      }); 
+  },
 }

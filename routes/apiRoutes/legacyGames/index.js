@@ -4,10 +4,10 @@ const router = require("express").Router();
 const { response } = require("express");
 
 // functions from the LegacyGamesController
-const { getAllLegacyGames, getOneLegacyGame, updateLegacyGame, deleteLegacyGame, addLegacyGame } = require('./../../../controllers/legacyGamesController');
+const { getAllLegacyGames, getOneLegacyGame, updateLegacyGame, deleteLegacyGame, addLegacyGame, findLegacyGames } = require('./../../../controllers/legacyGamesController');
 
 // route reached here: "/api/legacygames/"
-router.get("/", getAllLegacyGames);
+// router.get("/", getAllLegacyGames);
 
 router.route("/")
   .get(getAllLegacyGames)
@@ -18,5 +18,8 @@ router.route("/:id")
   .get(getOneLegacyGame)
   .put(updateLegacyGame)
   .delete(deleteLegacyGame)
+
+// route reached here: "/api/legacygames/search/:game"
+router.get("/search/:game", findLegacyGames);
 
 module.exports = router;

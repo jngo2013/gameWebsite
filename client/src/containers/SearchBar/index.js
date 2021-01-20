@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
+import axios from 'axios';
 import './styles.css';
 
 class SearchBox extends Component {
@@ -8,12 +9,22 @@ class SearchBox extends Component {
   }
   
   handleInputChange = events => {
-    this.setState({searchInput:events.target.value})
+    this.setState({ searchInput: events.target.value })
   }
 
-  handleSubmit = events => {
+  handleSubmit = async events => {
     events.preventDefault();
-    alert(this.state.searchInput)
+    
+    let searchInput = this.state.searchInput;
+
+    // send the inquiry to the backend (GET request to "/api/legacygames/search/:id")
+    // search legacy games
+    // let response = await axios.get(`/api/legacygames/search/${searchInput}`);
+    // console.log(response.data);
+
+    // search shortterm games
+    let res = await axios.get(`/api/shorttermgames/search/${searchInput}`);
+    console.log(res.data, "line 27 in searchbox");
   }
 
   render() {
