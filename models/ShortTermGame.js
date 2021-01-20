@@ -32,6 +32,9 @@ const ShortTermGameSchema = new Schema({
   }
 });
 
+// Full text search using MongoDB and mongoose:  https://stackoverflow.com/questions/28775051/best-way-to-perform-a-full-text-search-in-mongodb-and-mongoose
+ShortTermGameSchema.index({"$**": "text"});
+
 const Short = mongoose.model('Short', ShortTermGameSchema);
 
 module.exports = Short;
