@@ -1,14 +1,10 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import { Image, Container, Row, Col } from 'react-bootstrap';
 import JG from "./images/JG.jpg";
 import AL from "./images/AL.jpg";
 import GG from "./images/GG.jpg";
 import May from "./images/May3.jpg";
-import "./style.css"
-
+import "./style.css";
 
 function People() {
   return (
@@ -17,6 +13,8 @@ function People() {
       <hr></hr>
       <br></br>
       <br></br>
+
+      {/* ===== JONATHAN GROTHE =====  */}
       <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
@@ -32,71 +30,73 @@ function People() {
         </Row>
       </Container>
     
-    <hr></hr>
-    <br></br>
+      <hr></hr>
+      <br></br>
     
-    <Container className="People-container">
-      <Row>
-        <Col lg={3} className="People-col1">
-          <Image className="AL" src={AL} roundedCircle />
-          <h1>Albert Lee</h1>
-        </Col>
+      {/* ===== ALBERT LEE =====  */}
+      <Container className="People-container">
+        <Row>
+          <Col lg={3} className="People-col1">
+            <Image className="AL" src={AL} roundedCircle />
+            <h1>Albert Lee</h1>
+          </Col>
 
-        <Col className="textCenter">
-          <p>
-            The local rules lawyer, co-op advocate, and camera coordinator, I am constantly looking to optimize in both games and recording content. When a specific issue comes up, I'm either asking about it, or...using it to my advantage.
-          </p>
-        </Col>
-      </Row>
-    </Container>
-    
-    <hr></hr>
-    <br></br>
-
-    <Container className="People-container">
-      <Row>
-        <Col lg={3} className="People-col1">
-          <Image className="GG" src={GG} roundedCircle />
-          <h1>Gabe Golden</h1>
-        </Col>
-
-        <Col className="textCenter">
-          <p>
-            Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or his projects under Passionfruit Education on all social media sites or <a href="https://www.passionfruiteducation.com" target="_blank" rel="noopener noreferrer">PassionfruitEducation.com</a>
-          </p>
-        </Col>
-      </Row>
-    </Container>
-    
-    <hr></hr>
-    <br></br>
-
-    <Container>
-      <Row>
-        <Col lg={3} className="People-col1">
-          <Image className="May" src={May} roundedCircle />
-          <h1>Maybeline</h1>
-        </Col>
-
-        <Col className="textCenter">
-          <div>
-            <p>Hello! Maybeline here, at your service!</p>
-
+          <Col className="textCenter">
             <p>
-              I love the board game world! There is something wonderful about sitting around a table with people and a game in front of us that brings closer connections with one other. An extra bonus is when there are drinking rules (alcoholic beverages and non-alcoholic beverages). My strategy when playing a strategic game (whether it is co-op or not) is to be in my own world and analyze other player's moves. I'll be that "quiet player" that does their own thing and everyone forgets about and ends up winning the game. It works like a charm (most of the time).
+              The local rules lawyer, co-op advocate, and camera coordinator, I am constantly looking to optimize in both games and recording content. When a specific issue comes up, I'm either asking about it, or...using it to my advantage.
             </p>
+          </Col>
+        </Row>
+      </Container>
+    
+      <hr></hr>
+      <br></br>
 
+      {/* ===== GABE GOLDEN ===== */}
+      <Container className="People-container">
+        <Row>
+          <Col lg={3} className="People-col1">
+            <Image className="GG" src={GG} roundedCircle />
+            <h1>Gabe Golden</h1>
+          </Col>
+
+          <Col className="textCenter">
             <p>
-              I spend most of my time behind the scene for Drunk on Games as a video editor providing great content for the viewers. So if you see me in a video, comment on that video a cherry blossom flower "🌸" emoji!
+              Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or his projects under Passionfruit Education on all social media sites or <a href="https://www.passionfruiteducation.com" target="_blank" rel="noopener noreferrer">PassionfruitEducation.com</a>
             </p>
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </Container>
     
-    </Container>
+      <hr></hr>
+      <br></br>
+
+      {/* ===== MAYBELINE ===== */}
+      <Container>
+        <Row>
+          <Col lg={3} className="People-col1">
+            <Image className="May" src={May} roundedCircle />
+            <h1>Maybeline</h1>
+          </Col>
+
+          <Col className="textCenter">
+            <div>
+              <p>Hello! Maybeline here, at your service!</p>
+
+              <p>
+                I love the board game world! There is something wonderful about sitting around a table with people and a game in front of us that brings closer connections with one other. An extra bonus is when there are drinking rules (alcoholic beverages and non-alcoholic beverages). My strategy when playing a strategic game (whether it is co-op or not) is to be in my own world and analyze other player's moves. I'll be that "quiet player" that does their own thing and everyone forgets about and ends up winning the game. It works like a charm (most of the time).
+              </p>
+
+              <p>
+                I spend most of my time behind the scene for Drunk on Games as a video editor providing great content for the viewers. So if you see me in a video, comment on that video a cherry blossom flower "🌸" emoji!
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     
-    <hr></hr>
-    <br></br>
+      <hr></hr>
+      <br></br>
     </div>
   );
 }
