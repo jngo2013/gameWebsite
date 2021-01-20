@@ -3,6 +3,12 @@
   width: 100% !important;
 }
 
+.ShortTermGame-description{
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .ShortTermGames-header {
   font-size: 6rem;
 }
