@@ -27,12 +27,12 @@ class ShortTermDetails extends Component {
     // pass the game id to axios to make the api all
     try {
       // get a response and use the response data
-      let response = await axios.get(`/api/shorttermgames/${gameId}`);
+      let { data } = await axios.get(`/api/shorttermgames/${gameId}`);
       
       // check to see if the game doesn't exist...
-      if(response.data !== null) {
+      if(data !== null) {
         // ...if it does set gameData state to be 'response.data'
-        this.setState({ gameData: response.data });
+        this.setState({ gameData: data });
         
       } else {
         // ...else push to the '/notfound' route
@@ -46,7 +46,6 @@ class ShortTermDetails extends Component {
   // function for the child component to pass data to this component so it can rerender
   passDataToParent = (childData) => {
     this.setState({ gameData: childData });
-    console.log(this.state.gameData, "line 33");
   }
 
   // function for the child component to get the new route so the parent can redirect
@@ -97,6 +96,7 @@ class ShortTermDetails extends Component {
                   </div>
                 </Col>
 
+                {/* ===== IMAGE =====  */}
                 <Col id="ShortTermGames-col2" lg>
                   <Card.Img 
                     variant="top" 
@@ -108,6 +108,7 @@ class ShortTermDetails extends Component {
                 
               </Row>
               
+              {/* ===== DESCRIPTION ===== */}
               <Card.Body>
                 <Card.Title className="ShortTermGames-title">Description</Card.Title>
                 <Card.Text className="ShortTermGame-description">
@@ -136,8 +137,6 @@ class ShortTermDetails extends Component {
                   :
                   null
                 }
-                
-                
               </Card.Body>
             </Card>
           </Container>

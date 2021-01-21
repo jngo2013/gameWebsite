@@ -49,7 +49,7 @@ class AddShortModal extends Component {
     }
 
     // change validated to "true" after checking the form
-    this.setState({validated: true});
+    this.setState({ validated: true });
   }
 
   // function to submit data to the database
@@ -63,8 +63,7 @@ class AddShortModal extends Component {
     // send the data (from 'this.state.gameData') to the backend and get a response
     try {
       const { data } = await axios.post("/api/shorttermgames/", this.state.gameData);
-      console.log(data);
-      this.setState({gameData: data});
+      this.setState({ gameData: data });
     } catch (err) {
       console.log(err);
     }

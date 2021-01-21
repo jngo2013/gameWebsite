@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import AddShortModal from './../AddShortModal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import './styles.css';
 
@@ -21,9 +20,9 @@ class ShortTermGames extends Component {
 
     try {
       // when "/api/shorttermgames/" is hit, you'll get a response from the database, which is then saved to the "response" variable.
-      let response = await axios.get("/api/shorttermgames/");
+      let { data } = await axios.get("/api/shorttermgames/");
       // set the "shortTermGameData" state to be the data from the response
-      this.setState({ shortTermGameData : response.data });
+      this.setState({ shortTermGameData : data });
     } catch (err) {
       console.log(err, "line 21");
     }
@@ -33,10 +32,9 @@ class ShortTermGames extends Component {
 
   // ===== FUNCTIONS =====
   const allGames = this.state.shortTermGameData.map(game => 
-    // <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
     <a href={`/ShortTermGames/${game._id}`} target="_blank" rel="noopener noreferrer" className="LegacyGames-card">
       <KitchenSinkCard 
-        src={game.src}  // <--- for the image
+        src={game.src}
         name={game.title}
         description={game.description}
         players={game.players}
@@ -65,27 +63,10 @@ class ShortTermGames extends Component {
             {/* ===== Game cards ===== */}
             {allGames.reverse()}
           </Row>
-          
         </Container>
-        
-        
       </div>
     );
   }
 }
 
 export default ShortTermGames;
-
-// ========== NOTES ==========
-//  INFORMATION FOR THE KITCHENSINKCARD
-  //     <KitchenSinkCard 
-        // src={game.src}
-        // name={game.name}
-        // description={game.description}
-        // players={game.players}
-        // time={game.time}
-        // realRulesLink={game.realRulesLink}
-        // drunkRulesLink={game.drunkRulesLink}
-  //     /> 
-  //   </a>
-  // );
