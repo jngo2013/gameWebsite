@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import axios from 'axios';
+import { Link } from "react-router-dom";
+// import axios from 'axios';
 import './styles.css';
 
 class SearchBox extends Component {
   state = {
     searchInput: "",
+    searchGameData: [],
   }
   
   handleInputChange = events => {
@@ -19,12 +21,18 @@ class SearchBox extends Component {
 
     // send the inquiry to the backend (GET request to "/api/legacygames/search/:id")
     // search legacy games
-    let response = await axios.get(`/api/legacygames/search/${searchInput}`);
-    console.log(response.data);
+
 
     // search shortterm games
-    let res = await axios.get(`/api/shorttermgames/search/${searchInput}`);
-    console.log(res.data, "line 27 in searchbox");
+    
+    // try{
+    //   let res = await axios.get(`/api/shorttermgames/search/${searchInput}`);
+    //   this.setState ({ searchGameData : res.data });
+    //   console.log(res.data, "line 27 in searchbox");
+    // } catch (err){
+    //   console.log(err, 'line 16')
+    // }
+    
   }
 
   render() {
@@ -39,7 +47,7 @@ class SearchBox extends Component {
             onChange={this.handleInputChange}
           />
           
-          <Button variant="outline-warning" type="submit" className="search-btn"><span>Search</span></Button>
+          <Button variant="outline-warning" type="submit" className="search-btn"><Link to ={`/search/${this.state.searchInput}`}><span>Search</span></Link></Button>
         </form>
       </div>
     );
