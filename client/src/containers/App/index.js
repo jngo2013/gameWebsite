@@ -19,7 +19,8 @@ import "./style.css";
 
 class App extends Component {
   state = {
-    authenticated : false
+    authenticated : false,
+    searchResults: "",
   }
   
   componentDidMount(){
@@ -27,7 +28,7 @@ class App extends Component {
       this.setState({authenticated : true})
     } 
   }
-  
+
   render() {
     
     return (
@@ -35,7 +36,7 @@ class App extends Component {
         <Container fluid className="background">
           <Router>
             <ScrollToTop />
-            <NavBar authenticated ={this.state.authenticated} />
+            <NavBar authenticated={this.state.authenticated} passToSearch={this.passToSearch} />
 
             <Switch>
               <Route exact path="/" component={Home} />
@@ -48,14 +49,13 @@ class App extends Component {
               <Route exact path="/SignIn" component={SignIn} />
               <Route exact path='/SignOut' component={SignOut} />
               <Route exact path="/notfound" component={GameNotFound} />
-              <Route exact path="/search" component={Search}/>
+              <Route exact path="/search/:searchinput" component={Search} />
               <Route component={PageNotFound} />
             </Switch>
             
             <Footer />
           </Router>
         </Container>
-
       </div>
     );
   }
