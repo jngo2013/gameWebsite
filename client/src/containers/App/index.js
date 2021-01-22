@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import NavBar from './../../components/Navbar'
+import NavBar from './../../components/Navbar';
 import ScrollToTop from './../../components/ScrollToTop';
 import LegacyGames from './../../containers/LegacyGames';
 import ShortTermGames from './../../containers/ShortTermGames';
 import ShortTermDetails from './../ShortTermDetails';
 import LegacyDetails from './../LegacyDetails';
 import SignIn from './../SignIn';
-import SignOut from './../SignOut'
+import SignOut from './../SignOut';
 import GameNotFound from './../../components/GameNotFound';
 import PageNotFound from './../../components/PageNotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -14,12 +14,10 @@ import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
 import Home from "../Home";
 import AboutUs from '../AboutUs';
-import "./style.css"
-
-
+import "./style.css";
 
 class App extends Component {
-  state ={
+  state = {
     authenticated : false
   }
   
@@ -36,7 +34,7 @@ class App extends Component {
         <Container fluid className="background">
           <Router>
             <ScrollToTop />
-            <NavBar authenticated ={this.state.authenticated}/>
+            <NavBar authenticated ={this.state.authenticated} />
 
             <Switch>
               <Route exact path="/" component={Home} />
@@ -45,8 +43,8 @@ class App extends Component {
               <Route exact path="/ShortTermGames" component={ShortTermGames} />
               <Route exact path="/ShortTermGames/:id" component={ShortTermDetails} />
               <Route exact path="/LegacyGames/:id" component={LegacyDetails} />
-              <Route exact path="/SignIn" component={SignIn}/>
-              <Route exact path='/SignOut' component={SignOut}/>
+              <Route exact path="/SignIn" component={SignIn} />
+              <Route exact path='/SignOut' component={SignOut} />
               <Route exact path="/notfound" component={GameNotFound} />
               <Route component={PageNotFound} />
             </Switch>
@@ -56,7 +54,7 @@ class App extends Component {
         </Container>
 
       </div>
-    )
+    );
   }
 }
 

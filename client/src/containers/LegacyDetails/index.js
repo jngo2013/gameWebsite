@@ -24,12 +24,12 @@ class LegacyDetails extends Component {
     // pass the game id to axios to make the api call
     try {
       // get a response and use response data
-      let response = await axios.get(`/api/legacygames/${gameId}`);
+      let { data } = await axios.get(`/api/legacygames/${gameId}`);
       
       // check to see if the game exists...
-      if(response.data !== null) {
+      if(data !== null) {
         // ...if it does set gameData state to be 'response.data'
-        this.setState({ gameData: response.data });
+        this.setState({ gameData: data });
       } else {
         // ...else push to the '/notfound' route
         this.props.history.push("/notfound");
@@ -92,6 +92,7 @@ class LegacyDetails extends Component {
                   </div>  
                 </Col>
                 
+                {/* ===== IMAGE ===== */}
                 <Col id="LegacyGames-col2" lg>
                   <Card.Img 
                     variant="top" 
@@ -102,6 +103,7 @@ class LegacyDetails extends Component {
                 </Col>
               </Row>
               
+              {/* ===== DESCRIPTION ===== */}
               <Card.Body>
                 <Card.Title className="LegacyGames-title">Description</Card.Title>
                 <Card.Text className="LegacyGames-title-description">
@@ -110,6 +112,7 @@ class LegacyDetails extends Component {
                 
                 <hr className="LegacyGames-hr" />
 
+                {/* ===== DRUNK RULES ===== */}
                 <Card.Title className="LegacyGames-title">Drunk Rules</Card.Title>
                 <Card.Text className="LegacyGames-drunk">
                     <div className="LegacyGames-drunkRules">{drunkRules}</div>

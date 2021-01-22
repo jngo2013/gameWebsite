@@ -67,6 +67,7 @@
   text-align: left;
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 991px) {
   .LegacyGames-col1-div {
     padding: 1rem;

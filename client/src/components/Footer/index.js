@@ -11,7 +11,7 @@ function Footer() {
         <Row className="Footer-row">
           <Col className="Footer-col1"></Col>
 
-          {/* ========== Logo ========== */}
+          {/* ===== LOGO ===== */}
           <Col className="Footer-col" lg={4} md={6} sm={12}>
             <Link to="/">
               <Image
@@ -22,7 +22,7 @@ function Footer() {
             </Link>
           </Col>
 
-          {/* ========== Icons ========== */}
+          {/* ===== ICONS ===== */}
           <Col className="Footer-col" lg={4} md={6} sm={12}>
             <div className="Footer-text">
               <h4>Social Media</h4>
