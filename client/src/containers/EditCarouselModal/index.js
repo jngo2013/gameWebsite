@@ -25,10 +25,12 @@ class EditCarouselModal extends Component {
     this.handleShow();
   }
 
+  // function to show modal
   handleShow = () => {
     this.setState({ show: true });
   }
 
+  // function to close modal
   handleClose = () => {
     this.setState({ show: false });
   }
@@ -66,7 +68,6 @@ class EditCarouselModal extends Component {
           </Button>
         </Container>
         
-
         {/* The actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

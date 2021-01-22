@@ -19,8 +19,8 @@ class SearchBox extends Component {
 
     // send the inquiry to the backend (GET request to "/api/legacygames/search/:id")
     // search legacy games
-    // let response = await axios.get(`/api/legacygames/search/${searchInput}`);
-    // console.log(response.data);
+    let response = await axios.get(`/api/legacygames/search/${searchInput}`);
+    console.log(response.data);
 
     // search shortterm games
     let res = await axios.get(`/api/shorttermgames/search/${searchInput}`);

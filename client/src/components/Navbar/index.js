@@ -6,7 +6,7 @@ import sample2 from "./images/sample2.jpg";
 import { Link } from "react-router-dom";
 
 function NavBar(props) {
-  console.log(props.authenticated)
+  
   return (
       <Navbar bg="dark" expand="lg" className="NavbarBG">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -15,10 +15,14 @@ function NavBar(props) {
             <Nav.Link href="/"><Image src={sample2} className="navbar-brand" roundedCircle></Image></Nav.Link>
             
             <Link className="aboutUs"to="/AboutUs">About Us</Link>
+
+            {/* ===== DROPDOWN MENU ===== */}
             <NavDropdown title="Games" id="basic-nav-dropdown">
               <Link className="drop" to="/LegacyGames">LegacyGames</Link>
               <Link className="drop" to="/ShortTermGames">BoardGames</Link>
             </NavDropdown>
+
+            {/* if 'props.authenticated' is 'true', show the 'Sign Out' link, otherwise display nothing */}
             { props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
           </Nav>
           <Form inline>
@@ -31,24 +35,3 @@ function NavBar(props) {
 }
 
 export default NavBar;
-
-
-// export default (props) => (
-      // ===== ORIGINAL NAVBAR ===== 
-      // <Navbar bg="dark"  className="NavbarBG" expand="lg">
-      //   <Navbar.Toggle  aria-controls="basic-navbar-nav" />
-      //   <Navbar.Collapse id="basic-navbar-nav">
-      //     <Nav className="mr-auto">
-      //       <Nav.Link href="/"><Image   src={sample2} className="navbar-brand" roundedCircle></Image></Nav.Link>
-      //       <Nav.Link href="AboutUs" className="navPadding" >About Us</Nav.Link>
-      //       <NavDropdown title="Games" id="basic-nav-dropdown"  className="navPadding">
-      //         <NavDropdown.Item href="/LegacyGames">Legacy</NavDropdown.Item>
-      //         <NavDropdown.Item href="/ShortTermGames">Board Games</NavDropdown.Item>
-      //       </NavDropdown>
-      //       { props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
-      //     </Nav>
-      //     <Form inline>
-      //       <SearchBar />
-      //     </Form>
-      //   </Navbar.Collapse>
-      // </Navbar>

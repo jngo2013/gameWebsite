@@ -49,7 +49,7 @@ class AddLegacyModal extends Component {
     }
 
     // change validated to "true" after checking the form
-    this.setState({validated: true});
+    this.setState({ validated: true });
   }
 
   // function to submit data to the database
@@ -63,8 +63,7 @@ class AddLegacyModal extends Component {
     // send the data to the backend and get a response
     try {
       const { data } = await axios.post("/api/legacygames/", this.state.gameData);
-      console.log(data);
-      this.setState({gameData: data});
+      this.setState({ gameData: data });
     } catch (err) {
       console.log(err);
     }
@@ -79,7 +78,6 @@ class AddLegacyModal extends Component {
     this.refreshPage();
   }
 
-  
   render() {
     return (
       <>
@@ -90,7 +88,6 @@ class AddLegacyModal extends Component {
           </Button>
         </div>
         
-
         {/* This is the actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>
 
@@ -142,7 +139,6 @@ class AddLegacyModal extends Component {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Please provide a link to the real rules.</Form.Control.Feedback>
               </Form.Group>
-
               
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Drunk Rules</Form.Label>

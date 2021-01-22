@@ -22,7 +22,6 @@ class EditModal extends Component {
       let response = await axios.get(`${apiRoute}${gameId}`);
       // set the gameData to be 'response.data'
       this.setState({ gameData: response.data });
-      console.log(response.data, "line 25 in edit modal")
     } catch (err) {
       console.log(err);
     }
@@ -49,7 +48,6 @@ class EditModal extends Component {
     let apiRoute = this.props.apiRoute;
 
     // send the data to the backend and get a response
-    // let { data } = await axios.put(`/api/legacygames/${this.state.gameData._id}`, { gameData: this.state.gameData });
     let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, { gameData: this.state.gameData });
 
     // change the state of the gameData to be the response after updating the database
@@ -74,9 +72,7 @@ class EditModal extends Component {
     
     try {
       // send the request to the backend
-      // let response = axios.delete(`/api/legacygames/${gameId}`);
       let response = axios.delete(`${apiRoute}${gameId}`);
-      console.log("Game that got deleted: " + response.data);
 
       // Alert user they deleted a game
       alert("You successfully deleted the game!");
@@ -173,8 +169,6 @@ class EditModal extends Component {
             </Modal.Footer>
           </Form>
         </Modal>
-
-        
       </>
     );
   }

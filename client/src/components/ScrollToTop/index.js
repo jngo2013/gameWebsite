@@ -1,6 +1,5 @@
 // have link open page at the top
 // https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition
-
 import { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
