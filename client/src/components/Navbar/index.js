@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavDropdown, Nav, Form, Navbar, Image } from 'react-bootstrap';
 import "./style.css";
 import SearchBar from "./../../containers/SearchBar";
 import sample2 from "./images/sample2.jpg";
 import { Link } from "react-router-dom";
 
-function NavBar(props) {
-  
-  return (
+
+class NavBar extends Component {
+  state = {
+    searchResults: "",
+  }
+
+  render() {
+    return (
       <Navbar bg="dark" expand="lg" className="NavbarBG">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -23,15 +28,15 @@ function NavBar(props) {
             </NavDropdown>
 
             {/* if 'props.authenticated' is 'true', show the 'Sign Out' link, otherwise display nothing */}
-            { props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
+            { this.props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
           </Nav>
           <Form inline>
             <SearchBar />
           </Form>
         </Navbar.Collapse>
       </Navbar>
-
-  );
+    )
+  }
 }
 
 export default NavBar;
