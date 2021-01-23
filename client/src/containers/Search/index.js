@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
+import GameNotFound from './../../components/GameNotFound';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -36,6 +37,7 @@ class Search extends Component {
 
       // set searchResults state to be allResults
       this.setState({ allResults: allResults });
+      // console.log(this.state.allResults, "line 39000")
     } catch (err) {
       console.log(err);
     }
@@ -61,7 +63,16 @@ class Search extends Component {
       <div>
         <Container>
           <Row>
-            {allSearchResults}
+            {/* if results are found, show 'allSearchResults'; else show GameNotFound component */}
+            {
+              this.state.allResults.length !== 0
+              ?
+              allSearchResults
+              :
+              <GameNotFound 
+                notFound={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}
+              />
+            }
           </Row>
         </Container>
       </div>
