@@ -7,7 +7,7 @@ class CardSection extends Component {
   static defaultProps = {
     info: [
       {
-        title: "Legacy Games",
+        title: "Campaign Games",
         description:  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
@@ -33,7 +33,7 @@ class CardSection extends Component {
               page="ShortTermGames" 
               title={this.props.info[1].title} 
               description={this.props.info[1].description}
-              src="https://images.unsplash.com/photo-1530328411047-7063dbd29029?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2551&q=80"
+              src="https://images.unsplash.com/photo-1563941402622-4e7a488bcc57?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
             />
           </Row>
 

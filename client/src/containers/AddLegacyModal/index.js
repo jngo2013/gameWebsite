@@ -84,7 +84,7 @@ class AddLegacyModal extends Component {
         {/* Button to activate the modal */}
         <div>
           <Button variant="dark" size="sm" onClick={this.handleShow}>
-            Add a Legacy Game
+            Add a Campaign Game
           </Button>
         </div>
         
@@ -93,7 +93,7 @@ class AddLegacyModal extends Component {
 
           <Form noValidate validated={this.state.validated} onSubmit={this.handleOnSubmit}>
             <Modal.Header closeButton>
-              <Modal.Title>Add a Legacy Game!</Modal.Title>
+              <Modal.Title>Add a Campaign Game!</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
