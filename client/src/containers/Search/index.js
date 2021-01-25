@@ -65,17 +65,6 @@ class Search extends Component {
       <div>
         <Container>
           <Row>
-            {/* if results are found, show 'allSearchResults'; else show GameNotFound component */}
-            {/* {
-
-              this.state.allResults.length !== 0
-              ?
-              allSearchResults
-              :
-              <GameNotFound 
-                notFound={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}
-              />
-            } */}
             {
               this.state.isLoaded
               ?
@@ -97,5 +86,3 @@ class Search extends Component {
 }
 
 export default Search;
-
-// let jimmy know of a loading screen!!
