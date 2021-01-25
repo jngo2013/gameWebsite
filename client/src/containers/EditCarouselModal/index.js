@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Button, Modal, Form, Container } from 'react-bootstrap';
-import './styles.css';
+// import './styles.css';
 
 class EditCarouselModal extends Component {
   state = {
@@ -46,8 +46,12 @@ class EditCarouselModal extends Component {
     let { data } = await axios.put("/api/eventcarousel", { carouselData: this.state.carouselData });
 
     // send updated data to parent for rerendering of the carousel
-    this.props.passDataToParent(data);
 
+    // if you're on the 'secret page' don't run this function; otherwise run it
+    if(!this.props.onSecret) {
+      this.props.passDataToParent(data);
+    }
+    
     // alert user they successfully edited
     alert("Edits saved!");
 
@@ -62,11 +66,11 @@ class EditCarouselModal extends Component {
     return (
       <>
         {/* Button to show the modal */}
-        <Container className="EditCarouselModal-container">
+        {/* <Container className="EditCarouselModal-container"> */}
           <Button variant="info" className="EditCarouselModal-button" onClick={this.handleEdit}>
             Edit Slides
           </Button>
-        </Container>
+        {/* </Container> */}
         
         {/* The actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>

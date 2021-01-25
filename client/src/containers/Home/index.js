@@ -30,7 +30,7 @@ class Home extends Component {
       let carouselDataArr = Object.entries(response.data)[0][1];
 
       this.setState({carouselData: carouselDataArr});
-      console.log(this.state.carouselData)
+      console.log(this.state.carouselData, "this is the carousel's data")
     } catch (err) {
       console.log(err);
     }
@@ -60,15 +60,18 @@ class Home extends Component {
           slide1link={slide1link}
           slide2link={slide2link}
           slide3link={slide3link}
+          _id={_id}
+          passDataToParent={this.passDataToParent}
         />
 
+        {/* When authentication is working properly, uncomment this out */}
         {/* if this.state.authenticated is true, show EditCarouselmodal */}
-        { this.state.authenticated
+        {/* { this.state.authenticated
           ?
           <EditCarouselModal passDataToParent={this.passDataToParent} _id={_id}/>
           :
           null
-        }
+        } */}
         
         <CardSection />
       </div>
