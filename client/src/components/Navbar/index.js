@@ -23,7 +23,7 @@ class NavBar extends Component {
 
             {/* ===== DROPDOWN MENU ===== */}
             <NavDropdown title="Games" id="basic-nav-dropdown">
-              <Link className="drop" to="/LegacyGames">LegacyGames</Link>
+              <Link className="drop" to="/LegacyGames">CampaignGames</Link>
               <Link className="drop" to="/ShortTermGames">BoardGames</Link>
             </NavDropdown>
 

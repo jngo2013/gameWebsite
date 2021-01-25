@@ -54,13 +54,13 @@ class LegacyGames extends Component {
           { this.state.authenticated 
             ?
             <Row className="LegacyGames-container-header-row">   
-              <h1 className="LegacyGames-container-header">Legacy Games</h1>
+              <h1 className="LegacyGames-container-header">Campaign Games</h1>
               <div className="LegacyGames-break"></div>
               <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
             </Row>
             :
             <Row className="LegacyGames-container-header-row">
-              <h1 className="LegacyGames-container-header">Legacy Games</h1>
+              <h1 className="LegacyGames-container-header">Campaign Games</h1>
             </Row>
           }     
           
