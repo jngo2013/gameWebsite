@@ -48,7 +48,7 @@ class App extends Component {
               <Route exact path="/LegacyGames/:id" component={LegacyDetails} />
               <Route exact path="/SignIn" component={SignIn} />
               <Route exact path='/SignOut' component={SignOut} />
-              <Route exact path="/notfound" component={GameNotFound} />
+              <Route exact path="/notfound" render={() => <GameNotFound notFound="Sorry!  But that game doesn't exist." />} />
               <Route exact path="/search/:searchinput" component={Search} />
               <Route component={PageNotFound} />
             </Switch>
