@@ -54,7 +54,6 @@ class App extends Component {
               <Route exact path="/search/:searchinput" component={Search} />
               <Route component={PageNotFound} />
             </Switch>
-            
             <Footer />
           </Router>
         </Container>
