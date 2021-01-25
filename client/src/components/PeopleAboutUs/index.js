@@ -38,7 +38,7 @@ function People() {
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="AL" src={AL} roundedCircle />
-            <h1>Albert Lee</h1>
+            <h1>Albert Le</h1>
           </Col>
 
           <Col className="textCenter">
