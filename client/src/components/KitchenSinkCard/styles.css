@@ -12,6 +12,17 @@
   height: 50%;
 }
 
+.list-group-item {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list-group-divider {
+  /* border: 3px solid black; */
+  transform: scale(1, 2);
+}
+
+
 /* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 802px) {
   .KitchenSinkCard {

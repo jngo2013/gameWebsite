@@ -99,7 +99,7 @@ class EditModal extends Component {
   render() {
 
     // get game data from the state
-    const { src, title, description, players, time, realRules, drunkRules } = this.state.gameData;
+    const { src, title, description, players, time, realRules, drunkRules, drunkRating } = this.state.gameData;
 
     return (
       <>
@@ -139,6 +139,11 @@ class EditModal extends Component {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Time</Form.Label>
                 <Form.Control type="text" name="time" value={time} onChange={this.handleInputChange}/>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Drunk Rating</Form.Label>
+                <Form.Control type="text" name="drunkRating" value={drunkRating} onChange={this.handleInputChange}/>
               </Form.Group>
 
               <Form.Group controlId="formBasicEmail">

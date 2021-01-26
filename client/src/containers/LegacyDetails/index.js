@@ -51,7 +51,7 @@ class LegacyDetails extends Component {
 
   render() {
     // get data from the state
-    const { _id, src, title, description, players, time, realRules, drunkRules } = this.state.gameData;
+    const { _id, src, title, description, players, time, realRules, drunkRules, drunkRating } = this.state.gameData;
     
     return (
 
@@ -82,10 +82,19 @@ class LegacyDetails extends Component {
                   <hr />
 
                   <div className="LegacyGames-col1-div">
-                    <div>
+                    <div className="LegacyGames-col1-div-box">
                       <Card.Title className="LegacyGames-title">Time</Card.Title>
                       <Card.Text>
                         {time} min.
+                      </Card.Text>
+                    </div>
+
+                    <div className="divider"></div>
+
+                    <div className="LegacyGames-col1-div-box">
+                      <Card.Title className="LegacyGames-title">Drunk Rating</Card.Title>
+                      <Card.Text>
+                        {drunkRating}%
                       </Card.Text>
                     </div>
                     

@@ -26,8 +26,13 @@ function KitchenSinkCard(props) {
         </Card.Body>
 
         <ListGroup className="list-group-flush">
-          <ListGroupItem><i class="fas fa-user-friends"></i> {props.players}</ListGroupItem>
-          <ListGroupItem><i class="fas fa-clock"></i> {props.time}</ListGroupItem>
+          <ListGroupItem class="list-group-item">
+            <span><i class="fas fa-user-friends"></i> {props.players}</span>
+            <span className="list-group-divider">|</span>
+            <span className="list-group-time"><i class="fas fa-clock"></i> {props.time}</span>
+            <span className="list-group-divider">|</span>
+            <span><i class="fas fa-beer"></i> {props.drunkRating}%</span>
+          </ListGroupItem>
         </ListGroup>
 
       </Card>
