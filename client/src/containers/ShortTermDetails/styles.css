@@ -52,7 +52,7 @@
 .ShortTermGames-details-img {
   width: 100%;
   height: 35vh;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 /* https://stackoverflow.com/questions/30593103/preserve-line-breaks-in-textarea */
