@@ -25,7 +25,7 @@ function Footer() {
           {/* ===== ICONS ===== */}
           <Col className="Footer-col" lg={4} md={6} sm={12}>
             <div className="Footer-text">
-              <h4>Social Media</h4>
+              <h4 className="H4Text">Social Media</h4>
               <ul className="Footer-ul">
                 <div>
                   <Row className="Footer-icon-row">
