@@ -43,8 +43,8 @@ class LegacyGames extends Component {
         description={game.description}
         players={game.players}
         time={game.time}
-        realRulesLink={game.realRulesLink}
-        drunkRulesLink={game.drunkRulesLink}
+        // realRulesLink={game.realRulesLink}
+        // drunkRulesLink={game.drunkRulesLink}
         drunkRating={game.drunkRating}
       />
     </a>

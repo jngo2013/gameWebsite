@@ -14,6 +14,7 @@ class AddShortModal extends Component {
       realRules: "",
       drunkRules: "",
       src: "",
+      drunkRating: "",
     },
     validated: false,
   }
@@ -129,6 +130,13 @@ class AddShortModal extends Component {
                 <Form.Control required type="text" placeholder="90" name="time" onChange={this.handleInputChange}/>
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Fill out the time.</Form.Control.Feedback>
+              </Form.Group>
+
+              <Form.Group controlId="exampleForm.ControlInput1">
+                <Form.Label>Drunk Rating (%)</Form.Label>
+                <Form.Control required type="text" placeholder="90" name="drunkRating" onChange={this.handleInputChange}/>
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">Fill out the drunk rating.</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">

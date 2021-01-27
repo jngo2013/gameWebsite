@@ -14,7 +14,8 @@
 }
 
 .ShortTermGames-title {
-  font-size: 3rem;
+  /* font-size: 3rem; */
+  font-size: 2.5rem;
 }
 
 .ShortTermGames-hr {
@@ -47,6 +48,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ShortTermGames-col1-div-box {
+  width: 50%;
+}
+
+.divider {
+  border: 1px solid #E5E5E5;
+  height: 100%;
 }
 
 .ShortTermGames-details-img {

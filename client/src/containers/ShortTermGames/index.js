@@ -39,6 +39,7 @@ class ShortTermGames extends Component {
         description={game.description}
         players={game.players}
         time={game.time}
+        drunkRating={game.drunkRating}
       />
     </a>
   );

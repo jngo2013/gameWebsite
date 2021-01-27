@@ -29,6 +29,10 @@ const ShortTermGameSchema = new Schema({
   src: {
     type: String,
     required: true,
+  },
+  drunkRating: {
+    type: String,
+    required: true,
   }
 });
 
