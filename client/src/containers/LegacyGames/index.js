@@ -22,6 +22,7 @@ class LegacyGames extends Component {
     try {
       // when "/api/legacygames/" is hit, you'll get a response from the database, which is then saved to the "response" variable.
       let response = await axios.get("/api/legacygames/");
+      console.log(response.data, "line 25 in legacy games")
       // set the "legacyGameData" state to be the data from the response
       this.setState({ legacyGameData: response.data });
     } catch (err) {
@@ -42,8 +43,9 @@ class LegacyGames extends Component {
         description={game.description}
         players={game.players}
         time={game.time}
-        realRulesLink={game.realRulesLink}
-        drunkRulesLink={game.drunkRulesLink}
+        // realRulesLink={game.realRulesLink}
+        // drunkRulesLink={game.drunkRulesLink}
+        drunkRating={game.drunkRating}
       />
     </a>
   );

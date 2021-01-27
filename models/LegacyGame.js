@@ -30,6 +30,10 @@ const LegacyGameSchema = new Schema({
     type: String,
     required: true,
   },
+  drunkRating: {
+    type: String,
+    required: true,
+  }
 });
 
 // Full text search using MongoDB and mongoose:  https://stackoverflow.com/questions/28775051/best-way-to-perform-a-full-text-search-in-mongodb-and-mongoose

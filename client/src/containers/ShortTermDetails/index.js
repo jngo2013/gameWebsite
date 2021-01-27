@@ -55,7 +55,7 @@ class ShortTermDetails extends Component {
 
   render() {
     // get info from gameData state
-    const { _id, description, drunkRules, title, players, realRules, src, time } = this.state.gameData;
+    const { _id, description, drunkRules, title, players, realRules, src, time, drunkRating } = this.state.gameData;
 
     return (
 
@@ -87,12 +87,22 @@ class ShortTermDetails extends Component {
                   <hr/>
 
                   <div className="ShortTermGames-col1-div">
-                    <div>
+                    <div className="ShortTermGames-col1-div-box">
                       <Card.Title className="ShortTermGames-title">Time</Card.Title>
                       <Card.Text>
                         {time} min.
                       </Card.Text>
                     </div>
+
+                    <div className="divider"></div>
+
+                    <div className="ShortTermGames-col1-div-box">
+                      <Card.Title className="ShortTermGames-title">Drunk Rating</Card.Title>
+                      <Card.Text>
+                        {drunkRating}%
+                      </Card.Text>
+                    </div>
+
                   </div>
                 </Col>
 
