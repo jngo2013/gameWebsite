@@ -9,6 +9,7 @@ class ShortTermDetails extends Component {
     gameData: "",
     redirect: false,
     authenticated: false,
+    isLoaded: false,
     // authenticated: true,
   }
 
@@ -32,7 +33,7 @@ class ShortTermDetails extends Component {
       // check to see if the game doesn't exist...
       if(data !== null) {
         // ...if it does set gameData state to be 'response.data'
-        this.setState({ gameData: data });
+        this.setState({ gameData: data, isLoaded: true });
         
       } else {
         // ...else push to the '/notfound' route
@@ -61,95 +62,102 @@ class ShortTermDetails extends Component {
 
       <div>
         {
-          // if this.state.redirect is "true"...
-          this.state.redirect
+          // if this.state.isLoaded is true (after data has been retrieved), run the next ternary; otherwise show the loader
+          this.state.isLoaded
           ?
-          // ...then go to "/ShortTermGames/" route...
-          this.props.history.push("/ShortTermGames")
+            // ===== FOR DELETING A GAME =====
+            // if this.state.redirect is "true"...
+            this.state.redirect
+            ?
+            // ...then go to "/ShortTermGames/" route...
+            this.props.history.push("/ShortTermGames")
+            :
+            // ...otherwise, display the game info
+            <Container>
+              <Card className="ShortTermGames-details text-center">
+                <Card.Header className="ShortTermGames-header">{title}</Card.Header>
+                
+                <Row className="ShortTermGames-row1">
+                  <Col className="ShortTermGames-col1" lg>
+                    <div className="ShortTermGames-col1-div">
+                      <div>
+                        <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
+                        
+                        <Card.Text >
+                          {players} player(s)
+                        </Card.Text>
+                      </div> 
+                    </div>
+
+                    <hr/>
+
+                    <div className="ShortTermGames-col1-div">
+                      <div className="ShortTermGames-col1-div-box">
+                        <Card.Title className="ShortTermGames-title">Time</Card.Title>
+                        <Card.Text>
+                          {time} min.
+                        </Card.Text>
+                      </div>
+
+                      <div className="divider"></div>
+
+                      <div className="ShortTermGames-col1-div-box">
+                        <Card.Title className="ShortTermGames-title">Drunk Rating</Card.Title>
+                        <Card.Text>
+                          {drunkRating}%
+                        </Card.Text>
+                      </div>
+
+                    </div>
+                  </Col>
+
+                  {/* ===== IMAGE =====  */}
+                  <Col id="ShortTermGames-col2" lg>
+                    <Card.Img 
+                      variant="top" 
+                      src={src}
+                      alt="board game"
+                      className="ShortTermGames-details-img"
+                    />
+                  </Col>
+                  
+                </Row>
+                
+                {/* ===== DESCRIPTION ===== */}
+                <Card.Body>
+                  <Card.Title className="ShortTermGames-title">Description</Card.Title>
+                  <Card.Text className="ShortTermGame-description">
+                    {description}
+                  </Card.Text>
+                  
+                  <hr className="ShortTermGames-hr" />
+
+                  <Card.Title className="ShortTermGames-title">Drunk Rules</Card.Title>
+                  <Card.Text className="ShortTermGames-drunk">
+                    <div className="ShortTermGames-drunkRules">{drunkRules}</div>
+                  </Card.Text>
+
+                  <hr className="ShortTermGames-hr" />
+                  
+                  <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="ShortTermGames-real">Real Rules</Button></a>
+                  
+                  { this.state.authenticated
+                    ?
+                    <EditModal
+                      id={_id}
+                      passDataToParent={this.passDataToParent}
+                      redirect={this.redirect}
+                      apiRoute="/api/shorttermgames/"
+                    />
+                    :
+                    null
+                  }
+                </Card.Body>
+              </Card>
+            </Container>
           :
-          // otherwise, display the game info
-          <Container>
-            <Card className="ShortTermGames-details text-center">
-              <Card.Header className="ShortTermGames-header">{title}</Card.Header>
-              
-              <Row className="ShortTermGames-row1">
-                <Col className="ShortTermGames-col1" lg>
-                  <div className="ShortTermGames-col1-div">
-                    <div>
-                      <Card.Title className="ShortTermGames-title">Number of Players</Card.Title>
-                      
-                      <Card.Text >
-                        {players} player(s)
-                      </Card.Text>
-                    </div> 
-                  </div>
-
-                  <hr/>
-
-                  <div className="ShortTermGames-col1-div">
-                    <div className="ShortTermGames-col1-div-box">
-                      <Card.Title className="ShortTermGames-title">Time</Card.Title>
-                      <Card.Text>
-                        {time} min.
-                      </Card.Text>
-                    </div>
-
-                    <div className="divider"></div>
-
-                    <div className="ShortTermGames-col1-div-box">
-                      <Card.Title className="ShortTermGames-title">Drunk Rating</Card.Title>
-                      <Card.Text>
-                        {drunkRating}%
-                      </Card.Text>
-                    </div>
-
-                  </div>
-                </Col>
-
-                {/* ===== IMAGE =====  */}
-                <Col id="ShortTermGames-col2" lg>
-                  <Card.Img 
-                    variant="top" 
-                    src={src}
-                    alt="board game"
-                    className="ShortTermGames-details-img"
-                  />
-                </Col>
-                
-              </Row>
-              
-              {/* ===== DESCRIPTION ===== */}
-              <Card.Body>
-                <Card.Title className="ShortTermGames-title">Description</Card.Title>
-                <Card.Text className="ShortTermGame-description">
-                  {description}
-                </Card.Text>
-                
-                <hr className="ShortTermGames-hr" />
-
-                <Card.Title className="ShortTermGames-title">Drunk Rules</Card.Title>
-                <Card.Text className="ShortTermGames-drunk">
-                  <div className="ShortTermGames-drunkRules">{drunkRules}</div>
-                </Card.Text>
-
-                <hr className="ShortTermGames-hr" />
-                
-                <a href={realRules} target="_blank" rel="noopener noreferrer"><Button variant="primary" className="ShortTermGames-real">Real Rules</Button></a>
-                
-                { this.state.authenticated
-                  ?
-                  <EditModal
-                    id={_id}
-                    passDataToParent={this.passDataToParent}
-                    redirect={this.redirect}
-                    apiRoute="/api/shorttermgames/"
-                  />
-                  :
-                  null
-                }
-              </Card.Body>
-            </Card>
-          </Container>
+          // loader
+          <h1>loading...</h1>
         }
       </div>  
     );

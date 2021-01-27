@@ -9,6 +9,7 @@ class LegacyDetails extends Component {
     gameData: "",
     redirect: false,
     authenticated: false,
+    isLoaded: false,
     // authenticated: true,
   }
 
@@ -29,7 +30,7 @@ class LegacyDetails extends Component {
       // check to see if the game exists...
       if(data !== null) {
         // ...if it does set gameData state to be 'response.data'
-        this.setState({ gameData: data });
+        this.setState({ gameData: data, isLoaded: true });
       } else {
         // ...else push to the '/notfound' route
         this.props.history.push("/notfound");
@@ -57,94 +58,101 @@ class LegacyDetails extends Component {
 
       <div>
         {
-          // if this.state.redirect is "true"...
-          this.state.redirect
-          ? 
-          // ...then go to "/LegacyGames/" route...
-          this.props.history.push("/LegacyGames/")
-          :
-          // otherwise, display the game info
-          <Container>
-            <Card className="LegacyGames-details text-center">
-              <Card.Header className="LegacyGames-header">{title}</Card.Header>
-              <Row className="LegacyGames-row1">
-                
-                <Col className="LegacyGames-col1" lg>
-                  <div className="LegacyGames-col1-div">
-                    <div>
-                      <Card.Title className="LegacyGames-title">Number of Players</Card.Title>
-                      <Card.Text>
-                        {players} player(s)
-                      </Card.Text>
-                    </div>
-                  </div>
+          // if this.state.isLoaded is true (after data has been retrieved), run the next ternary; otherwise show the loader
+          this.state.isLoaded
+          ?
+            // ===== FOR DELETING A GAME =====
+            // if this.state.redirect is "true"...
+            this.state.redirect
+            ? 
+            // ...then go to "/LegacyGames/" route...
+            this.props.history.push("/LegacyGames/")
+            :
+            // ...otherwise, display the game info
+            <Container>
+              <Card className="LegacyGames-details text-center">
+                <Card.Header className="LegacyGames-header">{title}</Card.Header>
+                <Row className="LegacyGames-row1">
                   
-                  <hr />
-
-                  <div className="LegacyGames-col1-div">
-                    <div className="LegacyGames-col1-div-box">
-                      <Card.Title className="LegacyGames-title">Time</Card.Title>
-                      <Card.Text>
-                        {time} min.
-                      </Card.Text>
-                    </div>
-
-                    <div className="divider"></div>
-
-                    <div className="LegacyGames-col1-div-box">
-                      <Card.Title className="LegacyGames-title">Drunk Rating</Card.Title>
-                      <Card.Text>
-                        {drunkRating}%
-                      </Card.Text>
+                  <Col className="LegacyGames-col1" lg>
+                    <div className="LegacyGames-col1-div">
+                      <div>
+                        <Card.Title className="LegacyGames-title">Number of Players</Card.Title>
+                        <Card.Text>
+                          {players} player(s)
+                        </Card.Text>
+                      </div>
                     </div>
                     
-                  </div>  
-                </Col>
-                
-                {/* ===== IMAGE ===== */}
-                <Col id="LegacyGames-col2" lg>
-                  <Card.Img 
-                    variant="top" 
-                    src={src}
-                    alt="board game" 
-                    className="LegacyGames-details-img"
-                  />
-                </Col>
-              </Row>
-              
-              {/* ===== DESCRIPTION ===== */}
-              <Card.Body>
-                <Card.Title className="LegacyGames-title">Description</Card.Title>
-                <Card.Text className="LegacyGames-title-description">
-                  {description}
-                </Card.Text>
-                
-                <hr className="LegacyGames-hr" />
+                    <hr />
 
-                {/* ===== DRUNK RULES ===== */}
-                <Card.Title className="LegacyGames-title">Drunk Rules</Card.Title>
-                <Card.Text className="LegacyGames-drunk">
-                    <div className="LegacyGames-drunkRules">{drunkRules}</div>
-                </Card.Text>
+                    <div className="LegacyGames-col1-div">
+                      <div className="LegacyGames-col1-div-box">
+                        <Card.Title className="LegacyGames-title">Time</Card.Title>
+                        <Card.Text>
+                          {time} min.
+                        </Card.Text>
+                      </div>
 
-                <hr className="LegacyGames-hr" />
+                      <div className="divider"></div>
+
+                      <div className="LegacyGames-col1-div-box">
+                        <Card.Title className="LegacyGames-title">Drunk Rating</Card.Title>
+                        <Card.Text>
+                          {drunkRating}%
+                        </Card.Text>
+                      </div>
+                      
+                    </div>  
+                  </Col>
+                  
+                  {/* ===== IMAGE ===== */}
+                  <Col id="LegacyGames-col2" lg>
+                    <Card.Img 
+                      variant="top" 
+                      src={src}
+                      alt="board game" 
+                      className="LegacyGames-details-img"
+                    />
+                  </Col>
+                </Row>
                 
-                <a href={realRules} target="_blank" rel="noopener noreferrer"><Button className="LegacyGames-real">Real Rules</Button></a>
-                
-                { this.state.authenticated
-                  ?
-                  <EditModal
-                    id={_id}
-                    passDataToParent={this.passDataToParent}
-                    redirect={this.redirect}
-                    apiRoute="/api/legacygames/"
-                  />
-                  :
-                  null
-                }   
-              </Card.Body>
-            </Card>
-          </Container>
+                {/* ===== DESCRIPTION ===== */}
+                <Card.Body>
+                  <Card.Title className="LegacyGames-title">Description</Card.Title>
+                  <Card.Text className="LegacyGames-title-description">
+                    {description}
+                  </Card.Text>
+                  
+                  <hr className="LegacyGames-hr" />
+
+                  {/* ===== DRUNK RULES ===== */}
+                  <Card.Title className="LegacyGames-title">Drunk Rules</Card.Title>
+                  <Card.Text className="LegacyGames-drunk">
+                      <div className="LegacyGames-drunkRules">{drunkRules}</div>
+                  </Card.Text>
+
+                  <hr className="LegacyGames-hr" />
+                  
+                  <a href={realRules} target="_blank" rel="noopener noreferrer"><Button className="LegacyGames-real">Real Rules</Button></a>
+                  
+                  { this.state.authenticated
+                    ?
+                    <EditModal
+                      id={_id}
+                      passDataToParent={this.passDataToParent}
+                      redirect={this.redirect}
+                      apiRoute="/api/legacygames/"
+                    />
+                    :
+                    null
+                  }   
+                </Card.Body>
+              </Card>
+            </Container>
+          :
+          // loader
+          <h1>loading...</h1>
         }  
       </div>
     );
