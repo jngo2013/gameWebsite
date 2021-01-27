@@ -62,7 +62,7 @@ function People() {
 
           <Col className="textCenter">
             <p>
-              Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or his projects under Passionfruit Education on all social media sites or <a href="https://www.passionfruiteducation.com" target="_blank" rel="noopener noreferrer">PassionfruitEducation.com</a>
+              Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or <a href="https://www.instagram.com/PassionfruitEducation/" target="_blank" rel="noopener noreferrer">PassionfruitEducation</a>
             </p>
           </Col>
         </Row>

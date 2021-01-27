@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+   
 }
 
 /* https://tobiasahlin.com/blog/flexbox-break-to-new-row/ */
@@ -27,6 +28,7 @@
 .LegacyGames-container-header {
   font-size: 6rem;
   padding-bottom: 1rem;
+  font-family: Helvetica, sans-serif; 
 }
 
 .LegacyGames-card {
@@ -49,6 +51,8 @@
   .LegacyGames-container-header {
     font-size: 6rem;
     text-align: center;
+       
+
   }
 }
 
