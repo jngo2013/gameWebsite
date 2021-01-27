@@ -23,11 +23,11 @@ class CardSection extends Component {
         <div>
 
           <Row className="CardSection-row">
-            <BootstrapCard 
+            <BootstrapCard
               page="LegacyGames" 
               title={this.props.info[0].title} 
               description={this.props.info[0].description}
-              src="https://images.unsplash.com/photo-1563941402622-4e7a488bcc57?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5LUZtYd7aw_ZWC1ktmMhPV3jEc0nJwZVcg&usqp=CAU"
             />
             <BootstrapCard 
               page="ShortTermGames" 
