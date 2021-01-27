@@ -37,7 +37,7 @@ class Search extends Component {
         allResults.push(searchResult);
       }
 
-      // set searchResults state to be allResults
+      // set searchResults state to be allResults; after getting data from the database set "isLoaded" to be "true"
       this.setState({ allResults: allResults, isLoaded: true });
       // console.log(this.state.allResults, "line 39000")
     } catch (err) {
@@ -66,16 +66,21 @@ class Search extends Component {
         <Container>
           <Row>
             {
+              // if this.state.isLoaded is true (after checking the database), run the next ternary; otherwise show the loader
               this.state.isLoaded
               ?
+                // if there are results...
                 this.state.allResults.length !== 0
                 ?
+                // ...show all the results...
                 allSearchResults
                 :
+                // ...else show game not found
                 <GameNotFound 
                   notFound={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}
                 />
               :
+              // loader
               <h1>loading....</h1>
             }
           </Row>
