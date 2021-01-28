@@ -29,6 +29,7 @@ class SignIn extends Component {
   }
     catch (e) {
       console.log("it was not submitted correctly handle submit");
+      console.log(e)
     }
   };
 
