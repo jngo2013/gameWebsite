@@ -12,24 +12,26 @@ class SignIn extends Component {
     this.setState({
       password:events.target.value,
     })
-  } ;
+  };
+
   handleEmailChange = events => {
     this.setState({
       email:events.target.value,
     })
   };
+
   handleSubmit = async (events) =>{
     events.preventDefault();
-    try{
+    try {
       const { data } = await axios.post("/api/auth/signin", this.state);
-    console.log(data, "this is the data");
-    localStorage.setItem("token", data.token);
-    this.props.history.push('/')
-    window.location.reload()
-  }
+      console.log(data, "this is the data");
+      localStorage.setItem("token", data.token);
+      this.props.history.push('/');
+      window.location.reload();
+    }
     catch (e) {
       console.log("it was not submitted correctly handle submit");
-      console.log(e)
+      console.log(e);
     }
   };
 
@@ -53,6 +55,6 @@ class SignIn extends Component {
     </Form>
     )
   }
-  
 };
+
 export default SignIn;
