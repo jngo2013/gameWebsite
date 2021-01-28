@@ -80,7 +80,7 @@ class ControlledCarousel extends Component {
         </Container>
 
         {/* Edit modal button on homepage */}
-        {/* <EditCarouselModal passDataToParent={passDataToParent} _id={_id} /> */}
+        <EditCarouselModal passDataToParent={passDataToParent} _id={_id} />
       </div>
     );
   }
