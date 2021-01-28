@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
-  secret: "asdfdfjslfjdsjfeihjkfhkjdhkjewhrkjwehrkjwehrkjwehrjkhffdkjhvkjahkjewhrkjwhrj"
+  secret: process.env.DB_secret
 }
