@@ -50,9 +50,10 @@ class App extends Component {
               <Route exact path="/SignIn" component={SignIn} />
               <Route exact path='/SignOut' component={SignOut} />
               <Route exact path='/secretpage' component={SecretPage} />
-              <Route exact path="/notfound" render={() => <GameNotFound notFound="Sorry!  But that game doesn't exist." />} />
+              <Route exact path="/notfound" render={() => <PageNotFound message="Sorry!  That game doesn't exist." />} />
               <Route exact path="/search/:searchinput" component={Search} />
-              <Route component={PageNotFound} />
+              {/* <Route component={PageNotFound} /> */}
+              <Route render={() => <PageNotFound message="Sorry! That page doesn't exist."/>} />
             </Switch>
             <Footer />
           </Router>

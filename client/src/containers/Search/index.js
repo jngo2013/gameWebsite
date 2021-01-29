@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import GameNotFound from './../../components/GameNotFound';
+import PageNotFound from './../../components/PageNotFound';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 
@@ -76,9 +77,10 @@ class Search extends Component {
                 allSearchResults
                 :
                 // ...else show game not found
-                <GameNotFound 
-                  notFound={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}
-                />
+                // <GameNotFound 
+                //   notFound={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}
+                // />
+                <PageNotFound message={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}/>
               :
               // loader
               <h1>loading....</h1>
