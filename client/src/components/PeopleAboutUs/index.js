@@ -4,6 +4,7 @@ import JG from "./images/JG.jpg";
 import AL from "./images/AL.jpg";
 import GG from "./images/GG.jpg";
 import May from "./images/May3.jpg";
+import R from "./images/R.png"
 import "./style.css";
 
 function People() {
@@ -94,7 +95,24 @@ function People() {
           </Col>
         </Row>
       </Container>
-    
+
+      <hr></hr>
+      <br></br>
+      <Container className="People-container">
+        <Row>
+          <Col lg={3} className="People-col1">
+            <Image className="GG" src={R} roundedCircle />
+            <h1>Ryan</h1>
+          </Col>
+
+          <Col className="textCenter">
+            <p>
+            Starting his obsession with Collectible Card Games and the Super Nintendo in his youth, Ryan has always had a love for all things gaming. A veteran MMO, RPG and strategy PC gamer; he re-found his love of board games in recent years. Today he is excited for the emerging renaissance of the board games industry and the many games it will be offering up. Let's play!
+            </p>
+          </Col>
+        </Row>
+      </Container>
+
       <hr></hr>
       <br></br>
     </div>
