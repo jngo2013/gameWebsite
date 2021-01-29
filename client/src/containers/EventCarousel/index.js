@@ -17,7 +17,7 @@ class ControlledCarousel extends Component {
 
   render() {
     // get data from props
-    console.log(this.props, "line 20 in event caorusel")
+    // console.log(this.props, "line 20 in event caorusel")
     const { slide1, slide2, slide3, slide1desc, slide2desc, slide3desc, slide1src, slide2src, slide3src, slide1link, slide2link, slide3link, _id, passDataToParent } = this.props;
 
     return (
