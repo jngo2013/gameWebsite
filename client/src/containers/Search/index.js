@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
-import GameNotFound from './../../components/GameNotFound';
 import PageNotFound from './../../components/PageNotFound';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
+import './styles.css';
 
 class Search extends Component {
   state = {
@@ -48,7 +48,6 @@ class Search extends Component {
 
 
   render(){
-
     // for every result make a KitchenSinkCard
     const allSearchResults = this.state.allResults.map(result => 
       <KitchenSinkCard 
@@ -64,8 +63,8 @@ class Search extends Component {
 
     return (
       <div>
-        <Container>
-          <Row>
+        {/* <Container fluid> */}
+          {/* <Row className="Search-row"> */}
             {
               // if this.state.isLoaded is true (after checking the database), run the next ternary; otherwise show the loader
               this.state.isLoaded
@@ -74,19 +73,23 @@ class Search extends Component {
                 this.state.allResults.length !== 0
                 ?
                 // ...show all the results...
-                allSearchResults
+                <Container fluid>
+                <div><h1>Search Results</h1></div>
+                <Row className="Search-row">
+                  
+                  {allSearchResults}
+                </Row>
+                </Container>
+                
                 :
-                // ...else show game not found
-                // <GameNotFound 
-                //   notFound={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}
-                // />
+                // ...else show PageNotFound
                 <PageNotFound message={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}/>
               :
               // loader
               <h1>loading....</h1>
             }
-          </Row>
-        </Container>
+          {/* </Row> */}
+        {/* </Container> */}
       </div>
     );
   }

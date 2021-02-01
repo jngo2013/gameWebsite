@@ -8,7 +8,6 @@ import LegacyDetails from './../LegacyDetails';
 import SignIn from './../SignIn';
 import SignOut from './../SignOut';
 import Search from './../Search';
-import GameNotFound from './../../components/GameNotFound';
 import PageNotFound from './../../components/PageNotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from './../../components/Footer';
