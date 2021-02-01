@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
-import axios from "axios"
+import PageNotFound from './../../components/PageNotFound';
+import axios from "axios";
 
 class SignIn extends Component {
   state = {
     email: "",
     password: "",
+    isUser: true,
   }
    
   handlePasswordChange = events => {
@@ -32,28 +34,35 @@ class SignIn extends Component {
     catch (e) {
       console.log("it was not submitted correctly handle submit");
       console.log(e);
+      this.setState({isUser: false});
     }
   };
 
-  
   render() {
-    const { email, password } = this.state 
-    return(
-      <Form >
-      <Form.Group controlId="formBasicEmail" onChange={this.handleEmailChange}>
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email"  value={email} />
-      </Form.Group>
+    const { email, password, isUser } = this.state ;
     
-      <Form.Group controlId="formBasicPassword" onChange={this.handlePasswordChange}>
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" value={password}/>
-      </Form.Group>
-      <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-        Submit
-      </Button>
-    </Form>
-    )
+    if(isUser) {
+      return (
+        <Form >
+          <Form.Group controlId="formBasicEmail" onChange={this.handleEmailChange}>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email"  value={email} />
+          </Form.Group>
+        
+          <Form.Group controlId="formBasicPassword" onChange={this.handlePasswordChange}>
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" value={password}/>
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+            Submit
+          </Button>
+        </Form>
+      );
+    } else {
+      return (
+        <PageNotFound message="Sorry! That user doesn't exist." />
+      );
+    } 
   }
 };
 
