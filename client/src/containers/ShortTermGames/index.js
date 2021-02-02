@@ -45,7 +45,7 @@ class ShortTermGames extends Component {
   );
 
     return (
-      <div>
+      <div className="ShortTermGames-BG">
         <Container fluid className="ShortTermGames-container">
           { this.state.authenticated
             ?

@@ -51,7 +51,7 @@ class LegacyGames extends Component {
   );
 
     return (
-      <div>
+      <div className="LegacyGames-BG">
         <Container fluid className="LegacyGames-container">
           { this.state.authenticated 
             ?
