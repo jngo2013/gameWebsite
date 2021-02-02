@@ -1,7 +1,7 @@
 .JG{
   border: 3px solid black;
   width: 100%;
-  transform: rotate(-15deg);
+  /* transform: rotate(-15deg); */
 }
 
 .AL, .GG, .May {
