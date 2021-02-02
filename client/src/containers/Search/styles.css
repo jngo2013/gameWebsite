@@ -1,0 +1,8 @@
+.Search-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* https://ishadeed.com/article/spacing-in-css/#css-flexbox-gap */
+  flex-wrap: wrap;
+  gap: 5rem;
+}

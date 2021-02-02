@@ -16,6 +16,12 @@
   object-fit: cover;
 }
 
+.Carousel-edit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 /* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 767px) {
   .Carousel {
