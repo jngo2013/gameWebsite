@@ -3,3 +3,22 @@
   font-size: 10rem;
   font-family: bodoni;
 }
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 620px) {
+  .H1Text {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .H1Text {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .H1Text {
+    font-size: 4rem;
+  }
+}

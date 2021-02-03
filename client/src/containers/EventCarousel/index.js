@@ -79,12 +79,23 @@ class ControlledCarousel extends Component {
             
         </Container>
 
-        
+        {/* { this.state.authenticated
+          ?
+          <EditCarouselModal passDataToParent={this.passDataToParent} _id={_id}/>
+          :
+          null
+        } */}
 
         {/* Edit modal button on homepage */}
-        <Container className="Carousel-edit-btn">
-          <EditCarouselModal passDataToParent={passDataToParent} _id={_id} />
-        </Container>
+        { this.props.authenticated
+          ?
+          <Container className="Carousel-edit-btn">
+            <EditCarouselModal passDataToParent={passDataToParent} _id={_id} />
+          </Container>
+          :
+          null
+        }
+        
         
       </div>
     );

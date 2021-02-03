@@ -1,0 +1,23 @@
+.Loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.Loader-animate {
+  color: black;
+  font-size: 6rem;
+  animation: spin 2s linear infinite;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); 
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
