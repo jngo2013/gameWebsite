@@ -1,3 +1,7 @@
+.ShortTermGames-BG{
+  background: rgb(0,43,148);
+background: linear-gradient(90deg, rgba(0,43,148,1) 0%, rgba(34,108,245,1) 11%, rgba(27,104,246,1) 89%, rgba(0,49,139,1) 100%);
+}
 .ShortTermGames-container {
   width: 90%;
 }
@@ -26,7 +30,7 @@
 .ShortTermGames-container-header {
   font-size: 6rem;
   padding-bottom: 1rem;
-  font-family: Helvetica, sans-serif;
+  font-family: bodoni;
 }
 
 .ShortTermGames-card {

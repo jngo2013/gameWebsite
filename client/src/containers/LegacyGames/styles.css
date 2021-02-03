@@ -1,3 +1,7 @@
+.LegacyGames-BG{
+  background: rgb(89,45,0);
+background: linear-gradient(90deg, rgba(89,45,0,1) 0%, rgba(150,75,0,1) 11%, rgba(150,75,0,1) 89%, rgba(89,45,0,1) 100%);
+}
 .LegacyGames-container {
   width: 90%;
 }
@@ -28,7 +32,7 @@
 .LegacyGames-container-header {
   font-size: 6rem;
   padding-bottom: 1rem;
-  font-family: Helvetica, sans-serif; 
+  font-family: bodoni; 
 }
 
 .LegacyGames-card {

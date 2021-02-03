@@ -74,7 +74,6 @@ class ShortTermGames extends Component {
           :
           <Loader />
         }
-
       </div>
     );
   }

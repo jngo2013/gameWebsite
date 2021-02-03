@@ -81,7 +81,7 @@ class LegacyGames extends Component {
           :
           <Loader />
         }
-        
+       
       </div>
     );
   }
