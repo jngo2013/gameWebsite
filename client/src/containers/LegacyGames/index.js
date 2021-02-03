@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import AddLegacyModal from './../AddLegacyModal';
+import Loader from './../../components/Loader';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import './styles.css';
@@ -9,14 +10,14 @@ class LegacyGames extends Component {
   state = {
     legacyGameData: [],
     authenticated: false,
-    // authenticated: true,
+    isLoaded: false,
   }
 
   // API call to the backend
   async componentDidMount() {
     // check to see if the user has been authenticated
     if(localStorage.getItem('token') !== null){
-      this.setState({ authenticated : true });
+      this.setState({ authenticated: true });
     } 
     
     try {
@@ -24,7 +25,8 @@ class LegacyGames extends Component {
       let response = await axios.get("/api/legacygames/");
       console.log(response.data, "line 25 in legacy games")
       // set the "legacyGameData" state to be the data from the response
-      this.setState({ legacyGameData: response.data });
+      this.setState({ legacyGameData: response.data, isLoaded: true });
+      // this.setState({ legacyGameData: response.data });
     } catch (err) {
       console.log(err);
     }
@@ -51,27 +53,35 @@ class LegacyGames extends Component {
   );
 
     return (
-      <div className="LegacyGames-BG">
-        <Container fluid className="LegacyGames-container">
-          { this.state.authenticated 
-            ?
-            <Row className="LegacyGames-container-header-row">   
-              <h1 className="LegacyGames-container-header">Campaign Games</h1>
-              <div className="LegacyGames-break"></div>
-              <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
-            </Row>
-            :
-            <Row className="LegacyGames-container-header-row">
-              <h1 className="LegacyGames-container-header">Campaign Games</h1>
-            </Row>
-          }     
-          
-          <Row className="LegacyGames-row">
-            {/* ===== Game cards ===== */}
-            {allGames.reverse()}
-          </Row>
-
-        </Container>
+      <div>
+        
+        {
+          this.state.isLoaded
+          ?
+            <Container fluid className="LegacyGames-container">
+              {/* // if isloaded is true, show the games; else show 'loading' */}
+              { this.state.authenticated 
+                ?
+                <Row className="LegacyGames-container-header-row">   
+                  <h1 className="LegacyGames-container-header">Campaign Games</h1>
+                  <div className="LegacyGames-break"></div>
+                  <div className="LegacyGames-modal-div"><AddLegacyModal /></div>
+                </Row>
+                :
+                <Row className="LegacyGames-container-header-row">
+                  <h1 className="LegacyGames-container-header">Campaign Games</h1>
+                </Row>
+              }     
+              
+              <Row className="LegacyGames-row">
+                {/* ===== Game cards ===== */}
+                {allGames.reverse()}
+              </Row>
+            </Container>
+          :
+          <Loader />
+        }
+       
       </div>
     );
   }

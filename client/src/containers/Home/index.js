@@ -8,7 +8,7 @@ import "./styles.css";
 class Home extends Component {
   state = {
     carouselData: "",
-    authenticated: true,
+    authenticated: false,
   }
 
   // function to get data from the child so the carouselData rerenders
@@ -62,6 +62,7 @@ class Home extends Component {
           slide3link={slide3link}
           _id={_id}
           passDataToParent={this.passDataToParent}
+          authenticated={this.state.authenticated}
         />
 
         {/* When authentication is working properly, uncomment this out */}

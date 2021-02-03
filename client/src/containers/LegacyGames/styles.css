@@ -50,13 +50,12 @@ background: linear-gradient(90deg, rgba(89,45,0,1) 0%, rgba(150,75,0,1) 11%, rgb
   margin-left: 1rem;
 }
 
+
 /* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 991px) {
   .LegacyGames-container-header {
     font-size: 6rem;
     text-align: center;
-       
-
   }
 }
 

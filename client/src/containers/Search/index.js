@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import PageNotFound from './../../components/PageNotFound';
+import Loader from './../../components/Loader';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import './styles.css';
@@ -86,7 +87,7 @@ class Search extends Component {
                 <PageNotFound message={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}/>
               :
               // loader
-              <h1>loading....</h1>
+              <Loader />
             }
           {/* </Row> */}
         {/* </Container> */}

@@ -23,14 +23,20 @@
 }
 
 /* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 991px) {
+  .Carousel {
+    width: 90% !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .Carousel {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 991px) {
-  .Carousel {
-    width: 90% !important;
+@media screen and (max-width: 300px) {
+  .carousel-caption h3 {
+    font-size: 1.5rem;
   }
 }
