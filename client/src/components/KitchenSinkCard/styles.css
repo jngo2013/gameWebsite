@@ -58,6 +58,8 @@
   .KitchenSinkCard {
     width: 15rem;
     height: 30rem;
-    margin-bottom: -2rem;
+    /* margin-bottom: -2rem; */
+    /* margin-top: 0.5rem; */
+    /* margin-top: 0; */
   }
 }

@@ -56,7 +56,30 @@ background: linear-gradient(90deg, rgba(0,43,148,1) 0%, rgba(34,108,245,1) 11%, 
   }
 }
 
-@media screen and (max-width: 802px) {
+@media screen and (max-width: 800px) {
+  .ShortTermGames-container-header {
+    font-size: 6rem;
+  }
+
+  .ShortTermGames-modal-div {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .ShortTermGames-container-header {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ShortTermGames-container-header {
+    font-size: 6rem;
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
   .ShortTermGames-container-header {
     font-size: 4rem;
   }
