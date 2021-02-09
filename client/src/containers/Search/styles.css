@@ -6,3 +6,36 @@
   flex-wrap: wrap;
   gap: 5rem;
 }
+
+
+.Search-h1 {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-size: 5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 1px grey;
+}
+
+.Search-hr {
+  width: 90%;
+  margin-left: 2rem;
+  margin-bottom: 4rem;
+  background-color: black;
+  height: 1px;
+}
+
+/* ===== MEDIA QUERIES =====  */
+@media screen and (max-width: 450px) {
+  .Search-h1 {
+    /* border: 3px solid blue; */
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+
+  .Search-hr {
+    width: 90%;
+    margin: 2rem auto;
+  }
+}

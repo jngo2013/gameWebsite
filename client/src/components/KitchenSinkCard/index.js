@@ -5,7 +5,8 @@ import './styles.css';
 function KitchenSinkCard(props) {
   return (
     <div className="KitchenSinkCard-div">
-      <Card style={{ width: '21rem', height: '37rem' }} bg="secondary" className="KitchenSinkCard">
+      {/* <Card style={{ width: '21rem', height: '37rem' }} bg="secondary" className="KitchenSinkCard"> */}
+      <Card bg="secondary" className="KitchenSinkCard">
 
         
           <Card.Img 
