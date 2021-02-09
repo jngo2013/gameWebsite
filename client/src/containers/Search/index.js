@@ -75,7 +75,10 @@ class Search extends Component {
                 ?
                 // ...show all the results...
                 <Container fluid>
-                <div><h1>Search Results</h1></div>
+                  <div>
+                    <h1 className="Search-h1">{`Search Results for "${this.props.match.params.searchinput}"`}</h1>
+                    <hr className="Search-hr" />
+                  </div>
                 <Row className="Search-row">
                   
                   {allSearchResults}
