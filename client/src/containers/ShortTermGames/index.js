@@ -47,7 +47,7 @@ class ShortTermGames extends Component {
   );
 
     return (
-      <div>
+      <div className="ShortTermGames-BG">
 
         {
           this.state.isLoaded
