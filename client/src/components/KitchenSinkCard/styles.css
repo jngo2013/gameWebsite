@@ -1,5 +1,6 @@
 .KitchenSinkCard-div {
   transition: all 0.1s ease-out;
+  box-shadow: 0.2rem 0.2rem 0.3rem grey;
 }
 
 .KitchenSinkCard {
