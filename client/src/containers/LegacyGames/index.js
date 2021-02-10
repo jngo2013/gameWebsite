@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import KitchenSinkCard from '../../components/KitchenSinkCard';
 import AddLegacyModal from './../AddLegacyModal';
 import Loader from './../../components/Loader';
+import Footer from './../../components/Footer';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 import './styles.css';
@@ -53,7 +54,7 @@ class LegacyGames extends Component {
   );
 
     return (
-      <div>
+      <div className="LegacyGames-BG">
         
         {
           this.state.isLoaded
@@ -81,7 +82,7 @@ class LegacyGames extends Component {
           :
           <Loader />
         }
-       
+       {/* <Footer /> */}
       </div>
     );
   }

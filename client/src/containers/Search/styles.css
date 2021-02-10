@@ -38,4 +38,18 @@
     width: 90%;
     margin: 2rem auto;
   }
+
+  .Search-row {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .Search-h1 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    /* padding: 0; */
+  }
 }
