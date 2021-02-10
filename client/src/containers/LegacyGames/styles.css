@@ -1,7 +1,10 @@
-.LegacyGames-BG{
-  background: rgb(89,45,0);
-background: linear-gradient(90deg, rgba(89,45,0,1) 0%, rgba(150,75,0,1) 11%, rgba(150,75,0,1) 89%, rgba(89,45,0,1) 100%);
+.LegacyGames-BG {
+  /* background: rgb(89,45,0); */
+  background: rgb(247, 227, 213);
+  /* background: linear-gradient(90deg, rgba(89,45,0,1) 0%, rgba(150,75,0,1) 11%, rgba(150,75,0,1) 89%, rgba(89,45,0,1) 100%); */
+  padding-bottom: 5rem;
 }
+
 .LegacyGames-container {
   width: 90%;
 }
@@ -10,8 +13,7 @@ background: linear-gradient(90deg, rgba(89,45,0,1) 0%, rgba(150,75,0,1) 11%, rgb
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-   
+  align-items: center;  
 }
 
 /* https://tobiasahlin.com/blog/flexbox-break-to-new-row/ */
