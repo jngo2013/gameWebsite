@@ -84,7 +84,7 @@ class AddShortModal extends Component {
     return (
       <>
         {/* Button to activate the modal */}
-        <Button variant="dark" size="sm" onClick={this.handleShow}>
+        <Button variant="dark" size="sm" onClick={this.handleShow} style={{"box-shadow": "0.2rem 0.2rem 0.3rem grey"}}>
           Add a Board Game
         </Button>
 

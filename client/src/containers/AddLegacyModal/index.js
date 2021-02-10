@@ -84,7 +84,7 @@ class AddLegacyModal extends Component {
       <>
         {/* Button to activate the modal */}
         <div>
-          <Button variant="dark" size="sm" onClick={this.handleShow}>
+          <Button variant="dark" size="sm" onClick={this.handleShow} style={{"box-shadow": "0.2rem 0.2rem 0.3rem grey"}}>
             Add a Campaign Game
           </Button>
         </div>
