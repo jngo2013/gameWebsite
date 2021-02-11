@@ -1,6 +1,7 @@
 .LegacyGames-details {
   margin-top: 3rem;
   width: 100% !important;
+  box-shadow: 0.5rem 0.5rem 1rem grey;
 }
 
 .LegacyGames-header {
@@ -18,6 +19,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .LegacyGames-hr {
   height: 1px;
 }
@@ -81,9 +83,15 @@
 
 
 /* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 1199px) {
+  .LegacyGames-title {
+    font-size: 2rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .LegacyGames-col1-div {
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   #LegacyGames-col2 {
@@ -97,10 +105,46 @@
   .LegacyGames-real.btn-primary {
     width: 100%;
   }
+
+  .LegacyGames-title {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .LegacyGames-header {
     font-size: 4rem;
+  }
+
+  .LegacyGames-col1-div {
+    padding: 1rem 0;
+  }
+
+  .LegacyGames-title {
+    font-size: 2rem;
+  }
+
+  .LegacyGames-col1.col-lg {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .LegacyGames-header {
+    font-size: 3rem;
+  }
+
+  .LegacyGames-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .LegacyGames-title {
+    font-size: 1rem;
+  }
+
+  .LegacyGames-col1-div {
+    padding: 1.3rem 0;
   }
 }

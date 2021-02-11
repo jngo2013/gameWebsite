@@ -1,6 +1,7 @@
 .ShortTermGames-details {
   margin-top: 3rem;
   width: 100% !important;
+  box-shadow: 0.5rem 0.5rem 1rem grey;
 }
 
 .ShortTermGame-description{
@@ -79,9 +80,15 @@
 }
 
 /* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 1199px) {
+  .ShortTermGames-title {
+    font-size: 2rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .ShortTermGames-col1-div {
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   #ShortTermGames-col2 {
@@ -95,10 +102,46 @@
   .ShortTermGames-real.btn-primary {
     width: 100%;
   }
+
+  .ShortTermGames-title {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .ShortTermGames-header {
     font-size: 4rem;
+  }
+
+  .ShortTermGames-col1-div {
+    padding: 1rem 0;
+  }
+
+  .ShortTermGames-title {
+    font-size: 2rem;
+  }
+
+  .ShortTermGames-col1.col-lg {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .ShortTermGames-header {
+    font-size: 3rem;
+  }
+
+  .ShortTermGames-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .ShortTermGames-title {
+    font-size: 1rem;
+  }
+
+  .ShortTermGames-col1-div {
+    padding: 1.3rem 0;
   }
 }
