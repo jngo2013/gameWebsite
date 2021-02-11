@@ -11,7 +11,7 @@ function PageNotFound(props) {
         alt="error page" 
         className="PageNotFound-img"
       />
-      <div className="PageNotFound-link"><a href="/">Click here to go back to the home page.</a></div>
+      <div className="PageNotFound-link">Click <a href="/">here</a> to go back to the home page.</div>
     </Container>
   );
 }

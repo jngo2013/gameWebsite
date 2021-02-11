@@ -10,23 +10,25 @@ import "./style.css";
 function People() {
   return (
     <div>
-        <div>
+      <div className="jumbotron-story">
         <h1 className="jumbotronText">Our Story</h1>
         <p className="jumbotronText">
           This is a simple hero unit, a simple jumbotron-style component for calling
           extra attention to featured content or information.
         </p>
       </div>
+
+      {/* <br></br>
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
+      <br></br> */}
       
       <h1 className="titleCenter">The Crew</h1>
-      <hr></hr>
-      <br></br>
-      <br></br>
+      {/* <hr></hr> */}
+      <hr className="theCrew-hr" />
+      {/* <br></br>
+      <br></br> */}
 
       {/* ===== JONATHAN GROTHE =====  */}
       <Container className="People-container">
@@ -44,8 +46,8 @@ function People() {
         </Row>
       </Container>
     
-      <hr></hr>
-      <br></br>
+      <hr className="theCrew-hr" />
+      {/* <br></br> */}
     
       {/* ===== ALBERT LEE =====  */}
       <Container className="People-container">
@@ -63,8 +65,8 @@ function People() {
         </Row>
       </Container>
     
-      <hr></hr>
-      <br></br>
+      <hr className="theCrew-hr" />
+      {/* <br></br> */}
 
       {/* ===== GABE GOLDEN ===== */}
       <Container className="People-container">
@@ -76,17 +78,17 @@ function People() {
 
           <Col className="textCenter">
             <p>
-              Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or <a href="https://www.instagram.com/PassionfruitEducation/" target="_blank" rel="noopener noreferrer">PassionfruitEducation</a>
+              Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or <a href="https://www.instagram.com/PassionfruitEducation/" target="_blank" rel="noopener noreferrer">PassionfruitEducation</a>.
             </p>
           </Col>
         </Row>
       </Container>
     
-      <hr></hr>
-      <br></br>
+      <hr className="theCrew-hr" />
+      {/* <br></br> */}
 
       {/* ===== MAYBELINE ===== */}
-      <Container>
+      <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="May" src={May} roundedCircle />
@@ -109,8 +111,9 @@ function People() {
         </Row>
       </Container>
 
-      <hr></hr>
-      <br></br>
+      <hr className="theCrew-hr" />
+      {/* <br></br> */}
+
       <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
@@ -126,8 +129,8 @@ function People() {
         </Row>
       </Container>
 
-      <hr></hr>
-      <br></br>
+      <hr className="theCrew-hr" />
+      {/* <br></br> */}
     </div>
   );
 }
