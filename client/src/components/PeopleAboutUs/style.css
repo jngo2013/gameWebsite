@@ -1,40 +1,138 @@
-.JG{
+/* .JG {
   border: 3px solid black;
   width: 100%;
-  /* transform: rotate(-15deg); */
+  transform: rotate(-15deg);
+  height: 311.67px;
+  object-fit: cover;
+} */
+
+.jumbotron-story {
+  /* border: 3px solid black; */
+  margin-bottom: 4rem;
 }
 
-.AL, .GG, .May {
-  border:3px solid black;
+.JG, .AL, .GG, .May {
+  border: 3px solid black;
   width: 100%;
+  height: 311.67px;
+  object-fit: cover;
+  box-shadow: 0.2rem 0.2rem 0.3rem grey;
 }
 
-.titleCenter{
+.titleCenter {
   text-align: center;
+  font-size: 6rem;
+  text-shadow: 0.2rem 0.2rem 0.3rem grey;
 }
 
-.textCenter{
+.textCenter {
   display: flex;
   align-items: center;
   font-size: 20px;
+}
+
+.textCenter p {
+  /* text-shadow: 0.1rem 0.1rem 0.2rem grey; */
 }
 
 .People-col1 {
   text-align: center;
 }
 
+.People-col1 h1 {
+  margin: 2rem auto;
+  text-shadow: 0.1rem 0.1rem 0.3rem grey;
+}
+
+.theCrew-hr {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.jumbotronText {
+  text-align: center;
+}
+
 /* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 991px) {
   .JG, .AL, .GG, .May {
-    width: 75%;
+    width: 30%;
   }
 
   .People-col1 h1 {
     margin: 2rem auto;
   }
+
+  .theCrew-hr {
+    width: 90%;
+    /* margin-bottom: 2rem; */
+    margin: 2rem auto;
+  }
 }
 
-.jumbotronText {
-  text-align: center;
+@media screen and (max-width: 767px) {
+  .JG, .AL, .GG, .May {
+    width: 40%;
+  }
+}
 
+@media screen and (max-width: 575px) {
+  .JG, .AL, .GG, .May {
+    width: 70%;
+  }
+
+  .titleCenter {
+    margin-top: 4rem;
+    font-size: 4rem;
+    padding: 0 1rem;
+  }
+
+  .theCrew-hr {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .People-container {
+    padding: 0 2rem;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .JG, .AL, .GG, .May {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .JG, .AL, .GG, .May {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .JG, .AL, .GG, .May {
+    width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  .JG, .AL, .GG, .May {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .jumbotron-story {
+    margin: 2rem auto;
+  }
+
+  .JG, .AL, .GG, .May {
+    width: 100%;
+  }
+
+  .People-col1 h1 {
+    margin: 1rem auto;
+  }
 }

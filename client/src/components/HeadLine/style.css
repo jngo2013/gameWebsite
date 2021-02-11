@@ -1,4 +1,4 @@
-
+/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background_hero */
 .jumbotron {
   height: 30rem;
   display: flex;
@@ -6,4 +6,9 @@
   align-items: center;
   margin-bottom: 10%;
   background-image: url(./images/group.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: cover;
+  position: relative;
 }

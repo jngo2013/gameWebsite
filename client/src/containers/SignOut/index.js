@@ -31,7 +31,7 @@ class SignOut extends Component {
           alt="goodbye image" 
           className="SignOut-img"
         />
-        <div className="SignOut-link"><a href="/">Click here to go back to the home page</a> or wait a few seconds and you'll be redirected back to the homepage shortly.</div>
+        <div className="SignOut-link">Click <a href="/">here</a> to go back to the home page or wait a few seconds and you'll be redirected back to the homepage shortly.</div>
       </Container>
     );
   }
