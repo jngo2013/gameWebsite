@@ -26,7 +26,7 @@ class LegacyDetails extends Component {
     try {
       // get a response and use response data
       let { data } = await axios.get(`/api/legacygames/${gameId}`);
-      
+      console.log("this is legacy details data", data);
       // check to see if the game exists...
       if(data !== null) {
         // ...if it does set gameData state to be 'response.data'
@@ -66,7 +66,7 @@ class LegacyDetails extends Component {
             this.state.redirect
             ? 
             // ...then go to "/LegacyGames/" route...
-            this.props.history.push("/LegacyGames/")
+            this.props.history.push("/LegacyGames")
             :
             // ...otherwise, display the game info
             <Container>

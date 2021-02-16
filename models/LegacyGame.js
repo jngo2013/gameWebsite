@@ -2,19 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LegacyGameSchema = new Schema({
-  title:{
+  title: {
     type: String,
     required: true
   },
-  description:{
+  description: {
     type: String,
     required:true,
   },
-  time:{
+  time: {
     type:String,
     required:true,
   },
-  players:{
+  players: {
     type:String,
     required:true,
   },
@@ -27,7 +27,9 @@ const LegacyGameSchema = new Schema({
     required: true,
   },
   src: {
+    // type: Buffer,
     type: String,
+    // data: Buffer,
     required: true,
   },
   drunkRating: {
