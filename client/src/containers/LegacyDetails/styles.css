@@ -78,6 +78,7 @@
 .LegacyGames-drunkRules {
   width: 50%;
   text-align: left;
+  padding-left: 5rem;
 }
 
 
@@ -93,7 +94,6 @@
   .LegacyGames-col1-div {
     padding: 1rem 0;
   }
-
   #LegacyGames-col2 {
     margin-top: 0.25rem;
   }
@@ -110,8 +110,15 @@
     font-size: 2rem;
   }
 }
-
+@media screen and (max-width: 766px) {
+  .LegacyGames-drunkRules{
+    padding-left: 2rem;
+  }
+}
 @media screen and (max-width: 500px) {
+  .ShortTermGames-drunkRules{
+    padding-left: 1rem;
+  }
   .LegacyGames-header {
     font-size: 4rem;
   }
