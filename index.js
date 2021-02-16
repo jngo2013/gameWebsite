@@ -9,6 +9,9 @@ const app = express();
 require('dotenv').config();
 
 // Setup middlewares
+// express.static() will make a folder publicly available
+app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
