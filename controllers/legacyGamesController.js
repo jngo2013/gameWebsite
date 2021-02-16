@@ -1,7 +1,5 @@
 const { Legacy } = require('../models');
 var mongoose = require('mongoose');
-const multer = require('multer');
-const upload = multer({dest: 'uploads/'});
 
 module.exports = {
   getAllLegacyGames: (req, res) => {
@@ -83,20 +81,15 @@ module.exports = {
       }); 
   },
   addLegacyGame: (req, res) => {
-    // console.log("this is the req", req);
-    // console.log("this is the file request: ", req.file);
-    console.log("req.body is", req.body);
-    // console.log("you reached the legacygames post route!");
-    // console.log("REQ BODY", req.body);
-    // console.log("hello", req.file.path);
     // get information from the front end (req.body is already an object)
     const { body } = req;
-    console.log("this is req.file", req.file);
+    
     // add src to the body from multer
     body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
 
     // create a new document instance to be entered in to the database
     let newLegacyGame = new Legacy(body);
+    
     // save the model to the database
     newLegacyGame.save({})
       .then(legacyGame => {

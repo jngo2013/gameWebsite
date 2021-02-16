@@ -1,6 +1,9 @@
+const { response } = require("express");
+
 // will have the functions that make an API call to the backend (import functions from controller)
 const router = require("express").Router();
 
+// ===== MULTER SETUP - FOR UPLOADING FILES =====
 // multer setup - for uploading files
 const multer = require('multer');
 
@@ -23,17 +26,16 @@ const storage = multer.diskStorage({
 // upload middleware from multer; this executes multer
 const upload = multer({storage: storage});
 
-const { response } = require("express");
+// ===== END OF MULTER SETUP =====
+
 
 // functions from the LegacyGamesController
 const { getAllLegacyGames, getOneLegacyGame, updateLegacyGame, deleteLegacyGame, addLegacyGame, findLegacyGames } = require('./../../../controllers/legacyGamesController');
 
 // route reached here: "/api/legacygames/"
-// router.get("/", getAllLegacyGames);
-
 router.route("/")
   .get(getAllLegacyGames)
-  .post(upload.single("src"), addLegacyGame)
+  .post(upload.single("src"), addLegacyGame) // <--- add multer middleware before adding a game
 
 // route reached here: "/api/legacygames/:id"
 router.route("/:id")
