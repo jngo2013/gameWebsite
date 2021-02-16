@@ -35,24 +35,10 @@ class AddLegacyModal extends Component {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.value }});
   }
 
-  // function for form inputs
-  // handleFileInputChange = event => {
-  //   console.log("line 41", event.target.value);
-  //   this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
-  // }
-
+  // function for uploading an image
   handleFileInputChange = event => {
-    console.log("line 41", event.target.value);
-    console.log("line 41", event.target.files);
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
   }
-
-  // function to handle the selected file
-  // handleSelectedFile = event => {
-  //   // this.setState({ selectedFile: event.target.files[0] });
-  //   // console.log("file selected", this.state.selectedFile);
-  //   console.log("event file", event.target);
-  // }
 
   // function to refresh page (to get new data)
   refreshPage = () => {

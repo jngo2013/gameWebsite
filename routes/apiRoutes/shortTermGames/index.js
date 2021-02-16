@@ -1,15 +1,38 @@
 const { response } = require("express");
 const router = require("express").Router();
 
+// ===== MULTER SETUP - FOR UPLOADING FILES =====
+const multer = require('multer');
+
+// storage strategy for files
+// multer will execute these functions whenever a new file is received
+const storage = multer.diskStorage({
+  // destination defines where the incoming function will be stored
+  // "cb" is a callback function
+  destination: function(req, file, cb) {
+    // in cb you pass a potential error, then the path where you want to store the file
+    cb(null, './uploads/');
+  },
+  // filename defines how the file will be saved
+  filename: function(req, file, cb) {
+    // in cb you pass a potential error, then how you want to name the file
+    cb(null, file.originalname);
+  },
+});
+
+// upload middleware from multer; this executes multer
+const upload = multer({storage: storage});
+
+// ===== END OF MULTER SETUP =====
+
+
 // functions from the shortTermGamesController
 const { getAllShortTermGames, getOneShortTermGame, updateShortTermGame, deleteShortTermGame, addShortTermGame, findShortTermGames } = require('./../../../controllers/shortTermGamesController');
 
 // route reached here: "/api/shorttermgames/"
-// router.get("/", getAllShortTermGames);
-
 router.route("/")
   .get(getAllShortTermGames)
-  .post(addShortTermGame)
+  .post(upload.single("src"), addShortTermGame)
 
 // route reached here: "/api/shorttermgames/:id"
 router.route("/:id")
@@ -21,3 +44,8 @@ router.route("/:id")
 router.get("/search/:game", findShortTermGames);
 
 module.exports = router;
+
+// getting image upload to work
+// https://www.youtube.com/watch?v=srPXMt1Q0nY
+// https://stackoverflow.com/questions/56709353/how-to-send-a-file-image-from-react-to-node-js-server
+// https://github.com/therj/file-upload-react/blob/master/src/App.js

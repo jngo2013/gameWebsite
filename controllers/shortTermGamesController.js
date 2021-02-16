@@ -84,6 +84,10 @@ module.exports = {
     // 1. get the data from the front end
     // console.log(req.body, "line 64");
     const { body } = req;
+
+    // add src to the body from multer
+    body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
+    
     // 2. create a new document instance to be entered into the database
     let newShortTermGame = new Short(body);
     // 3. save the model to the database and respond with json
