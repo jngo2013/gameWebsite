@@ -37,7 +37,7 @@ router.route("/")
 // route reached here: "/api/shorttermgames/:id"
 router.route("/:id")
   .get(getOneShortTermGame)
-  .put(updateShortTermGame)
+  .put(upload.single("src"), updateShortTermGame)
   .delete(deleteShortTermGame)
 
 // route reached here: "/api/shorttermgames/search/:game"
