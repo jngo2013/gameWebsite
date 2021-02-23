@@ -51,11 +51,14 @@ module.exports = {
     // get the id from the front end from req.params
     let gameId = req.params.id;
 
-    // get the data from the front end from req.body
-    let gameData = req.body.gameData;
+    // deconstruct the data from the front end
+    let { body } = req;
+
+    // get the path for the file from the front end and add it to body
+    body.src = "/" + req.file.path;
 
     // use mongoose to findByid and update ({ new: true } gives you back the updated data)
-    Short.findByIdAndUpdate(gameId, gameData, { new: true })
+    Short.findByIdAndUpdate(gameId, body, { new: true })
       .then(game => {
         res.json(game);
       })

@@ -53,10 +53,16 @@ module.exports = {
     // get the game id (from the url using 'req.params.id')
     let gameId = req.params.id;
 
-    // get the updated game data (using req.body.gameData)
-    let gameData = req.body.gameData;
+    // deconstruct the data from the front end
+    let { body } = req;
+
+    // console.log("updatelegacy frontend data", body)
+
+    // get the path for the file from the front end and add it to body
+    body.src = "/" + req.file.path;
+
     // use mongoose to findbyid and update ({ new: true } gives you back the updated data)
-    Legacy.findByIdAndUpdate(gameId, gameData, { new: true } )
+    Legacy.findByIdAndUpdate(gameId, body, { new: true } )
       .then(game => {
         res.json(game);
       })
@@ -83,6 +89,7 @@ module.exports = {
   addLegacyGame: (req, res) => {
     // get information from the front end (req.body is already an object)
     const { body } = req;
+    
     
     // add src to the body from multer
     body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
