@@ -40,7 +40,7 @@ router.route("/")
 // route reached here: "/api/legacygames/:id"
 router.route("/:id")
   .get(getOneLegacyGame)
-  .put(updateLegacyGame)
+  .put(upload.single("src"), updateLegacyGame)
   .delete(deleteLegacyGame)
 
 // route reached here: "/api/legacygames/search/:game"

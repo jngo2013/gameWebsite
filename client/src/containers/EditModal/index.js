@@ -22,6 +22,7 @@ class EditModal extends Component {
       let response = await axios.get(`${apiRoute}${gameId}`);
       // set the gameData to be 'response.data'
       this.setState({ gameData: response.data });
+      console.log("this is the data to edit", this.state.gameData);
     } catch (err) {
       console.log(err);
     }
@@ -42,13 +43,34 @@ class EditModal extends Component {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.value} });
   }
 
+  // function for uploading an image
+  handleFileInputChange = event => {
+    this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
+  }
+
   handleOnSubmit = async event => {
     event.preventDefault();
 
     let apiRoute = this.props.apiRoute;
 
+    // "FormData" is creating a new empty object that all of the form data will go into
+    let formData = new FormData();
+
+    // then append the data from the state to formData
+    let { title, description, players, time, realRules, drunkRules, src, drunkRating } = this.state.gameData;
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("players", players);
+    formData.append("time", time);
+    formData.append("realRules", realRules);
+    formData.append("drunkRules", drunkRules);
+    formData.append("src", src);
+    formData.append("drunkRating", drunkRating);
+
     // send the data to the backend and get a response
-    let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, { gameData: this.state.gameData });
+    console.log("data sent", this.state.gameData);
+    // let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, { gameData: this.state.gameData });
+    let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, formData);
 
     // change the state of the gameData to be the response after updating the database
     this.setState({ gameData: data });
@@ -110,7 +132,7 @@ class EditModal extends Component {
 
         {/* This is the actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Form>
+          <Form onSubmit={this.handleOnSubmit} enctype="multipart/form-data">
 
             {/* This is the game name */}
             <Modal.Header>
@@ -128,7 +150,8 @@ class EditModal extends Component {
 
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Image URL</Form.Label>
-                <Form.Control type="text" name="src" value={src} onChange={this.handleInputChange}/>
+                {/* <Form.Control type="text" name="src" value={src} onChange={this.handleInputChange}/> */}
+                <Form.Control required type="file" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} />
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
@@ -159,7 +182,7 @@ class EditModal extends Component {
             </Modal.Body>
 
             <Modal.Footer>
-              <Button variant="primary" onClick={this.handleOnSubmit}>
+              <Button variant="primary" type="submit">
                 Save Changes
               </Button>
 
