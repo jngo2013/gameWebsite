@@ -56,6 +56,8 @@ module.exports = {
     // deconstruct the data from the front end
     let { body } = req;
 
+    // console.log("updatelegacy frontend data", body)
+
     // get the path for the file from the front end and add it to body
     body.src = "/" + req.file.path;
 

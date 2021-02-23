@@ -14,15 +14,25 @@ module.exports = {
   },
   updateAllEvents: function(req, res) {
     console.log("you've reached the event carousel PUT request!");
-    
+    console.log("updateAllEvents info from the front end", req.body);
+    console.log("file from front end:", req.file);
     // get the updated data from the front end (using req.body.carouselData)
-    let carouselData = req.body.carouselData;
+    // let carouselData = req.body.carouselData;
+
+    // get the updated date from the front end (using req.body)
+    let { body } = req;
+
+    // add slide1src to the body from multer
+    body.slide1src = "/" + req.file.path;
 
     // use mongoose to update
-    EventCarousel.updateOne(carouselData)
+    // EventCarousel.updateOne(carouselData)
+    EventCarousel.updateOne(body)
       .then(() => {
-        console.log(carouselData, "line 24");
-        res.json(carouselData);
+        // console.log(carouselData, "line 24");
+        console.log(body, "line 24");
+        // res.json(carouselData);
+        res.json(body);
       })
       .catch(err => {
         console.log(err);

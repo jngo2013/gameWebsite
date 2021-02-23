@@ -67,8 +67,9 @@ class EditModal extends Component {
     formData.append("src", src);
     formData.append("drunkRating", drunkRating);
 
+    console.log("this is formData in editModal", formData);
     // send the data to the backend and get a response
-    console.log("data sent", this.state.gameData);
+    // console.log("data sent", this.state.gameData);
     // let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, { gameData: this.state.gameData });
     let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, formData);
 
