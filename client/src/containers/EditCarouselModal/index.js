@@ -127,7 +127,7 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="slide1img">
                 <Form.Label>Image URL</Form.Label>
                 {/* <Form.Control type="text" name="slide1src" value={slide1src} onChange={this.handleInputChange}  /> */}
-                <Form.Control required type="file" placeholder="Put image URL here." name="slide1src" onChange={this.handleFileInputChange} />
+                <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="slide1src" onChange={this.handleFileInputChange} />
               </Form.Group>
 
               <Form.Group controlId="slide1link">
@@ -150,7 +150,7 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="slide2img">
                 <Form.Label>Image URL</Form.Label>
                 {/* <Form.Control type="text" name="slide2src" value={slide2src} onChange={this.handleInputChange}  /> */}
-                <Form.Control required type="file" placeholder="Put image URL here." name="slide2src" onChange={this.handleFileInputChange} />
+                <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="slide2src" onChange={this.handleFileInputChange} />
               </Form.Group>
 
               <Form.Group controlId="slide2link">
@@ -173,7 +173,7 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="slide3img">
                 <Form.Label>Image URL</Form.Label>
                 {/* <Form.Control type="text" name="slide3src" value={slide3src} onChange={this.handleInputChange}  /> */}
-                <Form.Control required type="file" placeholder="Put image URL here." name="slide3src" onChange={this.handleFileInputChange} />
+                <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="slide3src" onChange={this.handleFileInputChange} />
               </Form.Group>
 
               <Form.Group controlId="slide3link">
