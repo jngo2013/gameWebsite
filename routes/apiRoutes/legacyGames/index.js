@@ -23,8 +23,25 @@ const storage = multer.diskStorage({
   },
 });
 
+// image type filter
+const fileFilter = (req, file, cb) => {
+  if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/bmp' || file.mimetype === 'image/gif' || file.mimetype === 'image/png' || file.mimetype === 'image/tiff') {
+    // if image is jpeg, bmp, gif, png, or tiff, accept it
+    cb(null, true);
+  } else {
+    // else reject it and not store it
+    cb(null, false);  
+  }
+}
+
 // upload middleware from multer; this executes multer
-const upload = multer({storage: storage});
+const upload = multer({
+  storage: storage, 
+  // limite filesize max: 5MB
+  limits: { fileSize: 1024 * 1024 * 5 },
+  // fileFilter
+  fileFilter: fileFilter,
+});
 
 // ===== END OF MULTER SETUP =====
 

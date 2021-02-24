@@ -38,6 +38,7 @@ class AddLegacyModal extends Component {
   // function for uploading an image
   handleFileInputChange = event => {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
+    console.log("in handleFileInputChange", event.target.files[0]);
   }
 
   // function to refresh page (to get new data)
@@ -45,60 +46,54 @@ class AddLegacyModal extends Component {
     window.location.reload(true);
   }
 
-  // function to validate the form
-  validateForm = (event) => {
-    // check to see if the form is completely filled out every time the user tries to submit
-    // if the form isn't completely filled out, don't allow the user to submit the form
+  // function to submit data to the database
+  handleOnSubmit = async event => {
+    // get the form
     const form = event.currentTarget;
+    
+    // check to see if the form is completely filled out every time the user tries to submit
     if(form.checkValidity() === false){
       event.preventDefault();
       event.stopPropagation();
-    }
+    } else {
+      // then run the below code when it is
+      event.preventDefault();
 
-    // change validated to "true" after checking the form
+      // "FormData" is creating a new empty object that all of the form data will go into
+      let formData = new FormData();
+
+      // then append the data from the state to formData
+      let { title, description, players, time, realRules, drunkRules, src, drunkRating } = this.state.gameData;
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("players", players);
+      formData.append("time", time);
+      formData.append("realRules", realRules);
+      formData.append("drunkRules", drunkRules);
+      formData.append("src", src);
+      formData.append("drunkRating", drunkRating);
+
+      // send the data to the backend and get a response
+      try {
+        console.log("line 67 in add", this.state.gameData);
+        // const { data } = await axios.post("/api/legacygames/", this.state.gameData);
+        const { data } = await axios.post("/api/legacygames/", formData);
+        this.setState({ gameData: data });
+      } catch (err) {
+        console.log(err);
+      }
+
+      // alert the user the game was saved
+      alert("Game saved!");
+
+      // close modal
+      this.handleClose();
+
+      // refresh the page to get new data
+      this.refreshPage();
+    };  
+    // change validated to "true" after checking the form (bootstrap's validation)
     this.setState({ validated: true });
-  }
-
-  // function to submit data to the database
-  handleOnSubmit = async event => {
-    // check to make sure the form is filled properly filled out
-    this.validateForm(event);
-
-    // then run the below code when it is
-    event.preventDefault();
-
-    // "FormData" is creating a new empty object that all of the form data will go into
-    let formData = new FormData();
-
-    // then append the data from the state to formData
-    let { title, description, players, time, realRules, drunkRules, src, drunkRating } = this.state.gameData;
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("players", players);
-    formData.append("time", time);
-    formData.append("realRules", realRules);
-    formData.append("drunkRules", drunkRules);
-    formData.append("src", src);
-    formData.append("drunkRating", drunkRating);
-
-    // send the data to the backend and get a response
-    try {
-      console.log("line 67 in add", this.state.gameData);
-      // const { data } = await axios.post("/api/legacygames/", this.state.gameData);
-      const { data } = await axios.post("/api/legacygames/", formData);
-      this.setState({ gameData: data });
-    } catch (err) {
-      console.log(err);
-    }
-
-    // alert the user the game was saved
-    alert("Game saved!");
-
-    // close modal
-    this.handleClose();
-
-    // refresh the page to get new data
-    this.refreshPage();
   }
 
   render() {
