@@ -14,16 +14,14 @@ module.exports = {
   },
   updateAllEvents: function(req, res) {
     console.log("you've reached the event carousel PUT request!");
-    console.log("updateAllEvents info from the front end", req.body);
-    console.log("file from front end:", req.file);
-    // get the updated data from the front end (using req.body.carouselData)
-    // let carouselData = req.body.carouselData;
-
     // get the updated date from the front end (using req.body)
     let { body } = req;
 
-    // add slide1src to the body from multer
-    body.slide1src = "/" + req.file.path;
+    // add slide1src, slide2src, and slide3src to the body from multer
+    // file info is in "req.files"
+    body.slide1src = "/" + req.files.slide1src[0].path;
+    body.slide2src = "/" + req.files.slide2src[0].path;
+    body.slide3src = "/" + req.files.slide3src[0].path;
 
     // use mongoose to update
     // EventCarousel.updateOne(carouselData)
@@ -55,8 +53,3 @@ module.exports = {
       });
   }
 }
-
-
-// create a function for the GET request
-  // 1. get the form data from the database
-  // 2. send it back to the front end where it will be rendered
