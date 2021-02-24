@@ -31,13 +31,11 @@ const { getAllEvents, updateAllEvents, getEventData } = require ('./../../../con
 // route reached here: "/api/eventcarousel"
 router.route("/")
   .get(getAllEvents)
-  .put(upload.single("slide1src"), updateAllEvents)
-  // .put(upload.fields([{ name: "slide1src", maxCount: 1}, { name: "slide2src", maxCount: 1}, { name: "slide3src", maxCount: 1}]), updateAllEvents)
+  .put(upload.fields([{ name: "slide1src", maxCount: 1 }, { name: "slide2src", maxCount: 1 }, { name: "slide3src", maxCount: 1 }]), updateAllEvents)
 
 router.get("/:id", getEventData)
 
 module.exports = router;
 
-// ===== TASKS =====
 
-// create a function for editing (PUT request)
+// multiple file upload with multer: https://stackoverflow.com/questions/36096805/uploading-multiple-files-with-multer-but-from-different-fields

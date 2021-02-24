@@ -85,6 +85,8 @@ class EditCarouselModal extends Component {
 
     // close modal
     this.handleClose();
+
+    window.location.reload();
   }
 
   render() {
@@ -147,8 +149,8 @@ class EditCarouselModal extends Component {
 
               <Form.Group controlId="slide2img">
                 <Form.Label>Image URL</Form.Label>
-                <Form.Control type="text" name="slide2src" value={slide2src} onChange={this.handleInputChange}  />
-                {/* <Form.Control required type="file" placeholder="Put image URL here." name="slide2src" onChange={this.handleFileInputChange} /> */}
+                {/* <Form.Control type="text" name="slide2src" value={slide2src} onChange={this.handleInputChange}  /> */}
+                <Form.Control required type="file" placeholder="Put image URL here." name="slide2src" onChange={this.handleFileInputChange} />
               </Form.Group>
 
               <Form.Group controlId="slide2link">
@@ -170,8 +172,8 @@ class EditCarouselModal extends Component {
 
               <Form.Group controlId="slide3img">
                 <Form.Label>Image URL</Form.Label>
-                <Form.Control type="text" name="slide3src" value={slide3src} onChange={this.handleInputChange}  />
-                {/* <Form.Control required type="file" placeholder="Put image URL here." name="slide3src" onChange={this.handleFileInputChange} /> */}
+                {/* <Form.Control type="text" name="slide3src" value={slide3src} onChange={this.handleInputChange}  /> */}
+                <Form.Control required type="file" placeholder="Put image URL here." name="slide3src" onChange={this.handleFileInputChange} />
               </Form.Group>
 
               <Form.Group controlId="slide3link">
