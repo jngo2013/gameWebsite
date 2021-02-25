@@ -56,11 +56,9 @@ module.exports = {
     // deconstruct the data from the front end
     let { body } = req;
 
-    // console.log("updatelegacy frontend data", body)
-
-    // get the path for the file from the front end and add it to body
-    body.src = "/" + req.file.path;
-
+    // check to see if a new file was uploaded; if not, use the path of the previous image
+    req.file !== undefined ? body.src = "/" + req.file.path : console.log("No image was uploaded");
+    
     // use mongoose to findbyid and update ({ new: true } gives you back the updated data)
     Legacy.findByIdAndUpdate(gameId, body, { new: true } )
       .then(game => {
