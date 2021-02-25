@@ -150,7 +150,7 @@ class EditModal extends Component {
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">
-                <Form.Label>Image URL</Form.Label>
+                <Form.Label>Image</Form.Label>
                 {/* <Form.Control type="text" name="src" value={src} onChange={this.handleInputChange}/> */}
                 {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} /> */}
                 <Form.Control type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} />
