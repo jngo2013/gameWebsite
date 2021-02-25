@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from './../../components/Loader';
 import { Button, Container, Card, Row, Col } from 'react-bootstrap';
 import EditModal from '../EditModal';
 import axios from 'axios';
@@ -152,7 +153,7 @@ class LegacyDetails extends Component {
             </Container>
           :
           // loader
-          <h1>loading...</h1>
+          <Loader />
         }  
       </div>
     );
