@@ -39,6 +39,15 @@ class AddLegacyModal extends Component {
   handleFileInputChange = event => {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
     console.log("in handleFileInputChange", event.target.files[0]);
+    console.log("inhandlefil legacy", event.target.files[0].type)
+
+    // // get the file type
+    // let fileType = event.target.files[0].type;
+
+    // // check the file type
+    // if(fileType !== "image/jpeg" || fileType !== "image/bmp" || fileType !== "image/gif" || fileType !== "image/png" || fileType !== "image/tiff") {
+    //   event.stopPropagation();
+    // }
   }
 
   // function to refresh page (to get new data)
@@ -131,7 +140,8 @@ class AddLegacyModal extends Component {
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Image URL</Form.Label>
-                <Form.Control required type="file" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} />
+                {/* https://stackoverflow.com/questions/4328947/limit-file-format-when-using-input-type-file */}
+                <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Please provide an image URL.</Form.Control.Feedback>
               </Form.Group>
