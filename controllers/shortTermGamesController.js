@@ -55,7 +55,10 @@ module.exports = {
     let { body } = req;
 
     // get the path for the file from the front end and add it to body
-    body.src = "/" + req.file.path;
+    // body.src = "/" + req.file.path;
+
+    // check to see if a new file was uploaded; if not, use the path of the previous image
+    req.file !== undefined ? body.src = "/" + req.file.path : console.log("No image was uploaded");
 
     // use mongoose to findByid and update ({ new: true } gives you back the updated data)
     Short.findByIdAndUpdate(gameId, body, { new: true })

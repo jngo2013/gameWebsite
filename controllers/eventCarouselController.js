@@ -19,9 +19,20 @@ module.exports = {
 
     // add slide1src, slide2src, and slide3src to the body from multer
     // file info is in "req.files"
-    body.slide1src = "/" + req.files.slide1src[0].path;
-    body.slide2src = "/" + req.files.slide2src[0].path;
-    body.slide3src = "/" + req.files.slide3src[0].path;
+    
+    // check to see if an image was uploaded; if not, don't update the image
+    if(req.files.slide1src !== undefined) {
+      body.slide1src = "/" + req.files.slide1src[0].path;
+    }
+
+    if(req.files.slide2src !== undefined) {
+      body.slide2src = "/" + req.files.slide2src[0].path;
+    }
+    
+    if(req.files.slide3src !== undefined) {
+      body.slide3src = "/" + req.files.slide3src[0].path;
+    }
+    
 
     // use mongoose to update
     // EventCarousel.updateOne(carouselData)
