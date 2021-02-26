@@ -7,6 +7,7 @@ import ShortTermDetails from './../ShortTermDetails';
 import LegacyDetails from './../LegacyDetails';
 import SignIn from './../SignIn';
 import SignOut from './../SignOut';
+import EventCalendar from './../Calendar';
 import Search from './../Search';
 import PageNotFound from './../../components/PageNotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -47,6 +48,7 @@ class App extends Component {
               <Route exact path="/ShortTermGames/:id" component={ShortTermDetails} />
               <Route exact path="/ShortTermGames/game/:id" component={ShortTermDetails} />
               <Route exact path="/LegacyGames/:id" component={LegacyDetails} />
+              <Route exact path="/Calendar" component={EventCalendar} />
               <Route exact path="/SignIn" component={SignIn} />
               <Route exact path='/SignOut' component={SignOut} />
               <Route exact path='/secretpage' component={SecretPage} />
