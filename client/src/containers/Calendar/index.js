@@ -9,7 +9,15 @@ export default class EventCalendar extends React.Component {
 
   state = {
     weekendsVisible: true,
-    currentEvents: []
+    currentEvents: [],
+    authenticated: false,
+  }
+
+  // check to see if the user has been authenticated
+  componentDidMount() {
+    if(localStorage.getItem('token') !== null){
+      this.setState({ authenticated: true });
+    } 
   }
 
   render() {
@@ -31,7 +39,8 @@ export default class EventCalendar extends React.Component {
             dayMaxEvents={true}
             weekends={this.state.weekendsVisible}
             initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
-            select={this.handleDateSelect}
+            // select={this.handleDateSelect}
+            select={this.state.authenticated ? this.handleDateSelect : null} // if user is authenticated, allow to add an event
             eventContent={renderEventContent} // custom render function
             eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
