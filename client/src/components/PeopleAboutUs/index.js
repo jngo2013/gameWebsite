@@ -10,13 +10,13 @@ import "./style.css";
 function People() {
   return (
     <div>
-      <div className="jumbotron-story">
+      {/* <div className="jumbotron-story">
         <h1 className="jumbotronText">Our Story</h1>
         <p className="jumbotronText">
           This is a simple hero unit, a simple jumbotron-style component for calling
           extra attention to featured content or information.
         </p>
-      </div>
+      </div> */}
 
       {/* <br></br>
       <br></br>
