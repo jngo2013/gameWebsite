@@ -26,7 +26,7 @@ class NavBar extends Component {
               <Link className="drop" to="/LegacyGames">CampaignGames</Link>
               <Link className="drop" to="/ShortTermGames">BoardGames</Link>
             </NavDropdown>
-
+            <Link className="aboutUs" to="/Calendar">Events</Link>
             {/* if 'props.authenticated' is 'true', show the 'Sign Out' link, otherwise display nothing */}
             { this.props.authenticated ? <Nav.Link href="/SignOut" className='navPadding'>Sign Out</Nav.Link> : null}
           </Nav>
