@@ -20,6 +20,7 @@ export default class EventCalendar extends React.Component {
     if(localStorage.getItem('token') !== null){
       this.setState({ authenticated: true });
     } 
+    axios.get('/api/calendar')
   }
 
   render() {
@@ -57,7 +58,7 @@ export default class EventCalendar extends React.Component {
       </div>
     )
   }
-  eventAdd= async event => {
+  eventAdd = async event => {
     event.preventDefault();
   await axios.post("/api/calendar",)
 }
@@ -114,7 +115,7 @@ export default class EventCalendar extends React.Component {
 
     if (title) {
       let calData = calendarApi.addEvent({
-        id: createEventId(),
+        // id: createEventId(),
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
