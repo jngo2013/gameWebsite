@@ -20,6 +20,6 @@ router.use('/admin', adminRoutes);
 
 router.use('/auth', authRoutes);
 
-router.use('/calendarevents', calendar);
+router.use('/calendar', calendar);
 
 module.exports = router;

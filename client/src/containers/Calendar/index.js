@@ -6,6 +6,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './eventDb'
 import axios from 'axios'
 
+
 export default class EventCalendar extends React.Component {
 
   state = {
@@ -56,10 +57,10 @@ export default class EventCalendar extends React.Component {
       </div>
     )
   }
-//   eventAdd= async event => {
-//     event.preventDefault();
-//   await axios.post("/api/calendar",)
-// }
+  eventAdd= async event => {
+    event.preventDefault();
+  await axios.post("/api/calendar",)
+}
   
   renderSidebar() {
     // if user is authenticated show the instructions, otherwise don't show them
@@ -106,18 +107,21 @@ export default class EventCalendar extends React.Component {
 
   handleDateSelect = (selectInfo) => {
     let title = prompt('Please enter a new title for your event')
+
     let calendarApi = selectInfo.view.calendar
 
     calendarApi.unselect() // clear date selection
 
     if (title) {
-      calendarApi.addEvent({
+      let calData = calendarApi.addEvent({
         id: createEventId(),
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
         allDay: selectInfo.allDay
       })
+      console.log(typeof calData, "this is calData")
+      axios.post('/api/calendar', calData)
     }
   }
 
