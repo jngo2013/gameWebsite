@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './eventDb'
+import axios from 'axios'
 
 export default class EventCalendar extends React.Component {
 
@@ -45,16 +46,20 @@ export default class EventCalendar extends React.Component {
             eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
             /* you can update a remote database when these fire:
-            eventAdd={function(){}}
+            
             eventChange={function(){}}
             eventRemove={function(){}}
             */
+           
           />
         </div>
       </div>
     )
   }
-
+//   eventAdd= async event => {
+//     event.preventDefault();
+//   await axios.post("/api/calendar",)
+// }
   
   renderSidebar() {
     // if user is authenticated show the instructions, otherwise don't show them
@@ -120,7 +125,6 @@ export default class EventCalendar extends React.Component {
     if (alert(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
       clickInfo.event.remove()
     }
-    window.location.reload()
   }
 
   handleEvents = (events) => {

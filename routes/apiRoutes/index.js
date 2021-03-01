@@ -3,7 +3,8 @@ const legacyGames = require('./legacyGames');
 const shortTermGames = require('./shortTermGames');
 const eventCarousel = require('./eventCarousel');
 const adminRoutes = require('./adminRoutes');
-const authRoutes = require ('./authRoutes')
+const authRoutes = require ('./authRoutes');
+const calendar = require('./calendarRoutes')
 // "/api" prepended here
 // legacy games route
 router.use("/legacygames", legacyGames);
@@ -18,5 +19,7 @@ router.use("/eventcarousel", eventCarousel);
 router.use('/admin', adminRoutes);
 
 router.use('/auth', authRoutes);
+
+router.use('/calendar', calendar);
 
 module.exports = router;
