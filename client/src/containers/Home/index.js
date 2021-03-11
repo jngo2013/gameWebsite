@@ -42,10 +42,18 @@ class Home extends Component {
 
     return (
       <div>
-        <br></br>
-        <h1 className="H1Text">Welcome</h1>
+        <div className="Home-header">
+          <h1 className="H1Text">The Board Game Project</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
         
-        <hr></hr>
+        
+        <hr className="Home-hr"></hr>
+
+        <div className="Home-news">
+          <h2>Latest News</h2>
+        </div>
+        
 
         <ControlledCarousel 
           slide1={slide1}
