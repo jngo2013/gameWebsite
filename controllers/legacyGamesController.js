@@ -57,7 +57,7 @@ module.exports = {
     let { body } = req;
 
     // check to see if a new file was uploaded; if not, use the path of the previous image
-    req.file !== undefined ? body.src = "/" + req.file.path : console.log("No image was uploaded");
+    // req.file !== undefined ? body.src = "/" + req.file.path : console.log("No image was uploaded");
     
     // use mongoose to findbyid and update ({ new: true } gives you back the updated data)
     Legacy.findByIdAndUpdate(gameId, body, { new: true } )
@@ -90,7 +90,7 @@ module.exports = {
     
     
     // add src to the body from multer
-    body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
+    // body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
 
     // create a new document instance to be entered in to the database
     let newLegacyGame = new Legacy(body);
