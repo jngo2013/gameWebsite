@@ -1,18 +1,21 @@
 .CardSection-container {
   background-color: #e9ecef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 10%;
   padding: 5rem;
+}
+
+.CardSection-content {
+  text-align: center;
+}
+
+.CardSection-content-header {
+  font-size: 5rem;
+  font-family: bodoni;
+  margin-bottom: 2rem;
 }
 
 .CardSection-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
-
-
-
