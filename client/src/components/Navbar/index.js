@@ -23,8 +23,8 @@ class NavBar extends Component {
 
             {/* ===== DROPDOWN MENU ===== */}
             <NavDropdown title="Games" id="basic-nav-dropdown">
-              <Link className="drop" to="/LegacyGames">CampaignGames</Link>
-              <Link className="drop" to="/ShortTermGames">BoardGames</Link>
+              <Link className="drop" to="/LegacyGames">Campaign Games</Link>
+              <Link className="drop" to="/ShortTermGames">Board Games</Link>
             </NavDropdown>
             {/* <Link className="aboutUs" to="/Calendar">Events</Link> */}
             {/* if 'props.authenticated' is 'true', show the 'Sign Out' link, otherwise display 'Sign In' */}

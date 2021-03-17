@@ -15,6 +15,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.1s ease-out;
+  text-shadow: 0.2rem 0.2rem 0.2rem black;
 }
 
 /* for making the title disappear when you hover over the card */
@@ -27,6 +28,7 @@
   /* text styles */
   color: white;
   font-size: 2rem;
+  text-shadow: 0.2rem 0.2rem 0.2rem black;
 
   /* positioning the overlay directly over the card */
   position: absolute;
