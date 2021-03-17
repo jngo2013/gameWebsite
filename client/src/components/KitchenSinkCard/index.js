@@ -21,7 +21,8 @@ function KitchenSinkCard(props) {
         
         
 
-        <Card.Body className="overflow-auto">
+        {/* <Card.Body className="overflow-auto"> */}
+        <Card.Body className="KitchenSinkCard-body">
           <Card.Title>{props.name}</Card.Title>
           {/* <Card.Text >{props.description}</Card.Text> */}
         </Card.Body>
