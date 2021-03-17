@@ -23,7 +23,7 @@ function KitchenSinkCard(props) {
 
         <Card.Body className="overflow-auto">
           <Card.Title>{props.name}</Card.Title>
-          <Card.Text >{props.description}</Card.Text>
+          {/* <Card.Text >{props.description}</Card.Text> */}
         </Card.Body>
 
         <ListGroup className="list-group-flush">

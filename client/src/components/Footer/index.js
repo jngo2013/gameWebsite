@@ -9,7 +9,18 @@ function Footer() {
     <div>
         <Container fluid className="Footer-container">
         <Row className="Footer-row">
-          <Col className="Footer-col1"></Col>
+          <Col className="Footer-col1">
+            <h2>Streaming Schedule</h2>
+            <ul className="Footer-days">
+              <li>Sunday:  3-5</li>
+              <li>Monday:  3-5</li>
+              <li>Tuesday:  3-5</li>
+              <li>Wednesday: 3-5</li>
+              <li>Thursday: 3-5</li>
+              <li>Friday:  3-5</li>
+              <li>Saturday:  3-5</li>
+            </ul>
+          </Col>
 
           {/* ===== LOGO ===== */}
           <Col className="Footer-col" lg={4} md={6} sm={12}>

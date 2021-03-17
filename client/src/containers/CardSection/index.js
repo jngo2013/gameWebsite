@@ -8,11 +8,11 @@ class CardSection extends Component {
     info: [
       {
         title: "Campaign Games",
-        description:  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        description:  "Games with epic stories, like Gloomhaven!"
       },
       {
         title: "Board Games",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        description: "Games like Settlers of Catan!"
       }
     ]
   }
