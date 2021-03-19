@@ -20,3 +20,22 @@
   justify-content: center;
   align-items: center;
 }
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (max-width: 620px) {
+  .CardSection-content-header {
+    font-size: 8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .CardSection-content-header {
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .CardSection-content-header {
+    font-size: 4rem;
+  }
+}
