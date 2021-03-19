@@ -1,0 +1,36 @@
+.cal{
+  width: 100%;
+  /* width: 85rem; */
+  /* height: 45rem;  */
+  height: 90vh;
+}
+
+@media screen and (max-width: 991px) {
+  .cal{
+    width: 60rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cal{
+    width: 50rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .cal{
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .cal{
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .cal{
+    width: 20rem;
+  }
+}
