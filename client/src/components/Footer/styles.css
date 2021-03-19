@@ -79,16 +79,16 @@
 }
 
 /* ===== Media Queries ===== */
-@media screen and (max-width: 1183px) {
+/* @media screen and (max-width: 1183px) {
   .Footer-col-fill {
     display: none;
   }
-}
+} */
 
 @media screen and (max-width: 991px) {
-  .Footer-col1 {
+  /* .Footer-col1 {
     display: none;
-  }
+  } */
 
   .Footer-row {
     display: block;
