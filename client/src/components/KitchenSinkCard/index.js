@@ -8,16 +8,18 @@ function KitchenSinkCard(props) {
       {/* <Card style={{ width: '21rem', height: '37rem' }} bg="secondary" className="KitchenSinkCard"> */}
       <Card bg="secondary" className="KitchenSinkCard">
 
-        
+        <div className="KitchenSinkCard-img-div">
           <Card.Img 
-            variant="top" 
-            // if 'props.src' is undefined, show the replacement image, otherwise show props.src
-            // src={ props.src === undefined 
-            //     ? "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=859&q=80" 
-            //     : props.src } 
-            src={props.src}
-            className="KitchenSinkCard-img" 
+              variant="top" 
+              // if 'props.src' is undefined, show the replacement image, otherwise show props.src
+              // src={ props.src === undefined 
+              //     ? "https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=859&q=80" 
+              //     : props.src } 
+              src={props.src}
+              className="KitchenSinkCard-img" 
           />
+        </div>
+          
         
         
 
