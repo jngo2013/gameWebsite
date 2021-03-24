@@ -45,8 +45,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: black; */
-  background-color: lightgray;
+  background-color: black;
+  /* background-color: lightgray; */
 }
 
 .ShortTermGames-col1 hr {
