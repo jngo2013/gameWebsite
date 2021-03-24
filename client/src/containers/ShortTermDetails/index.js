@@ -114,12 +114,15 @@ class ShortTermDetails extends Component {
 
                   {/* ===== IMAGE =====  */}
                   <Col id="ShortTermGames-col2" lg>
-                    <Card.Img 
-                      variant="top" 
-                      src={src}
-                      alt="board game"
-                      className="ShortTermGames-details-img"
-                    />
+                    <div className="ShortTermGames-col2-div">
+                      <Card.Img 
+                        variant="top" 
+                        src={src}
+                        alt="board game"
+                        className="ShortTermGames-details-img"
+                      />
+                    </div>
+                    
                   </Col>
                   
                 </Row>

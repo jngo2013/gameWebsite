@@ -109,12 +109,15 @@ class LegacyDetails extends Component {
                   
                   {/* ===== IMAGE ===== */}
                   <Col id="LegacyGames-col2" lg>
-                    <Card.Img 
-                      variant="top" 
-                      src={src}
-                      alt="board game" 
-                      className="LegacyGames-details-img"
-                    />
+                    <div className="LegacyGames-col2-div">
+                      <Card.Img 
+                        variant="top" 
+                        src={src}
+                        alt="board game" 
+                        className="LegacyGames-details-img"
+                      />
+                    </div>
+                    
                   </Col>
                 </Row>
                 

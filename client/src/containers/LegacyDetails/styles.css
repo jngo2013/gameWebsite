@@ -37,6 +37,18 @@
 #LegacyGames-col2 {
   padding-left: 0;
   padding-right: 0;
+  /* height: 100%; */
+  height: 40rem;
+}
+
+.LegacyGames-col2-div {
+  /* border: 3px solid black; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: black; */
+  background-color: lightgray;
 }
 
 .LegacyGames-col1 hr {
@@ -65,6 +77,12 @@
   width: 100%;
   /* height: 35vh; */
   /* object-fit: cover; */
+  /* height: 100%; */
+  /* max-height: 100%; */
+}
+
+.card-img-top.LegacyGames-details-img {
+  max-height: 100%;
 }
 
 /* https://stackoverflow.com/questions/30593103/preserve-line-breaks-in-textarea */
