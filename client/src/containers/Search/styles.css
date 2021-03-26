@@ -24,6 +24,11 @@
   height: 1px;
 }
 
+a.Search-link {
+  color: black;
+  text-decoration: none;
+}
+
 /* ===== MEDIA QUERIES =====  */
 @media screen and (max-width: 450px) {
   .Search-h1 {

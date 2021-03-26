@@ -23,10 +23,13 @@ class Search extends Component {
       // search legacy games database
       // send the inquiry to the backend (GET request to "/api/legacygames/search/:id")
       let legRes = await axios.get(`/api/legacygames/search/${searchinput}`);
-      console.log(searchinput, "line 24")
+      // console.log(searchinput, "line 24")
+      console.log("legRes data", legRes.data)
 
       // for each result, push the data into "searchResults"
       for(let searchResult of legRes.data) {
+        // add the api path and id to the search result 
+        searchResult.href = `/LegacyGames/${searchResult._id}`
         allResults.push(searchResult);
       }
 
@@ -34,8 +37,12 @@ class Search extends Component {
       // send the inquiry to the backend (GET request to "/api/shorttermgames/search/:id")
       let shortRes = await axios.get(`/api/shorttermgames/search/${searchinput}`);
 
+      console.log("shortRes data", shortRes.data)
+
       // for each result, push the data into "searchResults"
       for(let searchResult of shortRes.data) {
+        // add the api path and id to the search result 
+        searchResult.href = `/ShortTermGames/${searchResult._id}`
         allResults.push(searchResult);
       }
 
@@ -51,7 +58,8 @@ class Search extends Component {
   render(){
     // for every result make a KitchenSinkCard
     const allSearchResults = this.state.allResults.map(result => 
-      <KitchenSinkCard 
+      <a href={result.href} target="_blank" rel="noopener noreferrer" className="Search-link" key={result._id}>
+        <KitchenSinkCard 
           src={result.src}
           name={result.title}
           description={result.description}
@@ -60,6 +68,7 @@ class Search extends Component {
           realRulesLink={result.realRulesLink}
           drunkRulesLink={result.drunkRulesLink}
         />
+      </a>
     );
 
     return (
