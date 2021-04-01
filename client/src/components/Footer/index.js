@@ -40,11 +40,11 @@ function Footer() {
               <ul className="Footer-ul">
                 <div>
                   <Row className="Footer-icon-row">
-                    <li><a href="https://www.facebook.com/DrunkOnGamesChannel" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook Footer-facebook"></i></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCUgcXszSeKLcAS6rT2h0Fjg" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube Footer-youtube"></i></a></li>
-                    <li><a href="https://www.instagram.com/drunkongameschannel/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram Footer-instagram"></i></a></li>
-                    <li><a href="https://twitter.com/DrnkOnGames" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter Footer-twitter"></i></a></li>
-                    <li><a href="mailto:DrunkonGamesChannel@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fas fa-envelope Footer-envelope"></i></a></li>
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook Footer-facebook"></i></a></li>
+                    <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube Footer-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram Footer-instagram"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter Footer-twitter"></i></a></li>
+                    <li><a href="mailto:JustSomeRandomEmail@gmail.com" target="_blank" rel="noopener noreferrer"><i className="fas fa-envelope Footer-envelope"></i></a></li>
                   </Row>
                 </div>
               </ul>
