@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, Container, Row, Col } from 'react-bootstrap';
-import JG from "./images/JG.jpg";
-import AL from "./images/AL.jpg";
-import GG from "./images/GG.jpg";
-import May from "./images/May3.jpg";
-import R from "./images/R.png"
+import JG from "./images/I1.jpg";
+import AL from "./images/I2.jpg";
+import GG from "./images/I3.jpg";
+import May from "./images/I4.jpg";
+import R from "./images/I5.jpg"
 import "./style.css";
 
 function People() {
@@ -18,12 +18,12 @@ function People() {
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="JG" src={JG} roundedCircle />
-            <h1>Jonathan Grothe</h1>
+            <h1>Joseph Koy</h1>
           </Col>
 
           <Col className="textCenter">
             <p>
-              Jonathan is a long running board game enthusiast. Founder of Drunk on Games when taking his top two passions and mixing them together. You'll find him at his local board game club SJ Gamekrackers making sure everyone learns some new games and has a good time. Lives by the motto "Everyone loves board games, most just don't know it yet."
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lobortis neque, sit amet placerat velit. Aenean at risus scelerisque, porta ex in, vestibulum leo. Praesent ac molestie nisl, at imperdiet ipsum. Nullam vestibulum, felis sit amet consequat lacinia, nisl justo pellentesque lacus, id gravida nunc neque id purus.Cras dignissim vitae purus facilisis malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Donec auctor urna in lorem pulvinar, ac semper orci porttitor. Sed elementum, tortor dapibus commodo gravida, urna lacus commodo lacus, eget pellentesque orci lacus rhoncus augue.
             </p>
           </Col>
         </Row>
@@ -36,12 +36,12 @@ function People() {
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="AL" src={AL} roundedCircle />
-            <h1>Albert Le</h1>
+            <h1>Rosaline Song</h1>
           </Col>
 
           <Col className="textCenter">
             <p>
-              The local rules lawyer, co-op advocate, and camera coordinator, I am constantly looking to optimize in both games and recording content. When a specific issue comes up, I'm either asking about it, or...using it to my advantage.
+            Phasellus elementum lacus risus, in mattis risus lobortis a. Cras blandit cursus diam nec efficitur. Praesent vitae scelerisque odio. Quisque porttitor vehicula mi, quis fermentum erat faucibus sit amet. Donec bibendum, urna eget pellentesque efficitur, dui quam facilisis erat, eget ultricies erat dolor quis elit. Cras vitae eros eget magna pulvinar viverra. Sed in felis augue.
             </p>
           </Col>
         </Row>
@@ -54,12 +54,12 @@ function People() {
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="GG" src={GG} roundedCircle />
-            <h1>Gabe Golden</h1>
+            <h1>Martin Reyes</h1>
           </Col>
 
           <Col className="textCenter">
             <p>
-              Golden is a Linguist who loves languages, voice acting, and of course boardgames! His favorite types of games are push your luck,  social deduction, and party games.  He is currently creating Boardgames that help people learn languages. You can follow him on Instagram as GoldenFedoraFox or <a href="https://www.instagram.com/PassionfruitEducation/" target="_blank" rel="noopener noreferrer">PassionfruitEducation</a>.
+            Mauris ultricies ante vel felis convallis tempus. Morbi quis tristique mauris. Vestibulum feugiat, dolor non rutrum lobortis, augue dui maximus ex, non posuere eros quam in lorem. Proin tempus, odio id aliquam maximus, nisi sem facilisis nibh, eu mollis sem nisi viverra dui. Nulla tristique, erat a tristique viverra, urna massa tempor magna, a porta mi massa at mi. Mauris sem magna, vulputate vitae dui dignissim, convallis luctus ligula. Maecenas molestie, lectus et egestas vehicula, lacus nisi blandit lorem, pellentesque sodales enim nulla sed enim.
             </p>
           </Col>
         </Row>
@@ -72,19 +72,19 @@ function People() {
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="May" src={May} roundedCircle />
-            <h1>Maybeline</h1>
+            <h1>Marilyn</h1>
           </Col>
 
           <Col className="textCenter">
             <div>
-              <p>Hello! Maybeline here, at your service!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
               <p>
-                I love the board game world! There is something wonderful about sitting around a table with people and a game in front of us that brings closer connections with one other. An extra bonus is when there are drinking rules (alcoholic beverages and non-alcoholic beverages). My strategy when playing a strategic game (whether it is co-op or not) is to be in my own world and analyze other player's moves. I'll be that "quiet player" that does their own thing and everyone forgets about and ends up winning the game. It works like a charm (most of the time).
+              Donec quis aliquet purus. Proin laoreet maximus lacus, non lobortis dolor malesuada non. Integer ex arcu, efficitur a elit et, auctor ultricies velit. Cras nec fermentum ipsum. Ut dapibus suscipit dignissim. Quisque lobortis urna vel mauris suscipit, quis gravida nulla varius. Phasellus egestas nunc justo, vel ornare dolor condimentum at. Aenean dapibus lorem malesuada risus faucibus, nec varius mi faucibus. Sed efficitur ultricies lacinia. Maecenas posuere eu ex sit amet volutpat.
               </p>
 
               <p>
-                I spend most of my time behind the scene for Drunk on Games as a video editor providing great content for the viewers. So if you see me in a video, comment on that video a cherry blossom flower "🌸" emoji!
+              Quisque fermentum elit vel leo lobortis, in vestibulum purus tempor. Nullam mollis, diam vel mattis condimentum, libero dui congue urna, non tempor neque ligula gravida nulla. Suspendisse venenatis aliquet dictum. Donec sit amet condimentum metus. Aliquam interdum condimentum quam sed porta. Vestibulum ac malesuada orci, dignissim semper augue. Ut quis ipsum suscipit, elementum leo eget, faucibus arcu.
               </p>
             </div>
           </Col>
@@ -97,12 +97,12 @@ function People() {
         <Row>
           <Col lg={3} className="People-col1">
             <Image className="GG" src={R} roundedCircle />
-            <h1>Ryan</h1>
+            <h1>Lucinda</h1>
           </Col>
 
           <Col className="textCenter">
             <p>
-            Starting his obsession with Collectible Card Games and the Super Nintendo in his youth, Ryan has always had a love for all things gaming. A veteran MMO, RPG and strategy PC gamer; he re-found his love of board games in recent years. Today he is excited for the emerging renaissance of the board games industry and the many games it will be offering up. Let's play!
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida, mauris eget posuere tempor, est nisi pellentesque magna, sed porttitor magna eros sit amet felis. Nulla vel velit diam. Duis bibendum faucibus velit, vitae tristique leo commodo vel. Phasellus ac arcu ex. Duis porttitor turpis non ipsum blandit efficitur.
             </p>
           </Col>
         </Row>
