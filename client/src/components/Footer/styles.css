@@ -78,18 +78,8 @@
   color:  #1DA1F2;
 }
 
-/* ===== Media Queries ===== */
-/* @media screen and (max-width: 1183px) {
-  .Footer-col-fill {
-    display: none;
-  }
-} */
-
+/* ===== MEDIA QUERIES ===== */
 @media screen and (max-width: 991px) {
-  /* .Footer-col1 {
-    display: none;
-  } */
-
   .Footer-row {
     display: block;
   }
