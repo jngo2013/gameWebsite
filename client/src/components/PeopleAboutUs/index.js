@@ -10,25 +10,8 @@ import "./style.css";
 function People() {
   return (
     <div>
-      {/* <div className="jumbotron-story">
-        <h1 className="jumbotronText">Our Story</h1>
-        <p className="jumbotronText">
-          This is a simple hero unit, a simple jumbotron-style component for calling
-          extra attention to featured content or information.
-        </p>
-      </div> */}
-
-      {/* <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br> */}
-      
       <h1 className="titleCenter">The Crew</h1>
-      {/* <hr></hr> */}
       <hr className="theCrew-hr" />
-      {/* <br></br>
-      <br></br> */}
 
       {/* ===== JONATHAN GROTHE =====  */}
       <Container className="People-container">
@@ -47,7 +30,6 @@ function People() {
       </Container>
     
       <hr className="theCrew-hr" />
-      {/* <br></br> */}
     
       {/* ===== ALBERT LEE =====  */}
       <Container className="People-container">
@@ -66,7 +48,6 @@ function People() {
       </Container>
     
       <hr className="theCrew-hr" />
-      {/* <br></br> */}
 
       {/* ===== GABE GOLDEN ===== */}
       <Container className="People-container">
@@ -85,7 +66,6 @@ function People() {
       </Container>
     
       <hr className="theCrew-hr" />
-      {/* <br></br> */}
 
       {/* ===== MAYBELINE ===== */}
       <Container className="People-container">
@@ -112,7 +92,6 @@ function People() {
       </Container>
 
       <hr className="theCrew-hr" />
-      {/* <br></br> */}
 
       <Container className="People-container">
         <Row>
@@ -130,7 +109,6 @@ function People() {
       </Container>
 
       <hr className="theCrew-hr" />
-      {/* <br></br> */}
     </div>
   );
 }

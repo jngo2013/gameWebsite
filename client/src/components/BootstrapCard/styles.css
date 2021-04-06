@@ -91,11 +91,6 @@
 }
 
 @media screen and (max-width: 300px) {
-  /* .BootstrapCard {
-    width: 90%;
-    margin: 1rem auto;
-  } */
-
   .BootstrapCard-title {
     font-size: 2rem;
   }
