@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import { Button, Modal, Form, Container } from 'react-bootstrap';
-// import './styles.css';
+import { Button, Modal, Form } from 'react-bootstrap';
 
 class EditCarouselModal extends Component {
   state = {
@@ -41,16 +40,9 @@ class EditCarouselModal extends Component {
     this.setState({ carouselData: {...this.state.carouselData, [event.target.name]: event.target.value }});
   }
 
-  // function for uploading an image
-  handleFileInputChange = event => {
-    this.setState({ carouselData: {...this.state.carouselData, [event.target.name]: event.target.files[0] }});
-    console.log("filename:", this.state.carouselData.slide1src);
-  }
-
   handleOnSubmit = async event => {
     event.preventDefault();
 
-    // console.log("asdfdsf", this.state.carouselData.slide1);
     // "FormData" is creating a new empty object that all of the form data will go into
     let formData = new FormData();
 
@@ -69,18 +61,8 @@ class EditCarouselModal extends Component {
     formData.append("slide2link", slide2link);
     formData.append("slide3link", slide3link);
 
-    console.log("this is formData in eventCarousel", formData)
     // send the edited data to the backend and get a response (PUT REQUEST)
-    // let { data } = await axios.put("/api/eventcarousel", { carouselData: this.state.carouselData });
     let { data } = await axios.put("/api/eventcarousel", formData);
-
-
-    // send updated data to parent for rerendering of the carousel
-
-    // if you're on the 'secret page' don't run this function; otherwise run it
-    if(!this.props.onSecret) {
-      this.props.passDataToParent(data);
-    }
     
     // alert user they successfully edited
     alert("Edits saved!");
@@ -98,11 +80,9 @@ class EditCarouselModal extends Component {
     return (
       <>
         {/* Button to show the modal */}
-        {/* <Container className="EditCarouselModal-container"> */}
           <Button variant="info" className="EditCarouselModal-button" onClick={this.handleEdit}>
             Edit Slides
           </Button>
-        {/* </Container> */}
         
         {/* The actual modal */}
         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -113,7 +93,6 @@ class EditCarouselModal extends Component {
           <Modal.Body>
 
             {/* Form inside modal */}
-            
               {/* Slide 1 Info */}
               <Form.Group controlId="slide1epi">
                 <h3>Slide 1</h3>
@@ -129,8 +108,6 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="slide1img">
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control type="text" name="slide1src" value={slide1src} onChange={this.handleInputChange}  />
-                {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="slide1src" onChange={this.handleFileInputChange} /> */}
-                {/* <Form.Control type="file" accept="image/*" placeholder="Put image URL here." name="slide1src" onChange={this.handleFileInputChange} /> */}
               </Form.Group>
 
               <Form.Group controlId="slide1link">
@@ -153,8 +130,6 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="slide2img">
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control type="text" name="slide2src" value={slide2src} onChange={this.handleInputChange}  />
-                {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="slide2src" onChange={this.handleFileInputChange} /> */}
-                {/* <Form.Control type="file" accept="image/*" placeholder="Put image URL here." name="slide2src" onChange={this.handleFileInputChange} /> */}
               </Form.Group>
 
               <Form.Group controlId="slide2link">
@@ -177,8 +152,6 @@ class EditCarouselModal extends Component {
               <Form.Group controlId="slide3img">
                 <Form.Label>Image URL</Form.Label>
                 <Form.Control type="text" name="slide3src" value={slide3src} onChange={this.handleInputChange}  />
-                {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="slide3src" onChange={this.handleFileInputChange} /> */}
-                {/* <Form.Control type="file" accept="image/*" placeholder="Put image URL here." name="slide3src" onChange={this.handleFileInputChange} /> */}
               </Form.Group>
 
               <Form.Group controlId="slide3link">

@@ -1,6 +1,4 @@
 .ShortTermGames-BG {
-  /* background: rgb(0,43,148); */
-  /* background: linear-gradient(90deg, rgba(0,43,148,1) 0%, rgba(34,108,245,1) 11%, rgba(27,104,246,1) 89%, rgba(0,49,139,1) 100%); */
   /* Pattern from: https://www.transparenttextures.com/wood-pattern.html */
   background-image: url("./images/wood-pattern.png");
   background-color: rgba(166, 86, 0, 0.1);
@@ -52,7 +50,6 @@
   display: flex;
   align-items: center;
   margin-left: 1rem;
-  /* box-shadow: 0.2rem 0.2rem 0.3rem grey; */
 }
 
 /* ===== MEDIA QUERIES ===== */

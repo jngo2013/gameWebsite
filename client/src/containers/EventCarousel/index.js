@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Carousel, Container } from 'react-bootstrap';
-// import jol4 from './images/jol4.jpeg';
-// import jol3 from './images/jol3.jpeg';
-// import jol1 from './images/jol1.jpeg';
 import EditCarouselModal from './../EditCarouselModal';
 import './style.css';
 
@@ -17,7 +14,6 @@ class ControlledCarousel extends Component {
 
   render() {
     // get data from props
-    // console.log(this.props, "line 20 in event caorusel")
     const { slide1, slide2, slide3, slide1desc, slide2desc, slide3desc, slide1src, slide2src, slide3src, slide1link, slide2link, slide3link, _id, passDataToParent } = this.props;
 
     return (
@@ -37,7 +33,7 @@ class ControlledCarousel extends Component {
                 </a>
                 
                 <Carousel.Caption>
-                  <h3> {slide1}</h3>
+                  <h3>{slide1}</h3>
                   <p>{slide1desc}</p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -53,7 +49,7 @@ class ControlledCarousel extends Component {
                 </a>
                 
                 <Carousel.Caption>
-                  <h3> {slide2}</h3>
+                  <h3>{slide2}</h3>
                   <p>{slide2desc}</p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -69,7 +65,7 @@ class ControlledCarousel extends Component {
                 </a>
                 
                 <Carousel.Caption>
-                  <h3> {slide3}</h3>
+                  <h3>{slide3}</h3>
                   <p>{slide3desc}</p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -79,13 +75,6 @@ class ControlledCarousel extends Component {
             
         </Container>
 
-        {/* { this.state.authenticated
-          ?
-          <EditCarouselModal passDataToParent={this.passDataToParent} _id={_id}/>
-          :
-          null
-        } */}
-
         {/* Edit modal button on homepage */}
         { this.props.authenticated
           ?
@@ -94,9 +83,7 @@ class ControlledCarousel extends Component {
           </Container>
           :
           null
-        }
-        
-        
+        } 
       </div>
     );
   }

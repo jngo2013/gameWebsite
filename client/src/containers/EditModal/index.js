@@ -18,11 +18,9 @@ class EditModal extends Component {
 
     // make an API call to get the data from the database
     try {
-      // let response = await axios.get(`/api/legacygames/${gameId}`);
       let response = await axios.get(`${apiRoute}${gameId}`);
       // set the gameData to be 'response.data'
       this.setState({ gameData: response.data });
-      console.log("this is the data to edit", this.state.gameData);
     } catch (err) {
       console.log(err);
     }
@@ -69,8 +67,6 @@ class EditModal extends Component {
 
     console.log("this is formData in editModal", formData);
     // send the data to the backend and get a response
-    // console.log("data sent", this.state.gameData);
-    // let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, { gameData: this.state.gameData });
     let { data } = await axios.put(`${apiRoute}${this.state.gameData._id}`, formData);
 
     // change the state of the gameData to be the response after updating the database
@@ -152,8 +148,6 @@ class EditModal extends Component {
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Image</Form.Label>
                 <Form.Control type="text" name="src" value={src} onChange={this.handleInputChange}/>
-                {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} /> */}
-                {/* <Form.Control type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} /> */}
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">

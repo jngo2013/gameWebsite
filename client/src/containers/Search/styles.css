@@ -32,7 +32,6 @@ a.Search-link {
 /* ===== MEDIA QUERIES =====  */
 @media screen and (max-width: 450px) {
   .Search-h1 {
-    /* border: 3px solid blue; */
     font-size: 3rem;
     text-align: center;
     padding: 2rem;
@@ -55,6 +54,5 @@ a.Search-link {
     padding-top: 2rem;
     padding-left: 0;
     padding-right: 0;
-    /* padding: 0; */
   }
 }
