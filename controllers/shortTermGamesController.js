@@ -54,12 +54,6 @@ module.exports = {
     // deconstruct the data from the front end
     let { body } = req;
 
-    // get the path for the file from the front end and add it to body
-    // body.src = "/" + req.file.path;
-
-    // check to see if a new file was uploaded; if not, use the path of the previous image
-    // req.file !== undefined ? body.src = "/" + req.file.path : console.log("No image was uploaded");
-
     // use mongoose to findByid and update ({ new: true } gives you back the updated data)
     Short.findByIdAndUpdate(gameId, body, { new: true })
       .then(game => {
@@ -88,11 +82,7 @@ module.exports = {
   addShortTermGame: (req, res) => {
     console.log("you reached the addShortTermGame function!");
     // 1. get the data from the front end
-    // console.log(req.body, "line 64");
     const { body } = req;
-
-    // add src to the body from multer
-    // body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
     
     // 2. create a new document instance to be entered into the database
     let newShortTermGame = new Short(body);

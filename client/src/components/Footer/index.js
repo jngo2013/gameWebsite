@@ -10,7 +10,7 @@ function Footer() {
         <Container fluid className="Footer-container">
         <Row className="Footer-row">
           <Col className="Footer-col1">
-            <h2>Streaming Schedule</h2>
+            <h2>Schedule</h2>
             <ul className="Footer-days">
               <li>Sunday:  3-5</li>
               <li>Monday:  3-5</li>

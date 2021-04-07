@@ -15,7 +15,6 @@ import Footer from './../../components/Footer';
 import Container from 'react-bootstrap/Container';
 import Home from "../Home";
 import AboutUs from '../AboutUs';
-import SecretPage from './../../containers/SecretPage';
 import "./style.css";
 
 class App extends Component {
@@ -49,7 +48,6 @@ class App extends Component {
               <Route exact path="/Calendar" component={EventCalendar} />
               <Route exact path="/SignIn" component={SignIn} />
               <Route exact path='/SignOut' component={SignOut} />
-              <Route exact path='/secretpage' component={SecretPage} />
               <Route exact path="/notfound" render={() => <PageNotFound message="Sorry!  That game doesn't exist." />} />
               <Route exact path="/search/:searchinput" component={Search} />
               <Route render={() => <PageNotFound message="Sorry! That page doesn't exist."/>} />

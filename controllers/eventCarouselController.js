@@ -16,9 +16,6 @@ module.exports = {
     console.log("you've reached the event carousel PUT request!");
     // get the updated date from the front end (using req.body)
     let { body } = req;
-
-    // add slide1src, slide2src, and slide3src to the body from multer
-    // file info is in "req.files"
     
     // check to see if an image was uploaded; if not, don't update the image
     if(req.files.slide1src !== undefined) {
@@ -33,14 +30,9 @@ module.exports = {
       body.slide3src = "/" + req.files.slide3src[0].path;
     }
     
-
     // use mongoose to update
-    // EventCarousel.updateOne(carouselData)
     EventCarousel.updateOne(body)
       .then(() => {
-        // console.log(carouselData, "line 24");
-        console.log(body, "line 24");
-        // res.json(carouselData);
         res.json(body);
       })
       .catch(err => {
