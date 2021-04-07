@@ -1,7 +1,6 @@
 const { isEmail, isLength } = require('validator');
 const jwt = require('jwt-simple');
 const { User } = require('../models');
-// const secret  = process.env.secret;
 const { secret } = require('../config.js');
 
 function tokenForUser(user) {
@@ -45,5 +44,4 @@ module.exports = {
     
   },
   signIn: (req, res) => {res.json({ token: tokenForUser(req.user) })},
-  // signIn: (req, res) => console.log(req)
 };
