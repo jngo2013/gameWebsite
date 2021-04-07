@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Form, Button, Container, Alert } from "react-bootstrap";
-import PageNotFound from './../../components/PageNotFound';
 import axios from "axios";
 import './styles.css';
 
@@ -106,11 +105,6 @@ class SignIn extends Component {
 
         </Container>  
       );
-    // } else {
-    //   return (
-    //     <PageNotFound message="Sorry! That user doesn't exist or your email/password was incorrect." />
-    //   );
-    // } 
   }
 };
 
