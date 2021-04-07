@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 
 module.exports = {
   getAllLegacyGames: (req, res) => {
-    // res.send("you reached the route");
     console.log("you reached the get all legacy games function!");
     Legacy.find({})
       .then(game => {
@@ -55,9 +54,6 @@ module.exports = {
 
     // deconstruct the data from the front end
     let { body } = req;
-
-    // check to see if a new file was uploaded; if not, use the path of the previous image
-    // req.file !== undefined ? body.src = "/" + req.file.path : console.log("No image was uploaded");
     
     // use mongoose to findbyid and update ({ new: true } gives you back the updated data)
     Legacy.findByIdAndUpdate(gameId, body, { new: true } )
@@ -87,10 +83,6 @@ module.exports = {
   addLegacyGame: (req, res) => {
     // get information from the front end (req.body is already an object)
     const { body } = req;
-    
-    
-    // add src to the body from multer
-    // body.src = "/" + req.file.path;  // <-- req.file.path contains the file info from the front end
 
     // create a new document instance to be entered in to the database
     let newLegacyGame = new Legacy(body);
