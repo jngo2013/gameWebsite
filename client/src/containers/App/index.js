@@ -38,10 +38,8 @@ class App extends Component {
           <Router>
             <ScrollToTop />
             <NavBar authenticated={this.state.authenticated} passToSearch={this.passToSearch} />
-
             <Switch>
               <Route exact path="/" component={Home} />
-              {/* <Route exact path="/" render={() => <Home authenticated={this.state.authenticated} />} /> */}
               <Route exact path="/AboutUs" component={AboutUs} />
               <Route exact path="/LegacyGames" component={LegacyGames} />
               <Route exact path="/ShortTermGames" component={ShortTermGames} />
@@ -54,7 +52,6 @@ class App extends Component {
               <Route exact path='/secretpage' component={SecretPage} />
               <Route exact path="/notfound" render={() => <PageNotFound message="Sorry!  That game doesn't exist." />} />
               <Route exact path="/search/:searchinput" component={Search} />
-              {/* <Route component={PageNotFound} /> */}
               <Route render={() => <PageNotFound message="Sorry! That page doesn't exist."/>} />
             </Switch>
             <Footer />

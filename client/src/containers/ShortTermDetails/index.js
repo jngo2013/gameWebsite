@@ -11,7 +11,6 @@ class ShortTermDetails extends Component {
     redirect: false,
     authenticated: false,
     isLoaded: false,
-    // authenticated: true,
   }
 
   // for componentDidMount():

@@ -27,7 +27,6 @@ class LegacyGames extends Component {
       console.log(response.data, "line 25 in legacy games")
       // set the "legacyGameData" state to be the data from the response
       this.setState({ legacyGameData: response.data, isLoaded: true });
-      // this.setState({ legacyGameData: response.data });
     } catch (err) {
       console.log(err);
     }
@@ -46,8 +45,6 @@ class LegacyGames extends Component {
         description={game.description}
         players={game.players}
         time={game.time}
-        // realRulesLink={game.realRulesLink}
-        // drunkRulesLink={game.drunkRulesLink}
         drunkRating={game.drunkRating}
       />
     </a>
@@ -55,7 +52,6 @@ class LegacyGames extends Component {
 
     return (
       <div className="LegacyGames-BG">
-        
         {
           this.state.isLoaded
           ?
@@ -82,7 +78,6 @@ class LegacyGames extends Component {
           :
           <Loader />
         }
-       {/* <Footer /> */}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import BootstrapCard from './../../components/BootstrapCard';
-import './CardSection.css';
+import './styles.css';
 
 class CardSection extends Component {
   static defaultProps = {

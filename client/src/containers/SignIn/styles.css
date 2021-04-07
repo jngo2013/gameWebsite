@@ -1,19 +1,9 @@
 .SignIn-container {
-  /* border: 1px solid black; */
   margin-top: 5rem;
   width: 500px;
   background: white;
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-.SignIn-form {
-  /* border: 3px solid black; */
-  /* padding: 2rem 25rem; */
-}
-
-.SignIn-input {
-  /* border: 3px solid black; */
 }
 
 /* ===== MEDIA QUERIES =====  */

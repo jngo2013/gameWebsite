@@ -35,21 +35,6 @@ class AddLegacyModal extends Component {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.value }});
   }
 
-  // function for uploading an image
-  handleFileInputChange = event => {
-    this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
-    console.log("in handleFileInputChange", event.target.files[0]);
-    console.log("inhandlefil legacy", event.target.files[0].type)
-
-    // // get the file type
-    // let fileType = event.target.files[0].type;
-
-    // // check the file type
-    // if(fileType !== "image/jpeg" || fileType !== "image/bmp" || fileType !== "image/gif" || fileType !== "image/png" || fileType !== "image/tiff") {
-    //   event.stopPropagation();
-    // }
-  }
-
   // function to refresh page (to get new data)
   refreshPage = () => {
     window.location.reload(true);
@@ -84,8 +69,6 @@ class AddLegacyModal extends Component {
 
       // send the data to the backend and get a response
       try {
-        console.log("line 67 in add", this.state.gameData);
-        // const { data } = await axios.post("/api/legacygames/", this.state.gameData);
         const { data } = await axios.post("/api/legacygames/", formData);
         this.setState({ gameData: data });
       } catch (err) {
@@ -140,8 +123,6 @@ class AddLegacyModal extends Component {
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Image URL</Form.Label>
-                {/* https://stackoverflow.com/questions/4328947/limit-file-format-when-using-input-type-file */}
-                {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} /> */}
                 <Form.Control required type="text" placeholder="Put image URL here." name="src" onChange={this.handleInputChange} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Please provide an image URL.</Form.Control.Feedback>

@@ -11,7 +11,6 @@ class LegacyDetails extends Component {
     redirect: false,
     authenticated: false,
     isLoaded: false,
-    // authenticated: true,
   }
 
   async componentDidMount() {

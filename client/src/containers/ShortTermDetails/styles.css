@@ -15,7 +15,6 @@
 }
 
 .ShortTermGames-title {
-  /* font-size: 3rem; */
   font-size: 2.5rem;
 }
 
@@ -40,13 +39,11 @@
 }
 
 .ShortTermGames-col2-div {
-  /* border: 3px solid black; */
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
-  /* background-color: lightgray; */
 }
 
 .ShortTermGames-col1 hr {
@@ -73,8 +70,6 @@
 
 .ShortTermGames-details-img {
   width: 100%;
-  /* height: 35vh; */
-  /* object-fit: cover; */
 }
 
 .card-img-top.ShortTermGames-details-img {

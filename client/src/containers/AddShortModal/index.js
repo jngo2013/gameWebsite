@@ -34,13 +34,6 @@ class AddShortModal extends Component {
     this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.value }});
   }
 
-  // function for uploading an image
-  handleFileInputChange = event => {
-    console.log("line 41", event.target.value);
-    console.log("line 41", event.target.files);
-    this.setState({ gameData: {...this.state.gameData, [event.target.name]: event.target.files[0] }});
-  }
-
   // function to refresh page (to get new data)
   refreshPage = () => {
     window.location.reload(true);
@@ -75,7 +68,6 @@ class AddShortModal extends Component {
 
       // send the data (from 'this.state.gameData') to the backend and get a response
       try {
-        // const { data } = await axios.post("/api/shorttermgames/", this.state.gameData);
         const { data } = await axios.post("/api/shorttermgames/", formData);
         this.setState({ gameData: data });
       } catch (err) {
@@ -93,7 +85,6 @@ class AddShortModal extends Component {
     }
     // change validated to "true" after checking the form
     this.setState({ validated: true });
-  
   }
 
   
@@ -130,12 +121,8 @@ class AddShortModal extends Component {
 
               <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Image URL</Form.Label>
-                {/* https://stackoverflow.com/questions/4328947/limit-file-format-when-using-input-type-file */}
-                {/* <Form.Control required type="file" accept="image/*" placeholder="Put image URL here." name="src" onChange={this.handleFileInputChange} /> */}
                 <Form.Control required type="text" placeholder="Put image URL here." name="src" onChange={this.handleInputChange} />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                {/* <Form.Control.Feedback type="invalid">Please provide an image URL.</Form.Control.Feedback> */}
-
               </Form.Group>
 
               <Form.Group controlId="exampleForm.ControlInput1">

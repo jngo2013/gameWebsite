@@ -23,8 +23,6 @@ class Search extends Component {
       // search legacy games database
       // send the inquiry to the backend (GET request to "/api/legacygames/search/:id")
       let legRes = await axios.get(`/api/legacygames/search/${searchinput}`);
-      // console.log(searchinput, "line 24")
-      console.log("legRes data", legRes.data)
 
       // for each result, push the data into "searchResults"
       for(let searchResult of legRes.data) {
@@ -48,12 +46,10 @@ class Search extends Component {
 
       // set searchResults state to be allResults; after getting data from the database set "isLoaded" to be "true"
       this.setState({ allResults: allResults, isLoaded: true });
-      // console.log(this.state.allResults, "line 39000")
     } catch (err) {
       console.log(err);
     }
   }
-
 
   render(){
     // for every result make a KitchenSinkCard
@@ -73,36 +69,32 @@ class Search extends Component {
 
     return (
       <div>
-        {/* <Container fluid> */}
-          {/* <Row className="Search-row"> */}
-            {
-              // if this.state.isLoaded is true (after checking the database), run the next ternary; otherwise show the loader
-              this.state.isLoaded
-              ?
-                // if there are results...
-                this.state.allResults.length !== 0
-                ?
-                // ...show all the results...
-                <Container fluid>
-                  <div>
-                    <h1 className="Search-h1">{`Search Results for "${this.props.match.params.searchinput}"`}</h1>
-                    <hr className="Search-hr" />
-                  </div>
-                <Row className="Search-row">
-                  
-                  {allSearchResults}
-                </Row>
-                </Container>
-                
-                :
-                // ...else show PageNotFound
-                <PageNotFound message={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}/>
-              :
-              // loader
-              <Loader />
-            }
-          {/* </Row> */}
-        {/* </Container> */}
+        {
+          // if this.state.isLoaded is true (after checking the database), run the next ternary; otherwise show the loader
+          this.state.isLoaded
+          ?
+            // if there are results...
+            this.state.allResults.length !== 0
+            ?
+            // ...show all the results...
+            <Container fluid>
+              <div>
+                <h1 className="Search-h1">{`Search Results for "${this.props.match.params.searchinput}"`}</h1>
+                <hr className="Search-hr" />
+              </div>
+            <Row className="Search-row">
+              
+              {allSearchResults}
+            </Row>
+            </Container>
+            
+            :
+            // ...else show PageNotFound
+            <PageNotFound message={`Sorry!  We couldn't find any games with "${this.props.match.params.searchinput}".`}/>
+          :
+          // loader
+          <Loader />
+        }
       </div>
     );
   }
