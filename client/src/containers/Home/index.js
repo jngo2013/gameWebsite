@@ -42,7 +42,6 @@ class Home extends Component {
       <div>
         <div className="Home-header">
           <h1 className="H1Text">The Board Game Project</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         
         <hr className="Home-hr"></hr>
