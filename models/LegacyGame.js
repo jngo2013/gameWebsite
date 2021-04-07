@@ -27,9 +27,7 @@ const LegacyGameSchema = new Schema({
     required: true,
   },
   src: {
-    // type: Buffer,
     type: String,
-    // data: Buffer,
     required: true,
   },
   drunkRating: {
