@@ -10,10 +10,9 @@ import "./style.css";
 function People() {
   return (
     <div>
-      <h1 className="titleCenter">The Crew</h1>
+      <h1 className="titleCenter">The Founders</h1>
       <hr className="theCrew-hr" />
 
-      {/* ===== JONATHAN GROTHE =====  */}
       <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
@@ -31,7 +30,6 @@ function People() {
     
       <hr className="theCrew-hr" />
     
-      {/* ===== ALBERT LEE =====  */}
       <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
@@ -49,7 +47,6 @@ function People() {
     
       <hr className="theCrew-hr" />
 
-      {/* ===== GABE GOLDEN ===== */}
       <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
@@ -67,7 +64,6 @@ function People() {
     
       <hr className="theCrew-hr" />
 
-      {/* ===== MAYBELINE ===== */}
       <Container className="People-container">
         <Row>
           <Col lg={3} className="People-col1">
