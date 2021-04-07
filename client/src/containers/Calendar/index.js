@@ -1,23 +1,8 @@
 import React  from 'react'
-import axios from 'axios';
 import './styles.css';
 
 
 export default class EventCalendar extends React.Component {
-
-  state = {
-    weekendsVisible: true,
-    currentEvents: [],
-    authenticated: false,
-  }
-
-  // check to see if the user has been authenticated
-  componentDidMount() {
-    if(localStorage.getItem('token') !== null){
-      this.setState({ authenticated: true });
-    } 
-    axios.get('/api/calendar')
-  }
 
   render() {
     return (
