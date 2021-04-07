@@ -26,7 +26,7 @@ function KitchenSinkCard(props) {
             <span className="list-group-divider">|</span>
             <span className="list-group-time"><i class="fas fa-clock"></i> {props.time}</span>
             <span className="list-group-divider">|</span>
-            <span><i class="fas fa-beer"></i> {props.drunkRating}%</span>
+            <span><i class="fas fa-beer"></i> {props.drunkRating}</span>
           </ListGroupItem>
         </ListGroup>
       </Card>
