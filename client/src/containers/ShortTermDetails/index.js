@@ -104,7 +104,7 @@ class ShortTermDetails extends Component {
                       <div className="ShortTermGames-col1-div-box">
                         <Card.Title className="ShortTermGames-title">Drunk Rating</Card.Title>
                         <Card.Text>
-                          {drunkRating}%
+                          {drunkRating}
                         </Card.Text>
                       </div>
 

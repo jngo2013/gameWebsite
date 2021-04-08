@@ -99,7 +99,7 @@ class LegacyDetails extends Component {
                       <div className="LegacyGames-col1-div-box">
                         <Card.Title className="LegacyGames-title">Drunk Rating</Card.Title>
                         <Card.Text>
-                          {drunkRating}%
+                          {drunkRating}
                         </Card.Text>
                       </div>
                       
