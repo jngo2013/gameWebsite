@@ -10,11 +10,10 @@
 * [Tools, Technologies, and Frameworks](#tools-technologies-and-frameworks)
 * [Challenges](#challenges)
 * [Future Improvements](#future-improvements)
-<!-- * [Tests](#tests) -->
 * [License](#license)
-<!-- * [Contributions](#contributions) -->
 * [Questions](#questions)
 * [Helpful Resources](#helpful-resources)
+* [Screenshots](#screenshots)
  
 ## Project Description
 The Board Game Project is a full stack MERN (MongoDB, Express, React, NodeJS) Web application that was created for a client that wanted to enhance their online presence within the board gaming community.  Visitors of the site are able to view upcoming events and news, and view and search a collection of board games.  The owner of the site (the client) has the ability to change the image and information in the carousel, add, edit, view, and delete board games, and add and delete events in the calendar.
@@ -148,6 +147,33 @@ If you have any questions, you can contact [Jimmy Ngo](jngo2013@gmail.com) or [G
 
  
 ## Screenshots
- 
+Home page  
+
+![image1](./client/public/assets/images/image1.png)  
+
+Card Section  
+
+![image2](./client/public/assets/images/image2.png)  
+
+Collection  
+
+![image3](./client/public/assets/images/image3.png)  
+
+Game Details  
+
+![image4](./client/public/assets/images/image4.png)  
+
+Edit Modal  
+
+![image5](./client/public/assets/images/image5.png)  
+
+Event Calendar  
+
+![image6](./client/public/assets/images/image6.png)  
+
+About Us  
+
+![image7](./client/public/assets/images/image7.png) 
+
 <!-- ![user image](https://avatars.githubusercontent.com/u/57199674?v=4)
 #### This user's email is private. -->
